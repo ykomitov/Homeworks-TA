@@ -1,0 +1,1 @@
+HTMLRenderer.exe < test.010.in.txt > sample-output-Yavor.txt

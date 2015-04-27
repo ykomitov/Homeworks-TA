@@ -1,0 +1,1 @@
+Furnitures.exe < test.000.001.in.txt > yavor.txt

@@ -1,0 +1,5 @@
+big - 5 times
+words - 4 times
+of - 3 times
+list - 1 time
+aardvark - 0 times

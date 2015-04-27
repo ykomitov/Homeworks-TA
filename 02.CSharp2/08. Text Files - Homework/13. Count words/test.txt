@@ -1,0 +1,2 @@
+﻿/*•	Big Write a program that reads a list of words from the file words.txt and finds how many times each of the words is contained in another file test.txt.
+ * The result big should be written big in the file result.txt big and the big words should be sorted by the number of their occurrences in descending order.*/

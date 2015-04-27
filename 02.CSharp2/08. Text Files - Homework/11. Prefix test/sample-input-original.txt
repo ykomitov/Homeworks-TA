@@ -1,0 +1,6 @@
+﻿This is a sample sentence. We have to delete all words starting with the prefix "test" like: 
+testing,
+testosterone,
+testtesttest,
+test101,
+test_fuck and so on.

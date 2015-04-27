@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="School.Person" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.SchoolClass" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIAAAACAAAAAAAAAAAAAACAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\SchoolClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.SchoolSubject" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAoAAAACAAQAA=</HashCode>
+      <FileName>SchoolObjects\SchoolSubject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.Student" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.25" />
+    <InheritanceLine Type="School.Person" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.191" />
+        <Point X="2.25" Y="3.346" />
+        <Point X="1.375" Y="3.346" />
+        <Point X="1.375" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.Teacher" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.25" />
+    <InheritanceLine Type="School.Person" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.191" />
+        <Point X="2.25" Y="3.346" />
+        <Point X="3" Y="3.346" />
+        <Point X="3" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.MainProgram" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>MainProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.SchoolObject" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\SchoolObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.School" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAgAAAAAAAAAAAAAAAgBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SchoolObjects\School.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

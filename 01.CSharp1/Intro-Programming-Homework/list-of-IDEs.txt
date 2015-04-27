@@ -1,0 +1,22 @@
+at least five IDEs along with 2-3 sentences about each of them
+
+1. Visual Studio
+
+Visual Studio is used to develop computer programs, as well as web sites, web applications and web services. This IDE is mostly used by corporate programmers to produce .NET code.
+
+2. Eclipse
+
+Eclipse contains a base workspace and an extensible plug-in system for customizing the environment. Written mostly in Java, Eclipse can be used to develop applications. By means of various plug-ins, Eclipse may also be used to develop applications in other programming languages.
+
+3. Netbeans
+
+NetBeans is an IDE for developing primarily with Java, but also with other languages, in particular PHP, C/C++, and HTML5. It is also an application platform framework for Java desktop applications and others. The NetBeans IDE can run on Windows, OS X, Linux, Solaris and other platforms supporting a compatible JVM.
+
+4. Xcode
+
+Xcode is an IDE containing a suite of software development tools developed by Apple for developing software for OS X and iOS. Xcode supports writing in C, C++, Objective-C, Swift, AppleScript, Java and Cocoa.
+
+5. MonoDevelop
+
+MonoDevelop is an open source integrated development environment for Linux, OS X,[5] and Windows.[6] Its primary focus is development of projects that use Mono and .NET frameworks. MonoDevelop integrates features similar to those of NetBeans and Microsoft Visual Studio, such as automatic code completion, source control, a graphical user interface (GUI) and Web designer.
+

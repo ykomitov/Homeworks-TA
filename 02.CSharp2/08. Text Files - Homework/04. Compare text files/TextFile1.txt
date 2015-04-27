@@ -1,0 +1,3 @@
+﻿Same line 1
+Diff
+Same line 2
