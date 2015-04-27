@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="e7c7f452-e461-11e4-82d9-86fd12a266f6.png" />
     <Content Include="index.html" />
+    <Content Include="styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
