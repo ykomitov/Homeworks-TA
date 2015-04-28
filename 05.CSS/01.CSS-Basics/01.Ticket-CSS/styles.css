@@ -3,3 +3,26 @@
     padding: 0;
 }
 
+table {
+    background-color: #595959;
+    width: 300px;
+}
+
+th {
+    font: 11px Arial;
+    font-style: italic;
+    text-align: left;
+    color: #ffffff;
+}
+
+#ticketID {
+    font: 16px Arial;
+    text-align: left;
+    color: #B6B2A7;
+}
+
+.generalInfo {
+    font: 11px Arial;
+    text-align: left;
+    color: #fff2b2;
+}
