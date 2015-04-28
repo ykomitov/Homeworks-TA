@@ -26,3 +26,14 @@ th {
     text-align: left;
     color: #fff2b2;
 }
+
+.grayTxt {
+    font: 11px Arial;
+    text-align: left;
+    color: #B6B2A7;
+}
+
+#dot {
+    color: green;
+    font: 20px Arial;
+}
