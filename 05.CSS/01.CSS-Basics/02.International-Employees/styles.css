@@ -2,3 +2,37 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+}
+
+table {
+    border-bottom: 1px solid #BFBDA1;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 456px;
+    height: 133px;
+}
+
+th {
+    border-bottom: 1px solid #BFBDA1;
+    padding-left: 4px;
+    font: normal normal 12px Arial;
+    color: white;
+}
+
+td {
+    padding-left: 4px;
+}
+
+tr :nth-of-type(1) {
+    background: linear-gradient(#5EC306, #46A209);
+}
+
+.colBorder {
+    border-left: 1px solid #BFBDA1;
+    border-right: 1px solid #BFBDA1;
+}
