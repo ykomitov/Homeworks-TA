@@ -65,11 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="e7c7704a-e461-11e4-80f5-71015ea9fd99.png" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="Web.config" />
-    <Content Include="World-flags.gif" />
+    <Content Include="World-flags_s.gif" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

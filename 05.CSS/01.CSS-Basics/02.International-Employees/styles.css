@@ -17,6 +17,22 @@ table {
     height: 133px;
 }
 
+#col1 {
+    width: 30%;
+}
+
+#col2 {
+    width: 24%;
+}
+
+#col3 {
+    width: 28%;
+}
+
+#col4 {
+    width: 18%;
+}
+
 th {
     border-bottom: 1px solid #BFBDA1;
     padding-left: 4px;
@@ -26,6 +42,7 @@ th {
 
 td {
     padding-left: 4px;
+    line-height: 20px;
 }
 
 .colBorder {
@@ -46,4 +63,29 @@ tr:nth-child(1) {
     background: -ms-linear-gradient(top, #5ec306 0%,#47a803 100%,#7db9e8 100%); /* IE10+ */
     background: linear-gradient(to bottom, #5ec306 0%,#47a803 100%,#7db9e8 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ec306', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+.MX, .UK, .DE {
+    background-image: url(World-flags_s.gif);
+    background-repeat: no-repeat;
+    float: left;
+    text-indent: 30px;
+}
+
+.MX {
+    width: 29px;
+    height: 18px;
+    background-position: -304px -254px;
+}
+
+.UK {
+    width: 29px;
+    height: 18px;
+    background-position: -33px -447px;
+}
+
+.DE {
+    width: 29px;
+    height: 18px;
+    background-position: -439px -126px;
 }

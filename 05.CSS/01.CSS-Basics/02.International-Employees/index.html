@@ -7,10 +7,10 @@
 <body>
     <table>
         <colgroup>
-            <col />
-            <col class="colBorder" />
-            <col class="colBorder" />
-            <col />
+            <col id="col1" />
+            <col class="colBorder" id="col2" />
+            <col class="colBorder" id="col3" />
+            <col id="col4" />
         </colgroup>
         <tbody>
             <tr>
@@ -22,25 +22,25 @@
             <tr>
                 <td>Maria Anders</td>
                 <td>Berlin</td>
-                <td>Germany</td>
+                <td><span class="DE">Germany</span></td>
                 <td><input type="checkbox" /></td>
             </tr>
             <tr>
                 <td>Ana Trujillo</td>
                 <td>México D.F.</td>
-                <td>Mexico</td>
+                <td><span class="MX">Mexico</span></td>
                 <td><input type="checkbox" /></td>
             </tr>
             <tr>
                 <td>Antonio Moreno</td>
                 <td>México D.F.</td>
-                <td>Mexico</td>
-                <td><input type="checkbox" /></td>
+                <td><span class="MX">Mexico</span></td>
+                <td><input type="checkbox" checked/></td>
             </tr>
             <tr>
                 <td>Thomas Hardy</td>
                 <td>London</td>
-                <td>UK</td>
+                <td><span class="UK">UK</span></td>
                 <td><input type="checkbox" /></td>
             </tr>
         </tbody>
