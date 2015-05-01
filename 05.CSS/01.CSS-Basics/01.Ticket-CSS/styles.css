@@ -23,6 +23,7 @@ table {
 th {
     font-style: italic;
     font-weight: normal;
+    text-align: left;
     vertical-align: top;
     color: #ffffff;
     padding-bottom: 7px;
@@ -61,7 +62,7 @@ td {
 }
 
 #bullet {
-    background-image: url(bullet.png);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAkSAAAJEgFGxru7AAAAB3RJTUUH3wQcFRgUQt9nAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABgElEQVQoz42Su04bURCGvznHezM4awHKRdpAQSgiZaukoCQib0Aa13mvtKn8BincJTyEkcBEIAHCm5i9efdMCmyQEoLyNaMzmv/MaOaXwWDAAgP0gBiIFrkSmAIzoF0Wdu6ikhhP9oPNlff+i2jbdAz1dT0uj36N2lnzFTgFmqXI4DSxff9TvLtx4D8NE/S2U/Cy+2b1dfw2+3axVU5uPqOcAK1B6YlvP8Tv1g/8Z+EOSm/xWQdlVTzZebK78dFbD/ZR7QEYbTUOt7p7nb6foHfj3qNYG9kk2FzZk8DGKBhUo04/2JbARPwLR+St+a+MZ0JQMSggPI4Aev80GCmaaTXW2hWPiIrmuh7r3JUgasRKVh7no2Za/0CkeUDQusqdlpObkavaDAGbpulcG3fVZvPQWwue264NF4d2CLm2epwdXg7rs3IIXABq0zRVEZm5oj2qTvLzJm8qUSpXNGflJP+eHV5+mZ+XQ5TJ0hXygI36QPg/NrpdLGTAz78u9Qe/AezboYj1hISFAAAAAElFTkSuQmCC);
     background-repeat: no-repeat;
     background-position: 0 center;
     padding-left: 15px;
