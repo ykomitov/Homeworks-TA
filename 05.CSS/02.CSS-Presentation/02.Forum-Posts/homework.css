@@ -235,14 +235,14 @@ body {
                     margin-top: 10px;
                     margin-right: 0;
                     margin-bottom: 10px;
-                    margin-left: 0px;
+                    margin-left: 0;
                 }
 
                     body aside > ul > li ul li {
                         margin-top: 5px;
                         margin-left: 10px;
-                        margin-bottom: 0px;
-                        margin-right: 0px;
+                        margin-bottom: 0;
+                        margin-right: 0;
                         background: url(images/li-dot.png) no-repeat;
                         background-position: 0 50%;
                         padding-left: 25px;
@@ -252,8 +252,8 @@ body {
         clear: both;
         padding-top: 15px;
         padding-bottom: 25px;
-        padding-right: 0px;
-        padding-left: 0px;
+        padding-right: 0;
+        padding-left: 0;
     }
 
         body footer p {
