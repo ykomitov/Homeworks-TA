@@ -15,6 +15,12 @@ table {
     border-collapse: collapse;
     width: 456px;
     height: 133px;
+    margin: 10px 0 0 10px;
+}
+
+#col2, #col3 {
+    border-left: 1px solid #BFBDA1;
+    border-right: 1px solid #BFBDA1;
 }
 
 #col1 {
@@ -45,11 +51,6 @@ td {
     line-height: 20px;
 }
 
-.colBorder {
-    border-left: 1px solid #BFBDA1;
-    border-right: 1px solid #BFBDA1;
-}
-
 tr:nth-child(2n+1) {
     background: #ECECD8;
 }
@@ -70,22 +71,18 @@ tr:nth-child(1) {
     background-repeat: no-repeat;
     float: left;
     text-indent: 30px;
+    width: 29px;
+    height: 18px;
 }
 
 .MX {
-    width: 29px;
-    height: 18px;
     background-position: -304px -254px;
 }
 
 .UK {
-    width: 29px;
-    height: 18px;
     background-position: -33px -447px;
 }
 
 .DE {
-    width: 29px;
-    height: 18px;
     background-position: -439px -126px;
 }

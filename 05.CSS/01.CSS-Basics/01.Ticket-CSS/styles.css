@@ -6,6 +6,7 @@
 
 table {
     font: 0.69em Arial;
+    text-align: left;
     background-color: #595959;
     width: 280px;
     border-spacing: 0;
@@ -22,21 +23,18 @@ table {
 th {
     font-style: italic;
     font-weight: normal;
-    text-align: left;
     vertical-align: top;
     color: #ffffff;
     padding-bottom: 7px;
 }
 
 td {
-    text-align: left;
     vertical-align: top;
     padding-bottom: 7px;
 }
 
 .generalInfo {
     font: 1em Arial;
-    text-align: left;
     color: #fff2b2;
     padding-bottom: 7px;
 }
@@ -49,19 +47,16 @@ td {
     font: 1em Arial;
     color: red;
     font-weight: bold;
-    vertical-align: text-top;
 }
 
 .grayTxt {
     font: 1em Arial;
-    text-align: left;
     color: #B6B2A7;
     padding-bottom: 7px;
 }
 
 #ticketID {
     font: 1.4em Arial;
-    text-align: left;
     color: #B6B2A7;
 }
 
