@@ -17,6 +17,7 @@ body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, l
     margin: 0;
     padding: 0;
     border: 0;
+    color: white;
 }
 
 div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
@@ -26,6 +27,14 @@ div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
 body {
     font: 14px normal Arial;
     color: white;
+    background: #d691fe; /* Old browsers */
+    background: -moz-linear-gradient(top, #d691fe 0, #d192fd 1%, #d391fd 1%, #d091fa 1%, #cb8ef5 4%, #c48af1 5%, #b35af4 11%, #b05af3 11%, #a53bf3 14%, #9f31f4 16%, #9c2ef1 17%, #8e1aef 20%, #9315f2 24%, #9315f2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#d691fe), color-stop(1%,#d192fd), color-stop(1%,#d391fd), color-stop(1%,#d091fa), color-stop(4%,#cb8ef5), color-stop(5%,#c48af1), color-stop(11%,#b35af4), color-stop(11%,#b05af3), color-stop(14%,#a53bf3), color-stop(16%,#9f31f4), color-stop(17%,#9c2ef1), color-stop(20%,#8e1aef), color-stop(24%,#9315f2), color-stop(100%,#9315f2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d691fe 0,#d192fd 1%,#d391fd 1%,#d091fa 1%,#cb8ef5 4%,#c48af1 5%,#b35af4 11%,#b05af3 11%,#a53bf3 14%,#9f31f4 16%,#9c2ef1 17%,#8e1aef 20%,#9315f2 24%,#9315f2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d691fe 0,#d192fd 1%,#d391fd 1%,#d091fa 1%,#cb8ef5 4%,#c48af1 5%,#b35af4 11%,#b05af3 11%,#a53bf3 14%,#9f31f4 16%,#9c2ef1 17%,#8e1aef 20%,#9315f2 24%,#9315f2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d691fe 0,#d192fd 1%,#d391fd 1%,#d091fa 1%,#cb8ef5 4%,#c48af1 5%,#b35af4 11%,#b05af3 11%,#a53bf3 14%,#9f31f4 16%,#9c2ef1 17%,#8e1aef 20%,#9315f2 24%,#9315f2 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #d691fe 0,#d192fd 1%,#d391fd 1%,#d091fa 1%,#cb8ef5 4%,#c48af1 5%,#b35af4 11%,#b05af3 11%,#a53bf3 14%,#9f31f4 16%,#9c2ef1 17%,#8e1aef 20%,#9315f2 24%,#9315f2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d691fe', endColorstr='#9315f2',GradientType=0 ); /* IE6-9 */
 }
 
     body header {
@@ -59,16 +68,26 @@ body {
                     border-radius: 10px;
                     padding: 2px 5px;
                     margin: 5px;
+                    background-color: #B35EF3;
                 }
 
             body header div#header-container div#reg-form-container button {
                 margin-left: auto;
                 margin-right: auto;
                 font-weight: bold;
+                color: white;
                 border: 1px solid #603382;
                 border-style: outset;
                 border-radius: 10px;
                 padding: 5px 8px;
+                background: #b463f0; /* Old browsers */
+                background: -moz-linear-gradient(left, #b463f0 0%, #b25ef2 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b463f0), color-stop(100%,#b25ef2)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(left, #b463f0 0%,#b25ef2 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(left, #b463f0 0%,#b25ef2 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(left, #b463f0 0%,#b25ef2 100%); /* IE10+ */
+                background: linear-gradient(to right, #b463f0 0%,#b25ef2 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b463f0', endColorstr='#b25ef2',GradientType=1 ); /* IE6-9 */
             }
 
                 body header div#header-container div#reg-form-container button:hover {
@@ -82,6 +101,7 @@ body {
             margin: 20px 20px 20px 20px;
             padding: 12px;
             border: 2px solid #000;
+            border-radius: 15px;
         }
 
             body header nav ul.nav-list {
@@ -146,6 +166,7 @@ body {
             margin: 20px;
             padding: 20px;
             border: 1px solid black;
+            border-radius: 15px;
         }
 
             body section article header {
@@ -174,6 +195,7 @@ body {
 
                     body section article footer p a {
                         text-decoration: none;
+                        color: #AAA;
                     }
 
                         body section article footer p a:hover {
@@ -239,6 +261,7 @@ body {
     body footer {
         clear: both;
         padding: 15px 0 25px 0;
+        text-align: center;
     }
 
         body footer p {

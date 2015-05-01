@@ -18,12 +18,12 @@ p {
     color: #0094ff;
 }
 
-    p::first-letter {
+    p:first-letter {
         font-family: Edwardian Script ITC;
         font-size: 4rem;
     }
 
-    p::first-line {
+    p:first-line {
         font-weight: bold;
         line-height: 3rem;
     }
