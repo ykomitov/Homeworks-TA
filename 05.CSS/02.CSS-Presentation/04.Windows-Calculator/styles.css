@@ -301,7 +301,7 @@ label {
 #numSysSelectorBottom > label, #Qword, #Dword, #Word, #Byte {
     color: #1f395e;
     position: relative;
-    top: -175px;
+    top: -178px;
     right: 0;
 }
 
@@ -311,9 +311,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 #keypadHolder {
-    border: 1px solid black;
-    height: 180px;
-    width: 301px;
+    height: 185px;
+    width: 317px;
     float: left;
     margin: 5px 0 0 5px;
 }
@@ -321,7 +320,32 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .calcSmall {
     border: 1px solid #8f9cad;
     border-radius: 3px;
-    width: 32px;
-    height: 25px;
+    width: 34px;
+    height: 27px;
     float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-family: Segoe UI;
+    font-size: 11px;
+    color: #1f395e;
+}
+
+#emptyButton {
+    background-color: transparent;
+}
+
+#equals {
+    height: 59px;
+    position: relative;
+    top: -32px;
+    right: 0;
+}
+
+#zero {
+    width: 73px;
+}
+
+#dummyButton {
+    width: 34px;
+    height: 27px;
 }
