@@ -191,3 +191,56 @@ td {
     background: linear-gradient(to bottom, #edf4fc 0,#e9f2fb 6%,#d9e5f1 22%,#dbe5f1 23%,#d8e4f0 23%,#d8e4f0 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4fc', endColorstr='#d8e4f0',GradientType=0 ); /* IE6-9 */
 }
+
+.txtMenu {
+    padding-left: 6px;
+    padding-right: 9px;
+    font: 11.5px Segoe UI;
+    line-height: 15px;
+    float: left;
+}
+
+    .txtMenu::first-letter {
+        text-decoration: underline;
+    }
+
+#result {
+    width: 379px;
+    height: 40px;
+    font-family: Consolas;
+    font-size: 24px;
+    text-align: right;
+    padding-right:4px;
+    padding-top:7px;
+    border: 1px solid #8f9cad;
+    border-radius: 3px;
+    margin: 11px 0 0 10px;
+    background: #e5effb; /* Old browsers */
+    background: -moz-linear-gradient(top, #e5effb 0, #e5eff9 17%, #e7effc 20%, #f0f5fb 48%, #fbfcfe 72%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#e5effb), color-stop(17%,#e5eff9), color-stop(20%,#e7effc), color-stop(48%,#f0f5fb), color-stop(72%,#fbfcfe), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e5effb 0,#e5eff9 17%,#e7effc 20%,#f0f5fb 48%,#fbfcfe 72%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e5effb 0,#e5eff9 17%,#e7effc 20%,#f0f5fb 48%,#fbfcfe 72%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e5effb 0,#e5eff9 17%,#e7effc 20%,#f0f5fb 48%,#fbfcfe 72%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e5effb 0,#e5eff9 17%,#e7effc 20%,#f0f5fb 48%,#fbfcfe 72%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5effb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+    #result::-webkit-input-placeholder {
+        color: black;
+        opacity: 1;
+    }
+
+    #result::-moz-placeholder { /* Firefox 18- */
+        color: black;
+        opacity: 1;
+    }
+
+    #result:-moz-placeholder { /* Firefox 19+ */
+        color: black;
+        opacity: 1;
+    }
+
+    #result:-ms-input-placeholder {
+        color: black;
+        opacity: 1;
+    }
