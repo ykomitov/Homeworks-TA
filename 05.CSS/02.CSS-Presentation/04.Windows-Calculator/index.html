@@ -9,9 +9,9 @@
         <table class="outerWindow">
             <tr>
                 <td id="outerTop" colspan="3">
-                    <div class="winButtons" id="close"></div>
-                    <div class="winButtons" id="maximize"></div>
-                    <div class="winButtons" id="minimize"></div>
+                    <div><button class="winButtons" id="close"></button></div>
+                    <div><button class="winButtons" id="maximize" disabled="disabled"></button></div>
+                    <div><button class="winButtons" id="minimize"></button></div>
                     <div class="winButtons" id="icon"><span>Calculator</span></div>
                 </td>
             </tr>
@@ -26,6 +26,30 @@
                             <td id="calcBody">
                                 <div>
                                     <input type="text" id="result" placeholder="0" />
+                                </div>
+                                <div id="binOutput-out">
+                                    <div id="binOutput-in">
+                                        <p></p>
+                                        <p></p>
+                                        <p></p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div id="numSysSelectorTop">
+                                    <input type="radio" name="numSys" id="Hex" /><label for="Hex">Hex</label>
+                                    <input type="radio" name="numSys" id="Dec" checked /><label for="Dec">Dec</label>
+                                    <input type="radio" name="numSys" id="Oct" /><label for="Oct">Oct</label>
+                                    <input type="radio" name="numSys" id="Bin" /><label for="Bin">Bin</label>
+
+                                </div>
+                                <div id="keypadHolder">
+                                    <button class="calcSmall"></button>
+                                </div>
+                                <div id="numSysSelectorBottom">
+                                    <input type="radio" name="numSysSel" id="Qword" checked /><label for="Qword">Qword</label>
+                                    <input type="radio" name="numSysSel" id="Dword" /><label for="Dword">Dword</label>
+                                    <input type="radio" name="numSysSel" id="Word" /><label for="Word">Word</label>
+                                    <input type="radio" name="numSysSel" id="Byte" /><label for="Byte">Byte</label>
                                 </div>
                             </td>
                         </tr>
