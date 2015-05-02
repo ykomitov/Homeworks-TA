@@ -8,7 +8,7 @@
     <div>
         <table class="outerWindow">
             <tr>
-                <td id="outerTop">
+                <td id="outerTop" colspan="3">
                     <div class="winButtons" id="close"></div>
                     <div class="winButtons" id="maximize"></div>
                     <div class="winButtons" id="minimize"></div>
@@ -16,7 +16,25 @@
                 </td>
             </tr>
             <tr>
-                <td id="outerBottom"></td>
+                <td id="middleLeftTop"></td>
+                <td rowspan="2">
+                    <table id="calculator">
+                        <tr>
+                            <td id="calcMenu"></td>
+                        </tr>
+                        <tr>
+                            <td id="calcBody"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="middleRightTop"></td>
+            </tr>
+            <tr>
+                <td id="middleLeftBottom"></td>
+                <td id="middleRightBottom"></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="outerBottom"></td>
             </tr>
         </table>
     </div>
