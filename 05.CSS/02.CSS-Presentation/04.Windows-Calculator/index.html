@@ -28,12 +28,7 @@
                                     <input type="text" id="result" placeholder="0" />
                                 </div>
                                 <div id="binOutput-out">
-                                    <div id="binOutput-in">
-                                        <p></p>
-                                        <p></p>
-                                        <p></p>
-                                        <p></p>
-                                    </div>
+                                    <img src="images/bin-win.png" />
                                 </div>
                                 <div id="numSysSelectorTop">
                                     <input type="radio" name="numSys" id="Hex" /><label for="Hex">Hex</label>
@@ -42,52 +37,52 @@
                                     <input type="radio" name="numSys" id="Bin" /><label for="Bin">Bin</label>
                                 </div>
                                 <div id="keypadHolder">
-                                    <button class="calcSmall" id="emptyButton" disabled></button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Mod</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>A</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>MC</button>
+                                    <button class="calcSmall" id="disabledButton" disabled></button>
+                                    <button class="activeButton" id="txtButton">Mod</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>A</button>
+                                    <button class="calcSmall" id="emptyButton">MC</button>
                                     <button class="calcSmall" id="emptyButton" disabled>MR</button>
                                     <button class="calcSmall" id="emptyButton" disabled>MS</button>
                                     <button class="calcSmall" id="emptyButton" disabled>M+</button>
                                     <button class="calcSmall" id="emptyButton" disabled>M-</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>(</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>)</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>B</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>←</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>CE</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>C</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>±</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>√</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>RoL</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>RoR</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>C</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>7</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>8</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>9</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>/</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>%</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Or</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Xor</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>D</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>4</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>5</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>6</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>*</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>1/x</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Lsh</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Rsh</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>E</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>1</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>2</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>3</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>-</button>
+                                    <button class="activeButton" id="txtButton">(</button>
+                                    <button class="activeButton" id="txtButton">)</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>B</button>
+                                    <button class="activeButton" id="arrow"></button>
+                                    <button class="activeButton" id="txtButton">CE</button>
+                                    <button class="activeButton" id="txtButton">C</button>
+                                    <button class="activeButton" id="txtButton">±</button>
+                                    <button class="calcSmall" id="disabledButton" disabled>√</button>
+                                    <button class="activeButton" id="txtButton">RoL</button>
+                                    <button class="activeButton" id="txtButton">RoR</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>C</button>
+                                    <button class="activeButton" id="numButton">7</button>
+                                    <button class="activeButton" id="numButton">8</button>
+                                    <button class="activeButton" id="numButton">9</button>
+                                    <button class="activeButton" id="txtButton">/</button>
+                                    <button class="calcSmall" id="disabledButton" disabled>%</button>
+                                    <button class="activeButton" id="txtButton">Or</button>
+                                    <button class="activeButton" id="txtButton">Xor</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>D</button>
+                                    <button class="activeButton" id="numButton">4</button>
+                                    <button class="activeButton" id="numButton">5</button>
+                                    <button class="activeButton" id="numButton">6</button>
+                                    <button class="activeButton" id="txtButton">*</button>
+                                    <button class="calcSmall" id="disabledButton" disabled>1/x</button>
+                                    <button class="activeButton" id="txtButton">Lsh</button>
+                                    <button class="activeButton" id="txtButton">Rsh</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>E</button>
+                                    <button class="activeButton" id="numButton">1</button>
+                                    <button class="activeButton" id="numButton">2</button>
+                                    <button class="activeButton" id="numButton">3</button>
+                                    <button class="activeButton" id="txtButton">-</button>
                                     <button class="calcSmall" id="dummyButton" disabled></button>
-                                    <button class="calcSmall" id="emptyButton" disabled>Not</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>And</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>F</button>
-                                    <button class="calcSmall" id="zero" disabled>0</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>.</button>
-                                    <button class="calcSmall" id="emptyButton" disabled>+</button>
+                                    <button class="activeButton" id="txtButton">Not</button>
+                                    <button class="activeButton" id="txtButton">And</button>
+                                    <button class="bigFonts" id="disabledButton" disabled>F</button>
+                                    <button class="activeButton" id="zero">0</button>
+                                    <button class="calcSmall" id="disabledButton" disabled>.</button>
+                                    <button class="activeButton" id="txtButton">+</button>
                                     <button class="calcSmall" id="equals">=</button>
                                 </div>
                                 <div id="numSysSelectorBottom">
