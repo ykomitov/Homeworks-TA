@@ -383,7 +383,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     height: 27px;
 }
 
-#txtButton, #arrow {
+#txtButton, #arrow, #txtButtonRes {
     background: #f1f6fc; /* Old browsers */
     background: -moz-linear-gradient(top, #f1f6fc 0, #e2ebf4 45%, #d3e1ec 50%, #d4e0f0 73%, #d4e0ec 77%, #d6e2ee 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#f1f6fc), color-stop(45%,#e2ebf4), color-stop(50%,#d3e1ec), color-stop(73%,#d4e0f0), color-stop(77%,#d4e0ec), color-stop(100%,#d6e2ee)); /* Chrome,Safari4+ */
@@ -412,7 +412,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbff', endColorstr='#ebf2f8',GradientType=0 ); /* IE6-9 */
 }
 
-    #txtButton:hover, #numButton:hover, #zero:hover, #arrow:hover, #emptyButton:hover {
+    #txtButton:hover, #numButton:hover, #zero:hover, #arrow:hover, #emptyButton:hover, #txtButtonRes:hover {
         background: #fffbf7; /* Old browsers */
         background: -moz-linear-gradient(top, #fffbf7 0, #fff0df 8%, #fee2c2 46%, #ffcf6a 50%, #ffd475 67%, #ffdc7b 79%, #ffe983 92%, #fff3a0 96%, #fffbe3 100%); /* FF3.6+ */
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#fffbf7), color-stop(8%,#fff0df), color-stop(46%,#fee2c2), color-stop(50%,#ffcf6a), color-stop(67%,#ffd475), color-stop(79%,#ffdc7b), color-stop(92%,#ffe983), color-stop(96%,#fff3a0), color-stop(100%,#fffbe3)); /* Chrome,Safari4+ */
