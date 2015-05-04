@@ -48,10 +48,10 @@
                                     <button class="activeButton" id="txtButton" onclick="result.value +='('">(</button>
                                     <button class="activeButton" id="txtButton" onclick="result.value +=')'">)</button>
                                     <button class="bigFonts" id="disabledButton" disabled>B</button>
-                                    <button class="activeButton" id="arrow"></button>
-                                    <button class="activeButton" id="txtButtonRes" onclick="result.value = 0">CE</button>
-                                    <button class="activeButton" id="txtButtonRes" onclick="result.value = 0">C</button>
-                                    <button class="activeButton" id="txtButton">±</button>
+                                    <button class="activeButton" id="arrow" onclick="result.value = result.value.substr(0, result.value.length-1)"></button>
+                                    <button class="activeButton" id="txtButtonRes" onclick="result.value = ''">CE</button>
+                                    <button class="activeButton" id="txtButtonRes" onclick="result.value = ''">C</button>
+                                    <button class="activeButton" id="txtButton" onclick="result.value *=-1">±</button>
                                     <button class="calcSmall" id="disabledButton" disabled>√</button>
                                     <button class="activeButton" id="txtButton">RoL</button>
                                     <button class="activeButton" id="txtButton">RoR</button>
