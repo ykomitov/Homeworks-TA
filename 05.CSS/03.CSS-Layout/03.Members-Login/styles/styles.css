@@ -1,0 +1,97 @@
+﻿body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #A4A4A4;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+header {
+    background-color: #2F2F2F;
+    height: 67px;
+    width: 660px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    vertical-align: middle;
+}
+
+#container {
+    width: 660px;
+    height: 297px;
+    border: 1px solid #806850;
+    margin: 20px 0 0 20px;
+    border-radius: 6px;
+}
+
+#txtContainer {
+    height: 230px;
+    background-color: #3B3B3B;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+img, input, button, #login {
+    float: left;
+}
+
+img {
+    margin: 7px 0 0 9px;
+}
+
+#login {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 22px;
+    margin: 16px 0 0 19px;
+    letter-spacing: 1.7px;
+}
+
+#goButton {
+    width: 56px;
+    height: 28px;
+    border: 0;
+    border-radius: 10px;
+    background-image: url('../images/go.png');
+}
+
+input {
+    margin: 18px 10px 0 15px;
+}
+
+button {
+    margin: 16px 0 0 15px;
+}
+
+input[type=text], input[type=email] {
+    width: 136px;
+    padding: 0 0 3px 9px;
+    font-family: Arial;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: black;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: black;
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: black;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: black;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #FBD61A;
+}
