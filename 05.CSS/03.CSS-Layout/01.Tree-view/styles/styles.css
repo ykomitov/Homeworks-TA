@@ -1,23 +1,24 @@
 ﻿ul > li {
     list-style-type: none;
+    position: relative;
 }
 
 .hidden {
     display: none;
     text-decoration: none;
+    color: darkgray;
+    margin-left: -30px;
 }
 
-.ulItem {
-    position: relative;
+ul li:hover {
+    text-decoration: underline;
 }
 
-    .ulItem:hover {
-        text-decoration: underline;
+    ul li:hover ul {
+        display: inline-block;
+        position: absolute;
     }
 
-        .ulItem:hover .hidden {
-            display: block;
-            text-decoration: none;
-            color: darkgray;
-            margin-left: -30px;
-        }
+    ul li:hover span {
+        text-decoration: none;
+    }
