@@ -1,6 +1,5 @@
 ﻿ul > li {
     list-style-type: none;
-    position: relative;
 }
 
 .hidden {
@@ -10,15 +9,11 @@
     margin-left: -30px;
 }
 
-ul li:hover {
-    text-decoration: underline;
+ul li:hover ul {
+    display: block;
 }
 
-    ul li:hover ul {
-        display: inline-block;
-        position: absolute;
-    }
-
-    ul li:hover span {
-        text-decoration: none;
-    }
+body > ul > li:hover {
+    display: inline;
+    border-bottom: 1px solid black;
+}
