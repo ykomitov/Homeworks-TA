@@ -65,6 +65,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\button1.png" />
+    <Content Include="images\button2.png" />
+    <Content Include="images\pic1.jpeg" />
+    <Content Include="images\pic2.jpeg" />
+    <Content Include="images\pic3.jpeg" />
+    <Content Include="index.html" />
+    <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
