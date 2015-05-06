@@ -65,6 +65,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\25styles.jpeg" />
+    <Content Include="images\home.png" />
     <Content Include="images\logocss.gif" />
     <Content Include="index.html" />
     <Content Include="styles\styles.css" />
