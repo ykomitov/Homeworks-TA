@@ -5,160 +5,162 @@
     <link href="styles/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <nav>
-        <div id="navigation">
-            <ul>
-                <li id="home">HOME</li>
-                <li>
-                    CSS Basic
-                    <ul>
-                        <li>CSS Introduction</li>
-                        <li>CSS Syntax</li>
-                        <li>CSS How To</li>
-                        <li>CSS Background</li>
-                        <li>CSS Text</li>
-                        <li>CSS Font</li>
-                        <li>CSS Border</li>
-                        <li>CSS Outline</li>
-                        <li>CSS Margin</li>
-                        <li>CSS Padding</li>
-                        <li>CSS List</li>
-                        <li>CSS Table</li>
-                    </ul>
-                </li>
-                <li>
-                    CSS Advanced
-                    <ul>
-                        <li>CSS Dimension</li>
-                        <li>CSS Classification</li>
-                        <li>CSS Positioning</li>
-                        <li>CSS Pseudo-class</li>
-                        <li>CSS Pseudo-element</li>
-                        <li>CSS Image Gallery</li>
-                        <li>CSS Image Opacity</li>
-                        <li>CSS Media Types</li>
-                        <li>CSS Don't</li>
-                        <li>CSS Summary</li>
-                    </ul>
-                </li>
-                <li>
-                    CSS Examples
-                    <ul>
-                        <li>CSS Examples</li>
-                    </ul>
-                </li>
-                <li>
-                    References
-                    <ul>
-                        <li>CSS2 Reference</li>
-                        <li>CSS2 Print</li>
-                        <li>CSS2 Aural</li>
-                        <li>CSS Units</li>
-                        <li>CSS Colors</li>
-                        <li>CSS Colorvalues</li>
-                        <li>CSS Colornames</li>
-                    </ul>
-                </li>
-                <li>
-                    CSS Quiz
-                    <ul>
-                        <li>CSS Quiz</li>
-                        <li>CSS Exam</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <main>
-        <div id="container">
-            <header>
-                <h1>CSS Tutorial</h1>
-                <button>Previous</button>
-                <button>Next</button><br />
-            </header>
-            <section>
-                <h2>CSS Tutorial</h2>
-                <img src="images/logocss.gif" />
-                <p>Save a lot of work with CSS!</p>
-                <p>In out CSS tutorial you will learn how to use CSS to control the style and layout of multiple Web pages all at once.</p>
-                <p><a href="#">Start learning CSS!</a></p>
-            </section>
-            <section>
-                <h2>CSS Examples</h2>
-                <p>Learn by 70 examples! With our editor, you can edit CSS, and click on a test button to view the result.</p>
-                <p><a href="#">Try-It-Yourself!</a></p>
-            </section>
-            <section>
-                <h2>CSS Reference</h2>
-                <p>At W3Schools you will find a complete CSS2 reference, listing properties, units of measurements, colors, and more.</p>
-                <p><a href="#">CSS2 Reference</a></p>
-            </section>
-            <section>
-                <h2>CSS Quiz Test</h2>
-                <p>Test your CSS skills at W3Schools!</p>
-                <p><a href="#">Start CSS Quiz!</a></p><br />
-                <button>Previous</button>
-                <button>Next</button><br />
-            </section>
-        </div>
-    </main>
-    <aside>
-        <div id="bannerContainer">
-            <div class="banner">
-                <h2>SITE SEARCH</h2>
-                <form>
-                    <input type="text" />
-                    <button type="submit"> ...</button>
-                </form>
-                <a href="#">About W3Schools</a>
-                <a href="#">W3School Forum</a>
+    <div id="outerFrame">
+        <nav>
+            <div id="navigation">
+                <ul>
+                    <li id="home"><a href="#">HOME</a></li>
+                    <li>
+                        <a href="#">CSS Basic</a>
+                        <ul class="sublist">
+                            <li><a href="#">CSS Introduction</a></li>
+                            <li><a href="#">CSS Syntax</a></li>
+                            <li><a href="#">CSS How To</a></li>
+                            <li><a href="#">CSS Background</a></li>
+                            <li><a href="#">CSS Text</a></li>
+                            <li><a href="#">CSS Font</a></li>
+                            <li><a href="#">CSS Border</a></li>
+                            <li><a href="#">CSS Outline</a></li>
+                            <li><a href="#">CSS Margin</a></li>
+                            <li><a href="#">CSS Padding</a></li>
+                            <li><a href="#">CSS List</a></li>
+                            <li><a href="#">CSS Table</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CSS Advanced</a>
+                        <ul class="sublist">
+                            <li><a href="#">CSS Dimension</a></li>
+                            <li><a href="#">CSS Classification</a></li>
+                            <li><a href="#">CSS Positioning</a></li>
+                            <li><a href="#">CSS Pseudo-class</a></li>
+                            <li><a href="#">CSS Pseudo-element</a></li>
+                            <li><a href="#">CSS Image Gallery</a></li>
+                            <li><a href="#">CSS Image Opacity</a></li>
+                            <li><a href="#">CSS Media Types</a></li>
+                            <li><a href="#">CSS Don't</a></li>
+                            <li><a href="#">CSS Summary</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CSS Examples</a>
+                        <ul class="sublist">
+                            <li><a href="#">CSS Examples</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">References</a>
+                        <ul class="sublist">
+                            <li><a href="#">CSS2 Reference</a></li>
+                            <li><a href="#">CSS2 Print</a></li>
+                            <li><a href="#">CSS2 Aural</a></li>
+                            <li><a href="#">CSS Units</a></li>
+                            <li><a href="#">CSS Colors</a></li>
+                            <li><a href="#">CSS Colorvalues</a></li>
+                            <li><a href="#">CSS Colornames</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CSS Quiz</a>
+                        <ul class="sublist">
+                            <li><a href="#">CSS Quiz</a></li>
+                            <li><a href="#">CSS Exam</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="banner">
-                <img src="images/25styles.jpeg" />
-                <a href="#">Dynamic button image generation</a>
+        </nav>
+        <main>
+            <div id="container">
+                <header>
+                    <h1>CSS Tutorial</h1>
+                    <button>Previous</button>
+                    <button>Next</button><br />
+                </header>
+                <section>
+                    <h2>CSS Tutorial</h2>
+                    <img src="images/logocss.gif" />
+                    <p>Save a lot of work with CSS!</p>
+                    <p>In out CSS tutorial you will learn how to use CSS to control the style and layout of multiple Web pages all at once.</p>
+                    <p><a href="#">Start learning CSS!</a></p>
+                </section>
+                <section>
+                    <h2>CSS Examples</h2>
+                    <p>Learn by 70 examples! With our editor, you can edit CSS, and click on a test button to view the result.</p>
+                    <p><a href="#">Try-It-Yourself!</a></p>
+                </section>
+                <section>
+                    <h2>CSS Reference</h2>
+                    <p>At W3Schools you will find a complete CSS2 reference, listing properties, units of measurements, colors, and more.</p>
+                    <p><a href="#">CSS2 Reference</a></p>
+                </section>
+                <section>
+                    <h2>CSS Quiz Test</h2>
+                    <p>Test your CSS skills at W3Schools!</p>
+                    <p><a href="#">Start CSS Quiz!</a></p><br />
+                    <button>Previous</button>
+                    <button>Next</button><br />
+                </section>
             </div>
-            <div class="banner">
-                <h2>WEB HOSTING</h2>
-                <a href="#">$15 Domain Name Registration Save $20 / year!</a>
+        </main>
+        <aside>
+            <div id="bannerContainer">
+                <div class="banner">
+                    <h2>SITE SEARCH</h2>
+                    <form>
+                        <input type="text" />
+                        <button type="submit"> ...</button>
+                    </form>
+                    <a href="#">About W3Schools</a>
+                    <a href="#">W3School Forum</a>
+                </div>
+                <div class="banner">
+                    <img src="images/25styles.jpeg" />
+                    <a href="#">Dynamic button image generation</a>
+                </div>
+                <div class="banner">
+                    <h2>WEB HOSTING</h2>
+                    <a href="#">$15 Domain Name Registration Save $20 / year!</a>
+                </div>
+                <div class="banner">
+                    <a href="#">UK Domain Names</a>
+                    <a href="#">UK Web Hosting</a>
+                    <a href="#">Alojamiento Web</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Buy UK Domain Names</a>
+                    <a href="#">Register Domain Names</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Cheap Domain Names</a>
+                    <a href="#">Cheap Web Hosting</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Best Web Hosting</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Domain Name Registration</a>
+                </div>
+                <div class="banner">
+                    <a href="#">PHP MySQL Hosting</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Top 10 Web Hosting</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Web Hosting Providers</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Web Hosting Company</a>
+                </div>
+                <div class="banner">
+                    <a href="#">Web Hosting Reviews</a>
+                </div>
+                <div class="banner">
+                    <a href="#">UK Web Hosting</a>
+                </div>
             </div>
-            <div class="banner">
-                <a href="#">UK Domain Names</a>
-                <a href="#">UK Web Hosting</a>
-                <a href="#">Alojamiento Web</a>
-            </div>
-            <div class="banner">
-                <a href="#">Buy UK Domain Names</a>
-                <a href="#">Register Domain Names</a>
-            </div>
-            <div class="banner">
-                <a href="#">Cheap Domain Names</a>
-                <a href="#">Cheap Web Hosting</a>
-            </div>
-            <div class="banner">
-                <a href="#">Best Web Hosting</a>
-            </div>
-            <div class="banner">
-                <a href="#">Domain Name Registration</a>
-            </div>
-            <div class="banner">
-                <a href="#">PHP MySQL Hosting</a>
-            </div>
-            <div class="banner">
-                <a href="#">Top 10 Web Hosting</a>
-            </div>
-            <div class="banner">
-                <a href="#">Web Hosting Providers</a>
-            </div>
-            <div class="banner">
-                <a href="#">Web Hosting Company</a>
-            </div>
-            <div class="banner">
-                <a href="#">Web Hosting Reviews</a>
-            </div>
-            <div class="banner">
-                <a href="#">UK Web Hosting</a>
-            </div>
-        </div>
-    </aside>
+        </aside>
+    </div>
 </body>
 </html>
