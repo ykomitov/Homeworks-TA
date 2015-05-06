@@ -1,7 +1,56 @@
-﻿body {
+﻿body, p, h1, h2, ul, li {
+    font-family: verdana,helvetica,arial,sans-serif;
+}
+
+@font-face {
+    font-family: 'WINGDNG3';
+    src: url('../fonts/WINGDNG3.TTF') format('truetype');
+}
+
+.arrow-p, .arrow-n {
+    font-family: 'WINGDNG3';
+    position: relative;
+}
+
+.arrow-p {
+    left: -22px;
+}
+
+.arrow-n {
+    left: 32px;
+}
+
+.pr-txt {
+    position: relative;
+    left: -2px;
+}
+
+.nxt-txt {
+    position: relative;
+    left: 2px;
+}
+
+body {
     background-color: #f1f1f1;
     margin: 30px 30px 30px 30px;
     padding: 0;
+}
+
+hr {
+    margin: 7px 0 6px 0;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 12px 0 10px 0;
+}
+
+h2 {
+    background-color: #808080;
+    color: white;
+    font-size: 12px;
+    margin: 0 0 5px 0;
+    padding-left: 3px;
 }
 
 #outerFrame {
@@ -11,14 +60,13 @@
 }
 
 ul {
-    line-height: 12px;
+    line-height: 11px;
     list-style: none;
-    margin: 0 0 10px 2px;
+    margin: 0 0 12px 2px;
     padding: 0;
 }
 
 li > a, #home {
-    font-family: Arial,'Arial Narrow', sans-serif;
     font-size: 11px;
     text-decoration: none;
 }
@@ -36,7 +84,7 @@ div > ul > li > a {
 #home {
     color: #8f0a08;
     font-weight: bold;
-    margin: 13px 0 9px 0;
+    margin: 12px 0 11px 0;
 }
 
     #home:before {
@@ -52,4 +100,61 @@ div > ul > li > a {
 #navigation {
     float: left;
     padding: 0;
+}
+
+#container {
+    width: 484px;
+    height: 538px;
+    border-top: 1px solid #848484;
+    border-bottom: 1px solid #848484;
+    border-left: 1px solid #a5a5a5;
+    border-right: 1px solid #a5a5a5;
+    margin: 2px 2px 0 18px;
+    padding: 5px 4px 5px 6px;
+}
+
+.banner, #bannerContainer, #container {
+    background-color: white;
+    float: left;
+}
+
+#bannerContainer {
+    width: 145px;
+    height: 553px;
+    margin: 2px 0 0 0;
+}
+
+.banner {
+    width: 144px;
+    border: 1px solid #888;
+}
+
+button {
+    width: 98px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 11px;
+}
+
+#logo {
+    float: left;
+    margin-right: 15px;
+}
+
+p {
+    font-size: 11px;
+}
+
+.boldP {
+    font-weight: bold;
+    margin: 15px 0 -5px 0;
+}
+
+#start {
+    margin: 29px 0 25px 0;
+}
+
+.hline {
+    margin: 7px 0 4px 0;
 }

@@ -63,6 +63,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="fonts\WINGDNG3.TTF" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\25styles.jpeg" />
