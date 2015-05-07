@@ -1,5 +1,7 @@
-﻿body, p, h1, h2, ul, li {
+﻿body, p, h1, h2, ul, li, a {
     font-family: verdana,helvetica,arial,sans-serif;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 
 @font-face {
@@ -139,7 +141,7 @@ button {
 
 #logo {
     float: left;
-    margin-right: 15px;
+    margin: 0 15px 0 -1px;
 }
 
 p {
