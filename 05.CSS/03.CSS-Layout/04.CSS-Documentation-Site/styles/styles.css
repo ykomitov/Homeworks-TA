@@ -51,9 +51,13 @@ h2 {
     background-color: #808080;
     color: white;
     font-size: 12px;
-    margin: 0 0 5px 0;
     padding-left: 3px;
 }
+
+    h2:nth-of-type(1) {
+        margin: 0 0 15px 0;
+    }
+
 
 #outerFrame {
     width: 786px;
@@ -78,13 +82,15 @@ li > a, #home {
     margin-left: -2px;
 }
 
-div > ul > li > a {
+a, #home {
     color: #8f0a08;
+}
+
+div > ul > li > a {
     font-weight: bold;
 }
 
 #home {
-    color: #8f0a08;
     font-weight: bold;
     margin: 12px 0 11px 0;
 }
@@ -129,6 +135,9 @@ div > ul > li > a {
 .banner {
     width: 144px;
     border: 1px solid #888;
+    font-size: 11px;
+    text-align: center;
+    margin: 0 0 1px 0;
 }
 
 button {
@@ -141,7 +150,7 @@ button {
 
 #logo {
     float: left;
-    margin: 0 15px 0 -1px;
+    margin: -11px 15px 0 0px;
 }
 
 p {
@@ -150,12 +159,36 @@ p {
 
 .boldP {
     font-weight: bold;
-    margin: 15px 0 -5px 0;
+    margin: 10px 0 0 0;
 }
 
 #start {
-    margin: 29px 0 25px 0;
+    margin: 24px 0 0 110px;
 }
+
+section:nth-child(2) {
+    margin: 0 0 25px 0;
+}
+
+section:nth-child(3), section:nth-child(4), section:nth-child(5), section:nth-child(4) > p:nth-child(3), section:nth-child(3) > p {
+    margin: 11px 0 0 0;
+}
+
+    section:nth-child(3) > h2 {
+        margin: 0 0 11px 0;
+    }
+
+    section:nth-child(4) > h2 {
+        margin: 0 0 12px 0;
+    }
+
+    section:nth-child(5) > h2 {
+        margin: 0 0 10px 0;
+    }
+
+    section:nth-child(5) > p:nth-child(3) {
+        margin: 11px 0 11px 0;
+    }
 
 .hline {
     margin: 7px 0 4px 0;
