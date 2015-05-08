@@ -1,0 +1,51 @@
+﻿table.outer {
+    font-family: Georgia;
+    text-align: center;
+    border-spacing: 0;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 900px;
+}
+
+table.inner {
+    border: 2px solid black;
+    width: 620px;
+}
+
+th, td {
+    padding: 7px;
+    text-align: center;
+}
+
+.laptopData {
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+#headerLinks {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#sliders {
+    font-family: Georgia;
+    width: 250px;
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+fieldset {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
+}
+
+legend {
+    position: relative;
+    left: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+}
