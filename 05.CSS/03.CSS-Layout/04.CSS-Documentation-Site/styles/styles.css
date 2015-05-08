@@ -121,6 +121,10 @@ div > ul > li > a {
     padding: 5px 4px 5px 6px;
 }
 
+    #container p {
+        line-height: 13px;
+    }
+
 .banner, #bannerContainer, #container {
     background-color: white;
     float: left;
@@ -136,8 +140,10 @@ div > ul > li > a {
     width: 144px;
     border: 1px solid #888;
     font-size: 11px;
+    line-height: 13px;
     text-align: center;
     margin: 0 0 1px 0;
+    padding: 4px 0 5px 0;
 }
 
 button {
@@ -150,7 +156,7 @@ button {
 
 #logo {
     float: left;
-    margin: -11px 15px 0 0px;
+    margin: -11px 15px 0 0;
 }
 
 p {
@@ -192,4 +198,39 @@ section:nth-child(3), section:nth-child(4), section:nth-child(5), section:nth-ch
 
 .hline {
     margin: 7px 0 4px 0;
+}
+
+input[type=text] {
+    width: 92px;
+    height: 15px;
+    border: 1px solid #87a3bd;
+    margin-bottom: 5px;
+}
+
+button[type=submit] {
+    width: 18px;
+    height: 17px;
+    border: 1px solid #064077;
+    border-radius: 2px;
+    text-align: center; 
+}
+
+#bannerContainer > div:nth-child(1), #bannerContainer > div:nth-child(3) {
+    padding: 0 0 5px 0;
+}
+
+    #bannerContainer > div:nth-child(1) > h2 {
+        margin-bottom: 7px;
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+    #bannerContainer > div:nth-child(3) > h2 {
+        margin-bottom: 4px;
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+#bannerContainer > div:nth-child(2) {
+    padding: 2px 0 5px 0;
 }
