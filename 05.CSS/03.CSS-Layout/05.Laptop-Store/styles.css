@@ -1,51 +1,106 @@
-﻿table.outer {
-    font-family: Georgia;
-    text-align: center;
-    border-spacing: 0;
+﻿body, p, h1, h2, ul, li, a, hr {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: Corbel, Candara;
+}
+
+.outer {
+    display: table;
+    width: 1066px;
+    height: 777px;
     border: 2px solid black;
-    border-radius: 6px;
-    width: 900px;
+    border-radius: 10px;
+    margin: 20px 0 0 20px;
 }
 
-table.inner {
-    border: 2px solid black;
-    width: 620px;
-}
-
-th, td {
-    padding: 7px;
-    text-align: center;
-}
-
-.laptopData {
-    border-top: 2px solid black;
-    text-align: center;
+hr {
+    margin-top: -3px;
+    width: 995px;
+    border: 1px solid black;
+    margin-left: 34px;
 }
 
 #headerLinks {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    display: table-row;
+    height: 68px;
+    width: 100%;
+    font-size: 37px;
     font-weight: bold;
+    text-align: center;
+    border-bottom: 0;
+}
+
+    #headerLinks a {
+        color: #1ab5f0;
+        margin-right: 6px;
+        line-height: 71px;
+    }
+
+.laptopData {
+    float: left;
+    width: 689px;
+    height: 671px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 16px 0 0 16px;
 }
 
 #sliders {
-    font-family: Georgia;
-    width: 250px;
-    border-top: 2px solid black;
-    text-align: center;
+    float: left;
+    font-size: 36px;
+    width: 325px;
+    text-align: left;
+    margin: 106px 0 0 0;
+    padding-left: 23px;
 }
+
+    #sliders input {
+        width: 266px;
+        margin: 27px 0 0 15px;
+    }
+
+    #sliders > div {
+        margin: 0 0 22px 0;
+    }
 
 fieldset {
     display: block;
-    margin: 0;
+    float: left;
     padding: 0;
     border: 2px solid black;
+    width: 325px;
+    height: 201px;
+    margin: 11px 1px 0 8px;
 }
 
 legend {
-    position: relative;
-    left: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 27px;
+    line-height: 19px;
+    text-align: center;
     border: none;
+    padding: 0 20px 0 5px;
+}
+
+fieldset div img {
+    float: left;
+    margin: 14px 0 10px 10px;
+}
+
+fieldset div p {
+    float: left;
+    font-size: 27px;
+    line-height: 30px;
+    text-align: left;
+}
+
+fieldset > div > p:first-of-type {
+    margin: 46px 0 20px 0;
+}
+
+fieldset > div > p:last-of-type {
+    margin: 18px 0 0 44px;
+}
+
+fieldset div span:first-of-type {
+    margin: 0 32px 0 0;
 }
