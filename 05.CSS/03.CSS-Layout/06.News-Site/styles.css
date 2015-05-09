@@ -1,0 +1,79 @@
+﻿body, p, h1, h2, ul, li, a, hr {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: Arial, Trebuchet MS, tahoma, Verdana,Sans-Serif;
+}
+
+#container {
+    width: 612px;
+    height: 326px;
+    background-color: #1e3741;
+    margin: 30px 0 0 30px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #90aab4;
+}
+
+ul {
+    list-style: none;
+}
+
+nav > ul > li {
+    display: inline;
+    float: left;
+    margin: 10px 1px 0 0;
+}
+
+nav ul a {
+    font-size: 11px;
+    line-height: 23px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    background-color: #4b5f67;
+    display: block;
+    padding: 3px 11px 3px 11px;
+}
+
+nav > ul > li:first-of-type > a {
+    background-color: #1e3741;
+    color: white;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+main div {
+    float: left;
+    margin: 12px 0 0 0;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.47px;
+}
+
+    main div:first-of-type {
+        width: 235px;
+    }
+
+    main div ul li {
+        border-bottom: 1px solid #3a4f58;
+        padding: 9px 11px 11px 9px;
+        margin: 0 0 1px 0;
+    }
+
+        main div ul li:last-of-type {
+            border: 0;
+        }
+
+        main div ul li:first-of-type {
+            background-color: #00968c;
+        }
+
+            main div ul li:first-of-type a {
+                color: white;
+            }
