@@ -1,2 +1,99 @@
-﻿body {
+﻿.gradient(@fromColor, @fromPosition, @toColor, @toPosition ) {
+    background: @fromColor;
+    background: -moz-linear-gradient(top, @fromColor @fromPosition, @toColor @toPosition);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@fromPosition,@fromColor), color-stop(@toPosition,@toColor));
+    background: -webkit-linear-gradient(top, @fromColor @fromPosition,@toColor @toPosition);
+    background: -o-linear-gradient(top, @fromColor @fromPosition,@toColor @toPosition);
+    background: -ms-linear-gradient(top, @fromColor @fromPosition,@toColor @toPosition);
+    background: linear-gradient(to bottom, @fromColor @fromPosition,@toColor @toPosition);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@fromColor', endColorstr='@toColor',GradientType=0 );
+}
+
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+        display: block;
+        content: "";
+        height: 0;
+        clear: both;
+    }
+}
+
+@default-border: 1px solid #000;
+@default-border-radius: 15px;
+@default-font-color: #FFF;
+@default-font-size: 14px;
+@default-font-family: Arial;
+@default-link-color: rgb(170, 170, 170);
+@default-background-color: #AF57F3;
+
+body, header, footer, aside, section, div, p, ul, li, a, article, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font: @default-font-size normal @default-font-family;
+}
+
+body {
+    .gradient(#d691fe, 0, #9315f2, 30%);
+    color: @default-font-color;
+
+    a {
+        text-decoration: none;
+        color: @default-link-color;
+    }
+}
+
+header {
+    padding: 25px 15px 5px 15px;
+
+    #header-container, #logo-container {
+        float: left;
+    }
+
+    #reg-form-container {
+        float: right;
+    }
+
+    nav {
+        display: inline-block;
+        width: 75%;
+        margin: 20px 20px 20px 20px;
+        padding: 12px;
+        border: @default-border;
+        border-width: 2px;
+        border-radius: @default-border-radius;
+
+        & > ul, li {
+            list-style-type: none;
+
+            a {
+                text-decoration: none;
+                color: @default-font-color;
+                font-size: 1.4em;
+                padding: 0 10px 0;
+            }
+
+            .sub-nav-list {
+                position: absolute;
+                background-color: @default-background-color;
+                border-radius: 5px;
+            }
+
+            & > li {
+                display: inline;
+
+                ul {
+                    position: absolute;
+                    display: none;
+                }
+
+                &:hover {
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
 }
