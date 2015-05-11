@@ -9,17 +9,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@fromColor', endColorstr='@toColor',GradientType=0 );
 }
 
-.clearfix() {
-    zoom: 1;
-
-    &:after {
-        display: block;
-        content: "";
-        height: 0;
-        clear: both;
-    }
-}
-
 @default-border: 1px solid #000;
 @default-border-radius: 15px;
 @default-font-color: #FFF;
@@ -72,9 +61,30 @@ aside {
 aside > ul > li {
     list-style-type: none;
     border: @default-border;
-    border-radius: @default-border-radius;
-    height: 170px;
+    border-radius: 5px;
+    height: 120px;
     margin-bottom: 15px;
+    padding: 15px;
+
+    h2 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+
+    ul li {
+        list-style-type: none;
+        margin: 5px 0 0 10px;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90BCA0LNFA4GiMAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAh9JREFUKM9Nkr1rVFEUxH9z733v7Ye7xKwkAfEDrdVaRFG0EPwAG7GwURC08J/RQiwsBFu1EBtBhDRiqREUG8VAiCTGuNnv9+49FqsxpzrFmTkzw4gdc+7CfeY2s0uV52xryIkQadcmfi+WBAKZjXJWSm+/+7neBez18rx/vvjs1jaH/i1XTz54un/dXayXPs/JSGYgwyyB/p6ZITkwcM5RUjJSrL7N8frDwcn5z0/uoitnHi4sbLqP81u+MwWDmZEsIUuYbKcJZMIknDySpuTyrDXj1vfO5EjYNdK9+a7rJCqMSNAustCins0SXJPct6aqmD4qU5cyDhmW61SxR2k9zBJ7+qHVr/nHodO1y4mEcwWd5jFaxT7y0MYs/lWbtnMxQNoHBpKnjD22ht/5OViiin3mN3UqhEhmZuS+RRHaBF/HSEAipYSZ7YwQKeEkDBFcjVo+QzFuUcUeSlL40eHd4dVwfFCusbzxiiLbTSNboJ7tIQttvCsQ/ywnYhxTxj6jco3B5AejagOzROZyVmbi17BZize7jfC+PcxyU2ISu4yrX2z0E6aEYTgCkiPaGOGQCTmP8Dg5nAL9wuLqbHVDAGcu3z9yeCV7Mffb7y8sSIJkU7tJCZm2SyYTTgJNiceqbL0ZVz/ttWuLL28vamclrpx+eDSPut6Y2PnGgANFpUZzovA/Q2OQWxwHhoM6y72avYneniwd4u2XR3cA+AN6iQt1xYT78wAAAABJRU5ErkJggg==) no-repeat;
+        background-position: 0 50%;
+        padding-left: 25px;
+    }
 }
 
 body {
@@ -175,6 +185,7 @@ header {
                 border-radius: 5px;
 
                 li {
+                    font-size: 12px;
                     float: none;
                     border-bottom: @default-border;
                     padding: 10px 0 10px 0;
