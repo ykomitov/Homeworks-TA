@@ -57,6 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\mush_1.jpeg" />
+    <Content Include="images\mush_2.jpeg" />
+    <Content Include="images\mush_3.jpeg" />
+    <Content Include="styles.css.map">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
+    <None Include="styles.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,11 +72,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="styles.css">
+      <DependentUpon>styles.less</DependentUpon>
+    </Content>
+    <Content Include="styles.min.css">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

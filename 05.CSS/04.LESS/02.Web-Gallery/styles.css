@@ -1,0 +1,22 @@
+﻿#wrapper {
+  width: 50%;
+  text-align: center;
+  margin: 10px 0 0 50px;
+}
+#wrapper img {
+  width: 100px;
+  height: 100px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+#large img {
+  margin-top: 10px;
+  display: none;
+}
+#large img:target {
+  display: block;
+  margin-left: 110px;
+  width: 450px;
+  height: 450px;
+}
+/*# sourceMappingURL=styles.css.map */
