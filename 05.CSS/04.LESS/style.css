@@ -1,0 +1,134 @@
+html, body {
+    font-family: 'Segoe UI', 'Segoe UI Web', 'Segoe UI Symbol', 'Helvetica Neue', 'BBAlpha Sans', 'S60 Sans', Arial, sans-serif;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0 auto;
+    width: 1000px;
+    font-weight: 400;
+    -webkit-text-stroke-width: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/*
+    •	Font sizes used in the solution:
+o	22px (header)
+o	30px (main h1)
+o	24px (main h2)
+o	16px (main text)
+o	14px (footer)
+    •	Colors used in the solution (in random order):
+o	#0078D7
+o	#333333
+o	#505050
+o	#CCCCCC
+
+*/
+
+h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+#search {
+    background: #0078d7;
+    width: 1000px;
+    height: 65px;
+    float: left;
+    text-align: center;
+}
+
+.searchInput {
+    height: 33px;
+    width: 398px;
+    border: 1px solid #a9a9a9;
+    margin-top: 15px;
+}
+
+#logo:after {
+    content: "";
+    width: 175px;
+    height: 65px;
+    background: url('images/logo.png');
+    float: left;
+}
+
+.separator {
+    width: 5px;
+    height: 45px;
+    background: #333;
+    float: left;
+    margin-top: 10px;
+}
+
+#headerTitle {
+    font-size: 22px;
+    font-weight: bold;
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#main, #footer {
+    float: left;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin: 15px 0 0 15px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+hr {
+    background: #333;
+    width: 968px;
+    height: 5px;
+    border: 1px inset #9a9a9a;
+}
+
+main p {
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
+}
+
+footer {
+    font-size: 14px;
+    width: 960px;
+    height: 40px;
+    background: #505050;
+    margin-top: 15px;
+    color: #CCC;
+    padding: 20px 20px 0 20px;
+}
+
+    footer a {
+        text-decoration: none;
+        color: #CCC;
+    }
+
+#language {
+    float: left;
+}
+
+#copyright {
+    float: right;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    float: right;
+}
+
+    ul li {
+        float: left;
+        margin-right: 15px;
+    }
