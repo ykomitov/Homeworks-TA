@@ -1,0 +1,130 @@
+html, body {
+    font-family: 'Segoe UI', 'Segoe UI Web', 'Segoe UI Symbol', 'Helvetica Neue', 'BBAlpha Sans', 'S60 Sans', Arial, sans-serif;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0 auto;
+    width: 1000px;
+    font-weight: 400;
+    -webkit-text-stroke-width: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+header {
+    background: #077cc6;
+    height: 35px;
+    width: 1000px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+    header ul li {
+        margin: 10px 15px 0 0;
+        color: #e0e0e0;
+    }
+
+main h1 {
+    font-size: 53px;
+    font-weight: normal;
+    float: left;
+    margin: 15px 0 15px 15px;
+}
+
+.clear, p, footer {
+    float: left;
+}
+
+main img {
+    float: right;
+    margin: 15px 15px 0 0;
+    border: 0;
+}
+
+main p {
+    font-size: 16px;
+    text-align: justify;
+    margin: 0 15px 10px 15px;
+}
+
+    main p a {
+        color: #dc143c;
+        text-decoration: none;
+    }
+
+code {
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 11px;
+    background: #077cc6;
+    width: 1000px;
+    height: 60px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.copyright {
+    color: #e0e0e0;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+    .copyright a {
+        color: #e0e0e0;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+
+footer div {
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+ul, li, h1, input, div, code, b, a {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    float: right;
+}
+
+    ul li {
+        text-decoration: none;
+        float: left;
+    }
+
+.search {
+    float: right;
+}
+
+.searchText {
+    float: right;
+    width: 198px;
+    height: 23px;
+    border: 1px solid #a9a9a9;
+    margin: 5px 5px 0 5px;
+}
+
+#logo {
+    float: left;
+}
+
+    #logo:after {
+        background-image: url('images/logo.png');
+        width: 195px;
+        height: 35px;
+        float: left;
+        content: "";
+    }
