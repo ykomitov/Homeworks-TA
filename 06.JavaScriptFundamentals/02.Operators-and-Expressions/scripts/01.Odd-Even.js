@@ -1,5 +1,5 @@
 var pr1 = function(){
-    var input = document.getElementById('problem1').value,
+    var input = 55,
         output;
     if (input % 2 === 0) {
         output = 'Number is even';
