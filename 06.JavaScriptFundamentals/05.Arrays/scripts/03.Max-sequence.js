@@ -1,31 +1,48 @@
 var pr3 = function () {
 
-    var seq,
-        arr,
-        min,
-        max;
+    var arr,
+        num = undefined,
+        counter_max = 1,
+        counter_temp,
+        i,
+        j,
+        len,
+        index,
+        max_sequence = '';
 
-    seq = document.getElementById('problem3').value;
-    arr = seq.split(",");
-    min = arr[0] * 1;
-    max = arr[1] * 1;
+    arr = document.getElementById('problem3').value.split(',');
 
-    for (var index in arr) {
-        if (min > (arr[index] * 1)) {
-            min = (arr[index] * 1);
+    for (index in arr) {
+        arr[index] = arr[index] * 1;
+    }
+
+    for (i = 0, len = arr.length; i < len - 1; i += 1) {
+        counter_temp = 1;
+        for (j = i + 1; j < len; j += 1) {
+            if (arr[i] === arr[j]) {
+                counter_temp += 1;
+            }
+            else {
+                break;
+            }
         }
-        if (max < (arr[index] * 1)) {
-            max = (arr[index] * 1);
+        if (counter_max < counter_temp) {
+            num = arr[i];
+            counter_max = counter_temp;
         }
     }
 
-    console.log('Sequence: ' + seq);
-    console.log('Min: ' + min);
-    console.log('Max: ' + max);
+    for (i = 0; i < counter_max; i += 1) {
+        max_sequence += num;
+        if (i < counter_max - 1) {
+            max_sequence += ', ';
+        }
+    }
+    console.log(num);
+    console.log(counter_max);
 
     jsConsole.writeLine('<br>=================== Problem 3 ===================');
-    jsConsole.writeLine('Sequence: ' + seq);
-    jsConsole.writeLine('Min: ' + min);
-    jsConsole.writeLine('Max: ' + max);
+    jsConsole.writeLine('Array: ' + arr.join(', '));
+    jsConsole.writeLine('Maximal sequence: ' + max_sequence);
     jsConsole.writeLine('=================================================');
 }
