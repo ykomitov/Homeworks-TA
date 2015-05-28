@@ -3,14 +3,15 @@ var pr3 = function () {
     var seq,
         arr,
         min,
-        max;
+        max,
+        index;
 
     seq = document.getElementById('problem3').value;
     arr = seq.split(",");
     min = arr[0] * 1;
     max = arr[1] * 1;
 
-    for (var index in arr) {
+    for (index in arr) {
         if (min > (arr[index] * 1)) {
             min = (arr[index] * 1);
         }
