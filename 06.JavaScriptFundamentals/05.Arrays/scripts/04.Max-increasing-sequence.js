@@ -1,110 +1,62 @@
-var pr4document = function () {
+var pr4 = function () {
+    var arr,
+        counter_max = 1,
+        counter_temp = 1,
+        i,
+        j,
+        len,
+        index,
+        i_start,
+        i_end,
+        i_start_temp,
+        sequence = '';
 
-    var prop,
-        lex_min = document[0],
-        lex_max = document[0],
-        i = 0;
+    arr = document.getElementById('problem4').value.split(',');
 
-    for (prop in document) {
-        if (i === 0) {
-            lex_min = prop;
-            i += 1;
-        }
-        if (i === 1) {
-            lex_max = prop;
-            i += 1;
-        }
-        if (i > 1) {
-            if (lex_min > prop) {
-                lex_min = prop;
+    //convert all elements of the array to numbers
+    for (index in arr) {
+        arr[index] = arr[index] * 1;
+    }
+
+    //find the max increasing sequence
+    for (i = 0, len = arr.length, j = i + 1; i < len - 1; i += 1, j += 1) {
+
+        if (arr[i] < arr[j]) {
+            if (counter_temp === 1) {
+                i_start_temp = i;
             }
-            if (lex_max < prop) {
-                lex_max = prop;
+            counter_temp += 1;
+        }
+        if (arr[i] >= arr[j]) {
+            if (counter_max < counter_temp) {
+                i_start = i_start_temp;
+                i_end = j - 1;
+                counter_max = counter_temp;
             }
+            counter_temp = 1;
+        }
+        if (i === len - 2) {
+            if (counter_max < counter_temp) {
+                i_start = i_start_temp;
+                i_end = j;
+                counter_max = counter_temp;
+            }
+            counter_temp = 1;
         }
     }
 
-    console.log('In document:');
-    console.log('Lexicographically smallest property: ' + lex_min);
-    console.log('Lexicographically largest property: ' + lex_max);
-
-    jsConsole.writeLine('<br>=================== Problem 4 ===================');
-    jsConsole.writeLine('In document:');
-    jsConsole.writeLine('Lexicographically smallest property: ' + lex_min);
-    jsConsole.writeLine('Lexicographically largest property: ' + lex_max);
-    jsConsole.writeLine('=================================================');
-}
-
-var pr4window = function () {
-
-    var prop,
-        lex_min = window[0],
-        lex_max = window[0],
-        i = 0;
-
-    for (prop in window) {
-        if (i === 0) {
-            lex_min = prop;
-            i += 1;
-        }
-        if (i === 1) {
-            lex_max = prop;
-            i += 1;
-        }
-        if (i > 1) {
-            if (lex_min > prop) {
-                lex_min = prop;
-            }
-            if (lex_max < prop) {
-                lex_max = prop;
-            }
+    //print the longest increasing sequence
+    for (i = i_start; i <= i_end; i += 1) {
+        sequence += arr[i];
+        if (i < i_end) {
+            sequence += ', ';
         }
     }
-
-    console.log('In window:');
-    console.log('Lexicographically smallest property: ' + lex_min);
-    console.log('Lexicographically largest property: ' + lex_max);
+    console.log(arr);
+    console.log('Max increasing sequence: ' + sequence);
 
     jsConsole.writeLine('<br>=================== Problem 4 ===================');
-    jsConsole.writeLine('In window:');
-    jsConsole.writeLine('Lexicographically smallest property: ' + lex_min);
-    jsConsole.writeLine('Lexicographically largest property: ' + lex_max);
-    jsConsole.writeLine('=================================================');
-}
-
-var pr4navigator = function () {
-
-    var prop,
-        lex_min = navigator[0],
-        lex_max = navigator[0],
-        i = 0;
-
-    for (prop in navigator) {
-        if (i === 0) {
-            lex_min = prop;
-            i += 1;
-        }
-        if (i === 1) {
-            lex_max = prop;
-            i += 1;
-        }
-        if (i > 1) {
-            if (lex_min > prop) {
-                lex_min = prop;
-            }
-            if (lex_max < prop) {
-                lex_max = prop;
-            }
-        }
-    }
-
-    console.log('In navigator:');
-    console.log('Lexicographically smallest property: ' + lex_min);
-    console.log('Lexicographically largest property: ' + lex_max);
-
-    jsConsole.writeLine('<br>=================== Problem 4 ===================');
-    jsConsole.writeLine('In navigator:');
-    jsConsole.writeLine('Lexicographically smallest property: ' + lex_min);
-    jsConsole.writeLine('Lexicographically largest property: ' + lex_max);
+    jsConsole.writeLine(arr);
+    jsConsole.writeLine('Max increasing sequence: ' + sequence);
     jsConsole.writeLine('=================================================');
 }
