@@ -1,6 +1,5 @@
 var pr7 = function () {
-    var form,
-        arr,
+    var arr,
         key,
         i_min,
         i_max,
@@ -8,8 +7,7 @@ var pr7 = function () {
         len,
         index;
 
-    form = document.getElementById("pr7r");
-    arr = form.elements['pr7r'].value.split(','); //get the array from selected radio button
+    arr = document.querySelector('input[name="pr7r"]:checked').value.split(','); //get the array from selected radio button
     key = document.getElementById('problem7').value; //get the key from the text input
 
     jsConsole.writeLine('<br>=================== Problem 7 ===================');
