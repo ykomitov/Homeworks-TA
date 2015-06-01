@@ -32,7 +32,8 @@
             <li>The search can be case sensitive or case insensitive.</li>
             <li>Use function overloading.</li>
         </ul>
-        <textarea id="problem3" placeholder="Please paste text inside and select case sensitive/insensitive search from the radio button below"></textarea>
+        <textarea id="problem3"
+                  placeholder="Please paste text inside and select case sensitive/insensitive search from the radio button below"></textarea>
         <button onclick="pr3()">Run</button>
     </div>
     <hr/>
@@ -45,13 +46,10 @@
     </div>
     <hr/>
     <div>
-        <h1>Problem 5. Selection sort</h1>
+        <h1>Problem 5. Appearance count</h1>
         <ul>
-            <li>Write a script to sort an array</li>
-            <li>Use the selection sort algorithm: Find the smallest element, move it at the first position, find the
-                smallest from the rest, move it at the second position, etc.
-            </li>
-            <li><i>Hint: Use a second array</i></li>
+            <li>Write a function that counts how many times given number appears in given array.</li>
+            <li>Write a test function to check if the function is working correctly.</li>
         </ul>
         <input type="text" id="problem5" class="txtInput"
                placeholder="Input a sequence of numbers, separated by commas (e.g 1, 2, 3, 123...)">
@@ -59,9 +57,11 @@
     </div>
     <hr/>
     <div>
-        <h1>Problem 6. Most frequent number</h1>
+        <h1>Problem 6. Larger than neighbours</h1>
         <ul>
-            <li>Write a program that finds the most frequent number in an array.</li>
+            <li>Write a function that checks if the element at given position in given array of integers is bigger than
+                its two neighbours (when such exist).
+            </li>
         </ul>
         <input type="text" id="problem6" class="txtInput"
                placeholder="Input a sequence of numbers, separated by commas (e.g 1, 2, 3, 123...)">
@@ -69,11 +69,12 @@
     </div>
     <hr/>
     <div>
-        <h1>Problem 7. Binary search</h1>
+        <h1>Problem 7. First larger than neighbours</h1>
         <ul>
-            <li>Write a program that finds the index of given element in a sorted array of integers by using the binary
-                search algorithm
+            <li>Write a function that returns the index of the first element in array that is larger than its neighbours
+                or -1, if there’s no such element.
             </li>
+            <li>Use the function from the previous exercise.</li>
         </ul>
         <form id="pr7r">
             <input type="radio" name="pr7r" id="pr7arr1" value="1, 2, 3, 4, 5, 6, 7, 8, 9, 10" checked>
@@ -88,13 +89,13 @@
     </div>
 </div>
 <div class="console"></div>
-<script src="scripts/01.Increase-array-mem.js"></script>
-<script src="scripts/02.Lex.comparison.js"></script>
-<script src="scripts/03.Max-sequence.js"></script>
-<script src="scripts/04.Max-increasing-sequence.js"></script>
-<script src="scripts/05.Selection-sort.js"></script>
-<script src="scripts/06.Most-frequent-num.js"></script>
-<script src="scripts/07.Binary-search.js"></script>
+<script src="scripts/01.English-digit.js"></script>
+<script src="scripts/02.Reverse-number.js"></script>
+<script src="scripts/03.Occurrences-of-word.js"></script>
+<script src="scripts/04.Number-of-elements.js"></script>
+<script src="scripts/05.Appearance-count.js"></script>
+<script src="scripts/06.Larger-than-neighbours.js"></script>
+<script src="scripts/07.First-larger-than-neighbours.js"></script>
 <script src="scripts/js-console.js"></script>
 </body>
 </html>
