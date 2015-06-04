@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Using Objects Homework</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div id="container">
+    <div>
+        <h1>Problem 1. Planar coordinates</h1>
+        <ul>
+            <li>Write functions for working with shapes in standard Planar coordinate system.
+                <ul>
+                    <li>Points are represented by coordinates P(X, Y)</li>
+                    <li>Lines are represented by two points, marking their beginning and ending L(P1(X1,Y1),
+                        P2(X2,Y2))
+                    </li>
+                </ul>
+            </li>
+            <li>Calculate the distance between two points.</li>
+            <span>P1</span><input type="text" id="pr1p1" class="txtInput" placeholder="x, y">
+            <span>P2</span><input type="text" id="pr1p2" class="txtInput" placeholder="x, y">
+            <button onclick="pr1points()">Run</button>
+            <li>Check if three segment lines can form a triangle.</li>
+            <span>L1</span>
+            <input type="text" id="pr1line1p1" class="txtInput" placeholder="x, y">
+            <input type="text" id="pr1line1p2" class="txtInput" placeholder="x, y">
+            <br>
+            <span>L2</span>
+            <input type="text" id="pr1line2p1" class="txtInput" placeholder="x, y">
+            <input type="text" id="pr1line2p2" class="txtInput" placeholder="x, y">
+            <br>
+            <span>L3</span>
+            <input type="text" id="pr1line3p1" class="txtInput" placeholder="x, y">
+            <input type="text" id="pr1line3p2" class="txtInput" placeholder="x, y">
+            <button onclick="pr1lines()">Run</button>
+        </ul>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 2. Remove elements</h1>
+        <ul>
+            <li>Write a function that removes all elements with a given value.</li>
+            <li>Attach it to the array type.</li>
+            <li>Read about prototype and how to attach methods.</li>
+        </ul>
+        <input type="text" id="problem2" class="txtInput" placeholder="Input a decimal number">
+        <button onclick="pr2()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 3. Deep copy</h1>
+        <ul>
+            <li>Write a function that makes a deep copy of an object.</li>
+            <li>The function should work for both primitive and reference types.</li>
+        </ul>
+        <button onclick="pr3()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 4. Has property</h1>
+        <ul>
+            <li>Write a function that checks if a given object contains a given property.</li>
+        </ul>
+        <button onclick="pr4()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 5. Youngest person</h1>
+        <ul>
+            <li>Write a function that finds the youngest person in a given array of people and prints his/hers full
+                name
+            </li>
+            <li>Each person has properties firstname, lastname and age.</li>
+        </ul>
+        <button onclick="pr5()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 6.</h1>
+        <ul>
+            <li>Write a function that groups an array of people by age, first or last name.</li>
+            <li>The function must return an associative array, with keys - the groups, and values - arrays with people
+                in this groups
+            </li>
+            <li>Use function overloading (i.e. just one function)</li>
+        </ul>
+        <button onclick="pr6()">Run</button>
+    </div>
+</div>
+<div class="console"></div>
+<script src="scripts/01.Planar-coordinates.js"></script>
+<script src="scripts/02.Remove-elements.js"></script>
+<script src="scripts/03.Deep-copy.js"></script>
+<script src="scripts/04.Has-property.js"></script>
+<script src="scripts/05.Youngest-person.js"></script>
+<script src="scripts/06.Problem6.js"></script>
+<script src="scripts/js-console.js"></script>
+</body>
+</html>
