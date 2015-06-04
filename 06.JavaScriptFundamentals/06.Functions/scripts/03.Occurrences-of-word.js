@@ -1,48 +1,61 @@
 var pr3 = function () {
+    var txt,
+        word,
+        type,
+        result;
 
-    var arr,
-        num = undefined,
-        counter_max = 1,
-        counter_temp,
-        i,
-        j,
-        len,
-        index,
-        max_sequence = '';
+    txt = document.getElementById('problem3').value;
+    word = document.getElementById('problem3w').value;
+    type = document.querySelector('input[name="pr3"]:checked').value;
 
-    arr = document.getElementById('problem3').value.split(',');
-
-    for (index in arr) {
-        arr[index] = arr[index] * 1;
+    //function overloading
+    if (!!(type*1)) {
+        result = countWord(txt, word, type);
     }
-
-    for (i = 0, len = arr.length; i < len - 1; i += 1) {
-        counter_temp = 1;
-        for (j = i + 1; j < len; j += 1) {
-            if (arr[i] === arr[j]) {
-                counter_temp += 1;
-            }
-            else {
-                break;
-            }
-        }
-        if (counter_max < counter_temp) {
-            num = arr[i];
-            counter_max = counter_temp;
-        }
+    else{
+        result = countWord(txt, word);
     }
-
-    for (i = 0; i < counter_max; i += 1) {
-        max_sequence += num;
-        if (i < counter_max - 1) {
-            max_sequence += ', ';
-        }
-    }
-    console.log(num);
-    console.log(counter_max);
 
     jsConsole.writeLine('<br>=================== Problem 3 ===================');
-    jsConsole.writeLine('Array: ' + arr.join(', '));
-    jsConsole.writeLine('Maximal sequence: ' + max_sequence);
+    jsConsole.writeLine('Word: ' + word);
+    jsConsole.writeLine('Count: ' + result);
+    jsConsole.writeLine('Case sensitive: ' + !!(type*1));
     jsConsole.writeLine('=================================================');
+
+    console.log('Word: ' + word);
+    console.log('Count: ' + result);
+    console.log('Case sensitive: ' + !!(type*1));
+}
+
+function countWord(txtInput, word, caseSensitive) {
+
+    var txtArr,
+        key = word,
+        counter = 0,
+        len,
+        i;
+
+    //Remove all punctuation from the text and split it into an array, removing whitespaces
+    txtArr = txtInput.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g, ""); //remove all punctuation
+    txtArr = txtArr.split(/\s*\b\s*/); //split into array of words
+
+    //selector for function overloading
+    switch (arguments.length) {
+        case 3:
+            break;
+        case 2:
+            for (i = 0, len = txtArr.length; i < len; i += 1) {
+                txtArr[i] = txtArr[i].toLowerCase();
+            }
+            key = key.toLowerCase();
+            break;
+    }
+
+    for (i = 0, len = txtArr.length; i < len; i += 1) {
+        if (key === txtArr[i]) {
+            counter += 1;
+        }
+    }
+
+    return counter;
 }

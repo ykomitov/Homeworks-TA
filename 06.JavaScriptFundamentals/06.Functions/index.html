@@ -21,8 +21,7 @@
         <ul>
             <li>Write a function that reverses the digits of given decimal number.</li>
         </ul>
-        <input type="text" id="problem2" class="txtInput"
-               placeholder="Input a decimal number">
+        <input type="text" id="problem2" class="txtInput" placeholder="Input a decimal number">
         <button onclick="pr2()">Run</button>
     </div>
     <hr/>
@@ -33,8 +32,16 @@
             <li>The search can be case sensitive or case insensitive.</li>
             <li>Use function overloading.</li>
         </ul>
-        <textarea id="problem3"
-                  placeholder="Please paste text inside and select case sensitive/insensitive search from the radio button below"></textarea>
+        <form id="pr3">
+            <textarea id="problem3"
+                      placeholder="Please paste text inside and select case sensitive/insensitive search from the radio button below"></textarea>
+            <br>
+            <input type="text" id="problem3w" class="txtInput" placeholder="Input a word">
+            <input type="radio" name="pr3" id="pr3cs" value="1" checked>
+            <label for="pr3cs">case sensitive</label>
+            <input type="radio" name="pr3" id="pr3ncs">
+            <label for="pr3ncs">case insensitive</label>
+        </form>
         <button onclick="pr3()">Run</button>
     </div>
     <hr/>
