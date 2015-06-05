@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Strings Homework</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div id="container">
+    <div>
+        <h1>Problem 1. Reverse string</h1>
+        <ul>
+            <li>Write a JavaScript function that reverses a string and returns it.</li>
+        </ul>
+        <input type="text" id="problem1" class="txtInput" placeholder="Input a string">
+        <button onclick="pr1()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 2. Correct brackets</h1>
+        <ul>
+            <li>Write a JavaScript function to check if in a given expression the brackets are put correctly.</li>
+        </ul>
+        <input type="text" id="problem2" class="txtInput" placeholder="Input an expression">
+        <button onclick="pr2()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 3. Sub-string in text</h1>
+        <ul>
+            <li>Write a JavaScript function that finds how many times a substring is contained in a given text (perform
+                case insensitive search).
+            </li>
+        </ul>
+        <textarea id="problem3" placeholder="Please put text inside"></textarea>
+        <br>
+        <input type="text" id="problem3w" class="txtInput" placeholder="Input substring">
+        <button onclick="pr3()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 4. Parse tags</h1>
+        <ul>
+            <li>You are given a text. Write a function that changes the text in all regions.</li>
+            <pre>&ltupcase>text&lt/upcase> to uppercase</pre>
+            <pre>&ltlowcase>text&lt/lowcase> to lowercase</pre>
+            <pre>&ltmixcase>text&lt/mixcase> to mix casing(random)</pre>
+        </ul>
+        <textarea id="problem4" placeholder="Please put text inside"></textarea>
+        <br>
+        <button onclick="pr4()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 5. nbsp</h1>
+        <ul>
+            <li><p>Write a function that replaces non breaking white-spaces in a text with &amp;nbsp;</p></li>
+        </ul>
+        <textarea id="problem5" placeholder="Please put text inside"></textarea>
+        <br>
+        <button onclick="pr5()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 6. Extract text from HTML</h1>
+        <ul>
+            <li>Write a function that extracts the content of a html page given as text.</li>
+            <li>he function should return anything that is in a tag, without the tags.</li>
+        </ul>
+        <textarea id="problem6" placeholder="Please put html here"></textarea>
+        <br>
+        <button onclick="pr6()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 7. Parse URL</h1>
+        <ul>
+            <li>Write a script that parses an URL address given in the format: [protocol]://[server]/[resource] and
+                extracts from it the [protocol], [server] and [resource] elements.
+            </li>
+            <li> Return the elements in a JSON object.</li>
+        </ul>
+        <textarea id="problem7" placeholder="Please put URL address here"></textarea>
+        <br>
+        <button onclick="pr7()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 8. Replace tags</h1>
+        <ul>
+            <li>Write a JavaScript function that replaces in a HTML document given as string all the tags &lta
+                href="…">…&lt/a> with corresponding tags [URL=…]…/URL].
+            </li>
+        </ul>
+        <textarea id="problem8" placeholder="Please put HTML here"></textarea>
+        <br>
+        <button onclick="pr8()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 9. Extract e-mails</h1>
+        <ul>
+            <li>Write a function for extracting all email addresses from given text.</li>
+            <li>All sub-strings that match the format @… should be recognized as emails.</li>
+            <li>Return the emails as array of strings.</li>
+        </ul>
+        <textarea id="problem9" placeholder="Please put text here"></textarea>
+        <br>
+        <button onclick="pr9()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 10. Find palindromes</h1>
+        <ul>
+            <li>Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".</li>
+        </ul>
+        <textarea id="problem10" placeholder="Please put text here"></textarea>
+        <br>
+        <button onclick="pr10()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 11. String format</h1>
+        <ul>
+            <li>Write a function that formats a string using placeholders.</li>
+            <li>The function should work with up to 30 placeholders and all types.</li>
+        </ul>
+        <textarea id="problem11" placeholder="Please put text here"></textarea>
+        <br>
+        <button onclick="pr11()">Run</button>
+    </div>
+    <hr/>
+    <div>
+        <h1>Problem 12. String format</h1>
+        <ul>
+            <li>Write a function that creates a HTML &ltul> using a template for every HTML &ltli>.</li>
+            <li>The source of the list should be an array of elements.</li>
+            <li>Replace all placeholders marked with –{…}– with the value of the corresponding property of the object.</li>
+        </ul>
+        <button onclick="pr12()">Run</button>
+    </div>
+</div>
+<div class="console"></div>
+<script src="scripts/01.Reverse-string.js"></script>
+<script src="scripts/02.Correct-brackets.js"></script>
+<script src="scripts/03.Sub-string-in-text.js"></script>
+<script src="scripts/04.Parse-tags.js"></script>
+<script src="scripts/05.nbsp.js"></script>
+<script src="scripts/06.Extract-txt-from-HTML.js"></script>
+<script src="scripts/07.Parse-URL.js"></script>
+<script src="scripts/08.Replace-tags.js"></script>
+<script src="scripts/09.Extract-e-mails.js"></script>
+<script src="scripts/10.Find-palindromes.js"></script>
+<script src="scripts/11.String-format.js"></script>
+<script src="scripts/12.Generate-list.js"></script>
+<script src="scripts/js-console.js"></script>
+</body>
+</html>
