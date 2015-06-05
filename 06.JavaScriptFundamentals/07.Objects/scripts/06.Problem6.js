@@ -1,51 +1,85 @@
 var pr6 = function () {
-    var sampleArr = [1, 1, 3, 4, 1, 3, 4, 6, 3, 4, -1, 10, 11],
-        index = 3,
-        isLargerThanNeighbours = largerThanNeighbours(sampleArr, index);
+    var inputArr = [createPerson('Adam', 'Smith', 45),
+        createPerson('Karl', 'Marx', 35),
+        createPerson('Friedrich', 'von Hayek', 65),
+        createPerson('Milton', 'Friedman', 40),
+        createPerson('Milton', 'Davis', 40),
+        createPerson('David', 'Ricardo', 40),
+        createPerson('Joseph', 'Ricardo', 60),
+        createPerson('John', 'Keynes', 20)];
+
+    var testFirstName = groupPersons(inputArr, 'firstName');
+    var testLastName = groupPersons(inputArr, 'lastName');
+    var testAge = groupPersons(inputArr, 'age');
+
+    var inStr = printPersons(inputArr);
+    var gFirstName = printObj(testFirstName);
+
+    console.log(inputArr);
+    console.log(testFirstName);
+    console.log(testLastName);
+    console.log(testAge);
 
     jsConsole.writeLine('<br>=================== Problem 6 ===================');
-    jsConsole.writeLine('Array: ' + sampleArr);
-    console.log(sampleArr);
-
-    if (isLargerThanNeighbours === 1) {
-        console.log(sampleArr[index] + ' at index ' + index + ' is larger than neighbours');
-        jsConsole.writeLine(sampleArr[index] + ' at index ' + index + ' is larger than neighbours');
-    }
-    else if (isLargerThanNeighbours === 0) {
-        console.log(sampleArr[index] + ' at index ' + index + ' is not larger than neighbours');
-        jsConsole.writeLine(sampleArr[index] + ' at index ' + index + ' is not larger than neighbours');
-    }
-    else {
-        console.log(isLargerThanNeighbours);
-        jsConsole.writeLine(isLargerThanNeighbours);
-    }
-
+    jsConsole.writeLine('Input: <br>' + inStr);
+    jsConsole.writeLine('Grouped by First Name: <br>' + gFirstName);
+    jsConsole.writeLine('Please check console for full associative arrays');
     jsConsole.writeLine('=================================================');
 }
 
-function largerThanNeighbours(arr, position) {
-    var len = arr.length,
-        isLarger;
+function groupPersons(arr, key) {
+    var groupedArr = {},
+        sortedArr,
+        keyTemp,
+        i,
+        len;
 
-    if ((position > (len - 1)) || (position < 0)) {
-        isLarger = 'Index out or range!'
-        return isLarger;
+    sortedArr = deepCopy(arr);
+    switch (key) {
+        case 'firstName':
+            sortedArr.sort(function (p1, p2) {
+                return p1.firstName > p2.firstName;
+            });
+            break;
+        case 'lastName':
+            sortedArr.sort(function (p1, p2) {
+                return p1.lastName > p2.lastName;
+            });
+            break;
+        case 'age':
+            sortedArr.sort(function (p1, p2) {
+                return p1.age > p2.age;
+            });
+            break;
+        default:
+            console.log('Invalid key');
+            break;
     }
 
-    if (position === (len - 1)) {
-        isLarger = arr[position] + ' at index ' + position + ' is the last element in the array';
-    }
-    else if (position === 0) {
-        isLarger = arr[position] + ' at index ' + position + ' is the first element in the array';
-    }
-    else {
-        if ((arr[position] > arr[position + 1]) && (arr[position] > arr[position - 1])) {
-            isLarger = 1;
+    keyTemp = sortedArr[0][key].toString();
+    groupedArr[keyTemp] = [];
+
+    for (i = 0, len = sortedArr.length; i < len; i += 1) {
+        if (keyTemp === sortedArr[i][key].toString()) {
+            groupedArr[keyTemp].push(sortedArr[i]);
         }
         else {
-            isLarger = 0;
+            keyTemp = sortedArr[i][key].toString();
+            groupedArr[keyTemp] = [];
+            groupedArr[keyTemp].push(sortedArr[i]);
         }
     }
 
-    return isLarger;
+    return groupedArr;
+}
+
+function printObj(obj) {
+    var output = '',
+        prop;
+
+    for (prop in obj) {
+        output += prop + '<br>';
+    }
+
+    return output;
 }
