@@ -1,61 +1,77 @@
 var pr3 = function () {
-    var txt,
-        word,
-        type,
-        result;
 
-    txt = document.getElementById('problem3').value;
-    word = document.getElementById('problem3w').value;
-    type = document.querySelector('input[name="pr3"]:checked').value;
+    var input = {
+        name: 'John', use: function () {
+            console.log('Hi, my name is ' + this.name)
+        }
+    };
+    var copy = deepCopy(input);
+    copy.surname = 'Doe';
 
-    //function overloading
-    if (!!(type*1)) {
-        result = countWord(txt, word, type);
-    }
-    else{
-        result = countWord(txt, word);
-    }
+    var inStr = printObject(input);
+    var outStr = printObject(copy);
 
+    console.log(input);
+    console.log(copy);
     jsConsole.writeLine('<br>=================== Problem 3 ===================');
-    jsConsole.writeLine('Word: ' + word);
-    jsConsole.writeLine('Count: ' + result);
-    jsConsole.writeLine('Case sensitive: ' + !!(type*1));
+    jsConsole.writeLine('Input: ' + inStr);
+    jsConsole.writeLine('Output: ' + outStr);
     jsConsole.writeLine('=================================================');
-
-    console.log('Word: ' + word);
-    console.log('Count: ' + result);
-    console.log('Case sensitive: ' + !!(type*1));
 }
 
-function countWord(txtInput, word, caseSensitive) {
+function deepCopy(obj) {
+    var copy,
+        attr,
+        i,
+        len;
 
-    var txtArr,
-        key = word,
-        counter = 0,
-        len,
-        i;
+    // Handle the 3 simple types, and null or undefined
+    if (null === obj || "object" !== typeof obj) return obj;
 
-    //Remove all punctuation from the text and split it into an array, removing whitespaces
-    txtArr = txtInput.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~']/g, ""); //remove all punctuation
-    txtArr = txtArr.split(/\s*\b\s*/); //split into array of words
-
-    //selector for function overloading
-    switch (arguments.length) {
-        case 3:
-            break;
-        case 2:
-            for (i = 0, len = txtArr.length; i < len; i += 1) {
-                txtArr[i] = txtArr[i].toLowerCase();
-            }
-            key = key.toLowerCase();
-            break;
+    // Handle Date
+    if (obj instanceof Date) {
+        copy = new Date();
+        copy.setTime(obj.getTime());
+        return copy;
     }
 
-    for (i = 0, len = txtArr.length; i < len; i += 1) {
-        if (key === txtArr[i]) {
-            counter += 1;
+    // Handle Array
+    if (obj instanceof Array) {
+        copy = [];
+        for (i = 0, len = obj.length; i < len; i += 1) {
+            copy[i] = deepCopy(obj[i]);
+        }
+        return copy;
+    }
+
+    // Handle Object
+    if (obj instanceof Object) {
+        copy = {};
+        for (attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = deepCopy(obj[attr]);
+        }
+        return copy;
+    }
+
+    throw new Error("Unable to copy obj! Its type isn't supported.");
+}
+
+function printObject(obj) {
+    var out = '{',
+        len,
+        count = 0,
+        p;
+
+    len = Object.keys(obj).length;
+
+    for (p in obj) {
+        out += p + ': ' + obj[p];
+
+        if (count < len - 1) {
+            count += 1;
+            out += ', ';
         }
     }
-
-    return counter;
+    out += '}';
+    return out;
 }

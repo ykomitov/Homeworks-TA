@@ -1,41 +1,40 @@
 var pr5 = function () {
-    var i,
-        len,
-        sampleArr = [1, 2, 3, 4, 4, 5, 5, 5, -1, -1, -1, -1],
-        keys = [1, -1, 4, 5],
-        expectedCount = [1, 4, 2, 3];
+
+    var inputArr = [createPerson('Adam', 'Smith', 45), createPerson('Karl', 'Marx', 35), createPerson('Friedrich', 'von Hayek', 65)];
+    var inStr = printPersons(inputArr);
 
     jsConsole.writeLine('<br>=================== Problem 5 ===================');
-    jsConsole.writeLine('Array: ' + sampleArr);
-    console.log('Array: ' + sampleArr);
-
-    for (i = 0, len = keys.length; i < len; i += 1) {
-
-        console.log('Key: ' + keys[i]);
-        console.log('Count in array: ' + appearanceCount(sampleArr, keys[i]));
-        console.log('Test ' + (i + 1) + ': ' + (expectedCount[i] === appearanceCount(sampleArr, keys[i]) ? true : false));
-        console.log('-----');
-
-        jsConsole.writeLine('Key: ' + keys[i]);
-        jsConsole.writeLine('Count in array: ' + appearanceCount(sampleArr, keys[i]));
-        jsConsole.writeLine('Test ' + (i + 1) + ': ' + (expectedCount[i] === appearanceCount(sampleArr, keys[i]) ? true : false));
-        jsConsole.writeLine('-----');
-    }
-
+    jsConsole.writeLine('Input: <br>' + inStr);
+    jsConsole.writeLine('Youngest person in array: ' + youngestPerson(inputArr).firstName + ' ' + youngestPerson(inputArr).lastName);
     jsConsole.writeLine('=================================================');
+
+    console.log(inputArr);
+    console.log('Youngest person in array: ' + youngestPerson(inputArr).firstName + ' ' + youngestPerson(inputArr).lastName);
 }
 
-function appearanceCount(arr, number) {
+function createPerson(firstname, lastname, age) {
+    return {
+        'firstName': firstname,
+        'lastName': lastname,
+        'age': age * 1
+    }
+}
 
-    var i,
-        len,
-        count = 0;
+function youngestPerson(personArr) {
+    var sortedArr = deepCopy(personArr);
+    sortedArr.sort(function (p1, p2) {
+        return p1.age > p2.age;
+    });
+    return sortedArr[0];
+}
+
+function printPersons(arr) {
+    var output = '',
+        i, len;
 
     for (i = 0, len = arr.length; i < len; i += 1) {
-        if (arr[i] === number) {
-            count += 1;
-        }
+        output += arr[i].firstName + ' ' + arr[i].lastName + ' age: ' + arr[i].age + '<br>';
     }
 
-    return count;
+    return output;
 }
