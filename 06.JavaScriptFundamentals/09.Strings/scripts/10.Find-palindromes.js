@@ -4,7 +4,7 @@ var pr10 = function () {
 
     console.log(out);
 
-    jsConsole.writeLine('<br>=================== Problem 9 ===================');
+    jsConsole.writeLine('<br>=================== Problem 10 ===================');
     jsConsole.writeLine(out);
     jsConsole.writeLine('=================================================');
 }
