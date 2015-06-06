@@ -68,10 +68,11 @@ div div:last-of-type {
     margin-bottom: 30px;
 }
 
-#pr1p1, #pr1p2, {
+#problem1, #problem2, #problem3w {
     width: 150px;
 }
 
-span{
-    margin-left: 20px;
+#problem3, #problem4, #problem5, #problem6, #problem7, #problem8, #problem9, #problem10, #problem11{
+    width: 450px;
+    height: 80px;
 }
