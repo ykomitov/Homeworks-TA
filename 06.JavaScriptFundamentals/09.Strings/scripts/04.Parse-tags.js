@@ -16,9 +16,7 @@ function parseTags(str) {
         len = input.length,
         i,
         j,
-        flagUpcase = false,
-        flagLowcase = false,
-        flagMixcase = false,
+        activeFlag = [],
         tag = '';
 
     for (i = 0; i < len; i += 1) {
@@ -37,42 +35,42 @@ function parseTags(str) {
         }
         switch (tag) {
             case '<upcase>':
-                flagUpcase = true;
+                activeFlag.push('<upcase>');
                 tag = '';
                 break;
             case '</upcase>':
-                flagUpcase = false;
+                activeFlag.pop();
                 tag = '';
                 break;
             case '<lowcase>':
-                flagLowcase = true;
+                activeFlag.push('<lowcase>');
                 tag = '';
                 break;
             case '</lowcase>':
-                flagLowcase = false;
+                activeFlag.pop();
                 tag = '';
                 break;
             case '<mixcase>':
-                flagMixcase = true;
+                activeFlag.push('<mixcase>');
                 tag = '';
                 break;
             case '</mixcase>':
-                flagMixcase = false;
+                activeFlag.pop();
                 tag = '';
                 break;
             default:
                 break;
         }
 
-        if (flagUpcase) {
+        if (activeFlag[activeFlag.length-1] === '<upcase>') {
             input[i] = input[i].toUpperCase();
         }
 
-        if (flagLowcase) {
+        if (activeFlag[activeFlag.length-1] === '<lowcase>') {
             input[i] = input[i].toLowerCase();
         }
 
-        if (flagMixcase) {
+        if (activeFlag[activeFlag.length-1] === '<mixcase>') {
             if (Math.random() > 0.5) {
                 input[i] = input[i].toUpperCase();
             }
@@ -112,3 +110,76 @@ function replaceTags(string) {
     }
     return input;
 }
+
+//function parseTags(str) {
+//    var input = str.split(''),
+//        len = input.length,
+//        i,
+//        j,
+//        flagUpcase = false,
+//        flagLowcase = false,
+//        flagMixcase = false,
+//        tag = '';
+//
+//    for (i = 0; i < len; i += 1) {
+//        if (input[i] === '<') {
+//            for (j = i; j < i + 10; j += 1) {
+//                while (input[j] !== '>') {
+//                    tag += input[j];
+//                    break;
+//                }
+//                if (input[j] === '>') {
+//                    tag += input[j];
+//                    break;
+//                }
+//            }
+//
+//        }
+//        switch (tag) {
+//            case '<upcase>':
+//                flagUpcase = true;
+//                tag = '';
+//                break;
+//            case '</upcase>':
+//                flagUpcase = false;
+//                tag = '';
+//                break;
+//            case '<lowcase>':
+//                flagLowcase = true;
+//                tag = '';
+//                break;
+//            case '</lowcase>':
+//                flagLowcase = false;
+//                tag = '';
+//                break;
+//            case '<mixcase>':
+//                flagMixcase = true;
+//                tag = '';
+//                break;
+//            case '</mixcase>':
+//                flagMixcase = false;
+//                tag = '';
+//                break;
+//            default:
+//                break;
+//        }
+//
+//        if (flagUpcase) {
+//            input[i] = input[i].toUpperCase();
+//        }
+//
+//        if (flagLowcase) {
+//            input[i] = input[i].toLowerCase();
+//        }
+//
+//        if (flagMixcase) {
+//            if (Math.random() > 0.5) {
+//                input[i] = input[i].toUpperCase();
+//            }
+//            else {
+//                input[i] = input[i].toLowerCase();
+//            }
+//        }
+//    }
+//    return input.join('');
+//}
