@@ -55,7 +55,7 @@ function solve() {
 
         function addBook(book) {
             validateBook(book);
-            validateCategory(book)
+            validateCategory(book);
 
             book.ID = books.length + 1;
             books.push(book);
@@ -63,19 +63,23 @@ function solve() {
         }
 
         function listCategories() {
-            var categoryKeys;
-            categoryKeys = categories.sort(function (category1, category2) {
-                return category1.ID > category2.ID;
-            });
-
-            return Object.keys(categoryKeys);
+            //var categoryKeys;
+            //categoryKeys = categories.sort(function (category1, category2) {
+            //    return category1.ID > category2.ID;
+            //});
+            //
+            //return Object.keys(categoryKeys);
+            return categories;
         }
 
         function validateCategory(book) {
-            if (!(categories.some(function (categoryInArr) {
-                    return categoryInArr === book.category;
-                }))) {
-                categories[book.category] = {'ID': categories.length + 1};
+            //if (!(categories.some(function (categoryInArr) {
+            //        return categoryInArr === book.category;
+            //    }))) {
+            //    categories[book.category] = {'ID': categories.length + 1};
+            //}
+            if (categories.indexOf(book.category.toString()) < 0) {
+                categories.push(book.category.toString());
             }
         }
 
