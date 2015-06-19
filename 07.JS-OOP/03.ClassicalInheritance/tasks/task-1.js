@@ -22,7 +22,6 @@ function solve() {
 
             this.firstname = firstName;
             this.lastname = lastName;
-            //this.fullname = firstName + ' ' + lastName;
             this.age = age * 1;
         }
 
@@ -35,24 +34,32 @@ function solve() {
                 return (this.firstname + ' ' + this.lastname);
             },
             set: function (fullname) {
+                validateChars(fullname);
+                var firstN = fullname.split(' ')[0];
+                var lastN = fullname.split(' ')[1];
+
+                if (firstN.length < 3 || firstN.length > 20 || lastN.length < 3 || lastN.length > 20) {
+                    throw new Error('FirstName & LastName must have length between 3 and 20 characters');
+                }
+
                 var fullName = fullname.split(' ');
                 this.firstname = fullName[0];
                 this.lastname = fullName[1];
             }
         });
 
-        function validatePerson(fName, lName, age) {
+        function validateChars(name) {
+            var i, len, charCode;
 
-            function validateChars(name) {
-                var i, len, charCode;
-
-                for (i = 0, len = name.length; i < len; i += 1) {
-                    charCode = name.charCodeAt(i);
-                    if ((charCode < 65 && charCode > 90) && (charCode < 97 && charCode > 122)) {
-                        throw new Error('Names can only contain Latin lower & uppercase letters');
-                    }
+            for (i = 0, len = name.length; i < len; i += 1) {
+                charCode = name.charCodeAt(i);
+                if ((charCode < 65 && charCode > 90) && (charCode < 97 && charCode > 122)) {
+                    throw new Error('Names can only contain Latin lower & uppercase letters');
                 }
             }
+        }
+
+        function validatePerson(fName, lName, age) {
 
             if (typeof(fName) !== 'string' || typeof(lName) !== 'string') {
                 throw new Error('FirstName & LastName must always be strings');
