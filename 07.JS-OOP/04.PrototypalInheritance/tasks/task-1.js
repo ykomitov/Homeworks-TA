@@ -74,26 +74,36 @@ function solve() {
                 return this;
             },
             appendChild: function (child) {
+                child.parent = this;
                 this.children.push(child);
                 return this;
             },
             addAttribute: function (name, value) {
                 var tempAttribute = [],
-                    i, len, containsName = false;
+                    indexOfExistingAttribute;
 
                 validateAttribute(name, value);
+                indexOfExistingAttribute = checkIfAttributeExists(name, this.attributes);
 
-                for (i = 0, len = this.attributes.length; i < len; i += 1) {
-                    if (this.attributes[i][0] === name) {
-                        containsName = true;
-                        this.attributes[i][1] = value;
-                    }
-                }
-
-                if (!containsName) {
+                if (indexOfExistingAttribute < 0) {
                     tempAttribute.push(name);
                     tempAttribute.push(value);
                     this.attributes.push(tempAttribute);
+                } else {
+
+                    //if attribute exists, replace the current attribute value with the new one
+                    this.attributes[indexOfExistingAttribute][1] = value;
+                }
+
+                return this;
+            },
+            removeAttribute: function (attributeName) {
+                var indexOfAttribute = checkIfAttributeExists(attributeName, this.attributes);
+
+                if (indexOfAttribute < 0) {
+                    throw new Error('This attribute (' + attributeName + ') does not exist!');
+                } else {
+                    this.attributes.splice(indexOfAttribute, 1);
                 }
 
                 return this;
@@ -128,44 +138,57 @@ function solve() {
             }
         };
 
+        function validateType(input) {
+            var i, len, charCode;
+
+            if ((typeof input !== 'string') || (input.length < 1)) {
+                throw new Error('A valid type is any non-empty string');
+            }
+
+            for (i = 0, len = input.length; i < len; i += 1) {
+                charCode = input.charCodeAt(i);
+
+                if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && (charCode < 48 || charCode > 57)) {
+                    throw new Error('A valid type contains only Latin letters and digits');
+                }
+            }
+        }
+
+        function validateAttribute(name) {
+            var i, len = name.length, charCode;
+
+            if (!name && len < 1) {
+                throw new Error('Each attribute must have a name');
+            }
+
+            for (i = 0; i < len; i += 1) {
+                charCode = name.charCodeAt(i);
+
+                if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && (charCode < 48 || charCode > 57) && (charCode !== 45)) {
+                    throw new Error('A valid attribute name contains only Latin letters and digits or dashes (-)');
+                }
+            }
+
+            //if (!value) {
+            //    throw new Error('Each attribute must have a value');
+            //}
+        }
+
+        function checkIfAttributeExists(name, attributesArr) {
+            var i, len, indexOfAttribute = -1;
+
+            for (i = 0, len = attributesArr.length; i < len; i += 1) {
+                if (attributesArr[i][0] === name) {
+                    indexOfAttribute = i;
+                    break;
+                }
+            }
+
+            return indexOfAttribute;
+        }
+
         return domElement;
     }());
-
-    function validateType(input) {
-        var i, len, charCode;
-
-        if ((typeof input !== 'string') || (input.length < 1)) {
-            throw new Error('A valid type is any non-empty string');
-        }
-
-        for (i = 0, len = input.length; i < len; i += 1) {
-            charCode = input.charCodeAt(i);
-
-            if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && (charCode < 48 || charCode > 57)) {
-                throw new Error('A valid type contains only Latin letters and digits');
-            }
-        }
-    }
-
-    function validateAttribute(name, value) {
-        var i, len = name.length, charCode;
-
-        if (!name && len < 1) {
-            throw new Error('Each attribute must have a name');
-        }
-
-        for (i = 0; i < len; i += 1) {
-            charCode = name.charCodeAt(i);
-
-            if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && (charCode < 48 || charCode > 57) && (charCode !== 45)) {
-                throw new Error('A valid attribute name contains only Latin letters and digits or dashes (-)');
-            }
-        }
-
-        //if (!value) {
-        //    throw new Error('Each attribute must have a value');
-        //}
-    }
 
     return domElement;
 }
