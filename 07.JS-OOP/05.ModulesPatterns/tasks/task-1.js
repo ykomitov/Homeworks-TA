@@ -52,15 +52,27 @@ function solve() {
 
             this.title = title;
             this.presentations = presentations;
+            this.students = [];
 
             return this;
         },
         addStudent: function (name) {
-            validateStudentName(name);
+            var student = {};
+            var studentNamesArr = validateStudentName(name);
+
+            student.firstname = studentNamesArr[0];
+            student.lastname = studentNamesArr[1];
+            student.id = (this.students.length + 1);
+            this.students.push(student);
+
+            return this.students.length;
         },
         getAllStudents: function () {
+            return this.students;
         },
         submitHomework: function (studentID, homeworkID) {
+            validateStudentID(studentID, this.students);
+            validateHomeworkID(homeworkID, this.presentations);
         },
         pushExamResults: function (results) {
         },
@@ -94,6 +106,16 @@ function solve() {
             firstName = namesArr[0],
             lastName = namesArr[1];
 
+        function checkName(input) {
+            var i, len = input.length;
+
+            for (i = 1; i < len; i += 1) {
+                if ((input.charCodeAt(i) < 97 || input.charCodeAt(i) > 122)) {
+                    throw new Error('Names can contain only lowercase letters!');
+                }
+            }
+        }
+
         if (namesArr.length > 2) {
             throw new Error('Student can only have 2 names!');
         }
@@ -106,14 +128,21 @@ function solve() {
         checkName(firstName);
         checkName(lastName);
 
-        function checkName(input) {
-            var i, len = input.length;
+        return namesArr;
+    }
 
-            for (i = 1; i < len; i += 1) {
-                if ((input.charCodeAt(i) < 97 || input.charCodeAt(i) > 122)) {
-                    throw new Error('Names can contain only lowercase letters!');
-                }
-            }
+    function validateHomeworkID(id, presentationsArr) {
+        if (id < presentationsArr.length || id > presentationsArr.length) {
+            throw new Error('Invalid presentation ID');
+        }
+    }
+
+    function validateStudentID(id, studentsArr) {
+        if (id < 1) {
+            throw new Error('Student ID cannot be < 1');
+        }
+        if (id < studentsArr.length || id > studentsArr.length) {
+            throw new Error('Invalid presentation ID');
         }
     }
 
