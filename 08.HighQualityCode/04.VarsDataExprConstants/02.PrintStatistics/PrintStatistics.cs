@@ -1,20 +1,25 @@
-﻿namespace _02.PrintStatistics
+﻿// Refactor the following code to apply variable usage and naming best practices:
+
+namespace _02.PrintStatistics
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    class PrintStatistics
+    public class PrintStatistics
     {
-        static void Main()
+        public static void Main()
         {
+            var sampleArr = new double[] { 6, 4, 5, 5 };
+
+            PrintMax(sampleArr);
+            PrintMin(sampleArr);
+            PrintAvg(sampleArr);
         }
 
-        public void PrintStatistics(double[] arr, int count)
+        public static void PrintMax(double[] arr)
         {
-            double max, tmp;
+            double max = double.MinValue;
+            int count = arr.Length;
+
             for (int i = 0; i < count; i++)
             {
                 if (arr[i] > max)
@@ -22,25 +27,39 @@
                     max = arr[i];
                 }
             }
-            PrintMax(max);
-            tmp = 0;
-            max = 0;
+
+            Console.WriteLine(max);
+        }
+
+        public static void PrintMin(double[] arr)
+        {
+            double min = double.MaxValue;
+            int count = arr.Length;
+
             for (int i = 0; i < count; i++)
             {
-                if (arr[i] < max)
+                if (arr[i] < min)
                 {
-                    max = arr[i];
+                    min = arr[i];
                 }
             }
-            PrintMin(max);
 
-            tmp = 0;
+            Console.WriteLine(min);
+        }
+
+        public static void PrintAvg(double[] arr)
+        {
+            double sum = 0;
+            int count = arr.Length;
+            double average;
+
             for (int i = 0; i < count; i++)
             {
-                tmp += arr[i];
+                sum += arr[i];
             }
-            PrintAvg(tmp / count);
+
+            average = sum / count;
+            Console.WriteLine(average);
         }
     }
-
 }
