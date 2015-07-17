@@ -1,45 +1,46 @@
-﻿using System;
+﻿// You are given a list of N numbers and a number S.
+// Count the occurrences of the most right 5 bits of S in the most right 29 bits in every given number.
+// For example there are 3 occurrences of the 5 most right bits of 9 in the number 9369.
+// The 5 most right bits of 9 are 01001 and the 29 most right bits in the number 9369 are 00000000000000010010010011001.
+// The occurrences are:
+// • 00000000000000 01001 0010011001
+// • 00000000000000010 01001 0011001
+// • 00000000000000010010 01001 1001
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Numerics;
 
-class Program05
+public class Program05
 {
-    static void Main()
+    public static void Main()
     {
         byte s = byte.Parse(Console.ReadLine());
-        string sString = Convert.ToString(s, 2).PadLeft(5, '0');
         byte n = byte.Parse(Console.ReadLine());
-        string line;
-        string lineBit = "";
-        string input = "";
-        string source = "";
-        int count = 0;
+        string bitsSequence = Convert.ToString(s, 2).PadLeft(5, '0');
+        int occurancesCount = 0;
+
+        List<string> listOfBitwiseStrings = new List<string>();
+
         for (int i = 0; i < n; i++)
         {
-            line = Console.ReadLine();
-            lineBit = Convert.ToString(Convert.ToInt32(line), 2).PadLeft(29, '0');
-            input = input + " " + lineBit;
+            string line = Console.ReadLine();
+            string lineBit = Convert.ToString(Convert.ToInt32(line), 2).PadLeft(29, '0');
+            listOfBitwiseStrings.Add(lineBit);
         }
-        string[] arrayInput = input.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
-        for (int i = 0; i < arrayInput.Length; i++)
+        for (int i = 0; i < listOfBitwiseStrings.Count; i++)
         {
+            string currentNumber = listOfBitwiseStrings[i];
+            int endIndex = currentNumber.Length - bitsSequence.Length;
 
-            source = arrayInput[i];
-            //count += Regex.Matches(source, sString).Count;
-
-            for (int k = 0; k <= source.Length - sString.Length; k++)
+            for (int j = 0; j <= endIndex; j++)
             {
-                if (source.Substring(k, sString.Length) == sString)
+                if (currentNumber.Substring(j, bitsSequence.Length) == bitsSequence)
                 {
-                    count++;
+                    occurancesCount++;
                 }
             }
         }
-        Console.WriteLine(count);
+
+        Console.WriteLine(occurancesCount);
     }
 }

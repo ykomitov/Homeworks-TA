@@ -1,36 +1,28 @@
 ﻿namespace _03.RefactorLoops
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    class RefactorLoops
+    public class RefactorLoops
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Refactor the following loop
-            int i = 0;
-            for (i = 0; i < 100; )
+            var array = new int[] { 3, 40, 5, 6, 1, 1, 1, 1, 1, 1, 41 };
+            var expectedValue = 40;
+            bool isFound = false;
+
+            // Refactor the following loop
+            for (int i = 0; i < array.Length; i++)
             {
-                if (i % 10 == 0)
+                Console.WriteLine(array[i]);
+                if (i % 10 == 0 && array[i] == expectedValue)
                 {
-                    Console.WriteLine(array[i]);
-                    if (array[i] == expectedValue)
-                    {
-                        i = 666;
-                    }
-                    i++;
-                }
-                else
-                {
-                    Console.WriteLine(array[i]);
-                    i++;
+                    isFound = true;
+                    break;
                 }
             }
+
             // More code here
-            if (i == 666)
+            if (isFound)
             {
                 Console.WriteLine("Value Found");
             }

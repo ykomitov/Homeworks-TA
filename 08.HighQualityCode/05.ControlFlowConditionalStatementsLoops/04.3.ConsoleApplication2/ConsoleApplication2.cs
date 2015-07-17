@@ -1,99 +1,51 @@
 ﻿using System;
-using System.Linq;
 using System.Numerics;
 
-
-class Program03
+public class Program03
 {
-    static void Main()
+    public static void Main()
     {
-        //StreamReader reader = new StreamReader("..\\..\\input.txt");
-        //Console.SetIn(reader);
-
         string line;
-        string input = "";
-        string digitsString = "";
-        BigInteger digitsProduct = 1;
-        BigInteger digitsProduct2 = 1;
 
+        BigInteger productOfFirst10 = 1;
+        BigInteger productAfterFirst10 = 1;
+
+        int counter = 0;
         while ((line = Console.ReadLine()) != "END")
         {
-            input = input + " " + line;
-        }
-        string[] arrayInput = input.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            char currentDigit;
+            BigInteger tempProductOfDigits = 1;
 
-        if (arrayInput.Length <= 10)
-        {
-            for (int i = 0; i < arrayInput.Length; i++)
+            if (counter % 2 == 0)
             {
-                if (i % 2 == 0)
+                for (int i = 0; i < line.Length; i++)
                 {
-                    digitsString = arrayInput[i];
-                    if (digitsString == "48")
-                    {
-                        digitsProduct *= 1;
-                    }
-                    else
-                    {
-                        for (int j = 0; j < digitsString.Length; j++)
-                        {
-                            if (digitsString[j] != '0')
-                            {
-                                digitsProduct *= Convert.ToInt32(digitsString[j] - '0');
-                            }
-                        }
-                    }
-                }
-            }
-            Console.WriteLine(digitsProduct);
-        }
-        else if (arrayInput.Length > 10)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    digitsString = arrayInput[i];
-                    if (digitsString == "48")
-                    {
-                        digitsProduct *= 1;
-                    }
-                    else
-                    {
-                        for (int j = 0; j < digitsString.Length; j++)
-                        {
-                            if (digitsString[j] != '0')
-                            {
-                                digitsProduct *= Convert.ToInt32(digitsString[j] - '0');
-                            }
-                        }
-                    }
-                }
-            }
-            Console.WriteLine(digitsProduct);
+                    currentDigit = line[i];
 
-            for (int i = 10; i < arrayInput.Length; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    digitsString = arrayInput[i];
-                    if (digitsString == "48")
+                    if (currentDigit != '0')
                     {
-                        digitsProduct2 *= 1;
-                    }
-                    else
-                    {
-                        for (int j = 0; j < digitsString.Length; j++)
-                        {
-                            if (digitsString[j] != '0')
-                            {
-                                digitsProduct2 *= Convert.ToInt32(digitsString[j] - '0');
-                            }
-                        }
+                        tempProductOfDigits *= currentDigit - '0';
                     }
                 }
             }
-            Console.WriteLine(digitsProduct2);
+
+            if (counter < 10)
+            {
+                productOfFirst10 *= tempProductOfDigits;
+            }
+            else
+            {
+                productAfterFirst10 *= tempProductOfDigits;
+            }
+
+            counter++;
+        }
+
+        Console.WriteLine(productOfFirst10);
+
+        if (counter > 10)
+        {
+            Console.WriteLine(productAfterFirst10);
         }
     }
 }

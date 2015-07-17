@@ -1,62 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Numerics;
 
-//digits 48 to 57
-//capital 65 to 90
-//lowercase 97 to 122
-
-class Program02
+// You are given a number (SECRET) and a text. The text must be encoded using the SECRET.
+// •    If the character is “@”, stop the program
+// •    If the character in the text is a letter, multiply its char code by the given SECRET and add 1000.
+// •    If the character in the text is a digit, add to its char code SECRET and add 500
+// •    If the character in the text is not a digit, letter or “@” (any other symbol), subtract from its char code SECRET
+// •    After performing the above operations on the character in the original text:
+//   o    If the character is on even position in the text - divide the encoded value by 100 and round the precision to 2 digits after the decimal point
+//   o    Else if the character is on odd position in the original text – multiply its encoded value by 100
+//   o    The first character in the text is at position 0. 
+public class SymbolToNum
 {
-    static void Main()
+    public static void Main()
     {
         byte secret = byte.Parse(Console.ReadLine());
-        string input = Console.ReadLine();
-        int encodedValue = 0;
-        decimal answer;
-        bool cont = true;
+        string inputTxt = Console.ReadLine();
+
+        bool continueEncoding = true;
 
         do
         {
-            for (int i = 0; i < input.Length; i++)
+            int encodedValue = 0;
+            decimal result;
+
+            for (int i = 0; i < inputTxt.Length; i++)
             {
-                //if the symbol is a lower or uppercase letter
-                if ((input[i] >= 65 && input[i] <= 90) || (input[i] >= 97 && input[i] <= 122))
+                char currentSymbol = inputTxt[i];
+
+                bool isLowerOrUppercaseLetter = (currentSymbol >= 65 && currentSymbol <= 90) ||
+                                                (currentSymbol >= 97 && currentSymbol <= 122);
+                bool isDigit = currentSymbol >= 48 && currentSymbol <= 57;
+                bool isAT = currentSymbol == 64;
+                bool onEvenPosition = i % 2 == 0;
+
+                // Encoding logic
+                if (isLowerOrUppercaseLetter)
                 {
-                    encodedValue = (input[i] * secret) + 1000;
+                    encodedValue = (inputTxt[i] * secret) + 1000;
                 }
-                //if the symbol is a digit
-                else if (input[i] >= 48 && input[i] <= 57)
+                else if (isDigit)
                 {
-                    encodedValue = (input[i] + secret + 500);
+                    encodedValue = inputTxt[i] + secret + 500;
+                }
+                else if (!isAT)
+                {
+                    encodedValue = inputTxt[i] - secret;
+                }
+                else
+                {
+                    continueEncoding = false;
                 }
 
-                //if the symbol is anything else except @
-                else if (input[i] != 64)
+                // Print the result on the console
+                if (onEvenPosition && continueEncoding)
                 {
-                    encodedValue = (input[i] - secret);
+                    result = encodedValue / 100M;
+                    Console.WriteLine("{0:0.00}", result);
                 }
-
-                //stop in case of @
-                else if (input[i] == 64)
+                else if (!onEvenPosition && continueEncoding)
                 {
-                    cont = false;
-                }
-
-                if (i % 2 == 0 && cont == true)
-                {
-                    answer = encodedValue / 100M;
-                    Console.WriteLine("{0:0.00}", answer);
-                }
-                if (i % 2 != 0 && cont == true)
-                {
-                    answer = encodedValue * 100M;
-                    Console.WriteLine(answer);
+                    result = encodedValue * 100M;
+                    Console.WriteLine(result);
                 }
             }
-        } while (cont);
+        }
+        while (continueEncoding);
     }
 }
