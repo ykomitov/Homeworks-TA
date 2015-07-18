@@ -1,81 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Numerics;
-
-namespace _001.Exam_Problem1
+﻿namespace _001.Exam_Problem1
 {
-    class Problem1
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class Problem1
     {
-        static void Main()
+        internal static void Main()
         {
             string input = Console.ReadLine();
 
-            var tempList1 = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            var tempList2 = new List<string>();
+            var inputStringAsArray = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var finalResultArray = new List<string>();
 
-            foreach (var word in tempList1)
+            foreach (var word in inputStringAsArray)
             {
-                string input21 = ConvertTo21(word);
-                long input10 = ArbitraryToDecimalSystem(input21.ToString(), 21);
-                string input26 = DecimalToArbitrarySystem(input10, 26).ToLower();
-                string cat = ConvertToCat(input26);
-                tempList2.Add(cat);
+                string inputTo21Base = ConvertTo21Base(word);
+                long inputToDecimal = ArbitraryToDecimalSystem(inputTo21Base.ToString(), 21);
+                string inputTo26Base = DecimalToArbitrarySystem(inputToDecimal, 26).ToLower();
+                string inputTranslatedInEnglish = ConvertToEnglish(inputTo26Base);
+
+                finalResultArray.Add(inputTranslatedInEnglish);
             }
 
-            string finalResult = string.Join(" ", tempList2.ToArray());
+            string finalResult = string.Join(" ", finalResultArray.ToArray());
             Console.WriteLine(finalResult);
-
         }
 
-        static string ConvertTo21(string input)
+        internal static string ConvertTo21Base(string input)
         {
-            var sb = new StringBuilder();
+            var result = new StringBuilder();
 
             for (int i = 0; i < input.Length; i++)
             {
                 switch (input[i].ToString())
                 {
-                    case "a": sb.Append("0"); break;
-                    case "b": sb.Append("1"); break;
-                    case "c": sb.Append("2"); break;
-                    case "d": sb.Append("3"); break;
-                    case "e": sb.Append("4"); break;
-                    case "f": sb.Append("5"); break;
-                    case "g": sb.Append("6"); break;
-                    case "h": sb.Append("7"); break;
-                    case "i": sb.Append("8"); break;
-                    case "j": sb.Append("9"); break;
-                    case "k": sb.Append("a"); break;
-                    case "l": sb.Append("b"); break;
-                    case "m": sb.Append("c"); break;
-                    case "n": sb.Append("d"); break;
-                    case "o": sb.Append("e"); break;
-                    case "p": sb.Append("f"); break;
-                    case "q": sb.Append("g"); break;
-                    case "r": sb.Append("h"); break;
-                    case "s": sb.Append("i"); break;
-                    case "t": sb.Append("j"); break;
-                    case "u": sb.Append("k"); break;
+                    case "a": result.Append("0"); break;
+                    case "b": result.Append("1"); break;
+                    case "c": result.Append("2"); break;
+                    case "d": result.Append("3"); break;
+                    case "e": result.Append("4"); break;
+                    case "f": result.Append("5"); break;
+                    case "g": result.Append("6"); break;
+                    case "h": result.Append("7"); break;
+                    case "i": result.Append("8"); break;
+                    case "j": result.Append("9"); break;
+                    case "k": result.Append("a"); break;
+                    case "l": result.Append("b"); break;
+                    case "m": result.Append("c"); break;
+                    case "n": result.Append("d"); break;
+                    case "o": result.Append("e"); break;
+                    case "p": result.Append("f"); break;
+                    case "q": result.Append("g"); break;
+                    case "r": result.Append("h"); break;
+                    case "s": result.Append("i"); break;
+                    case "t": result.Append("j"); break;
+                    case "u": result.Append("k"); break;
                     default: break;
                 }
             }
-            return sb.ToString();
+
+            return result.ToString();
         }
 
-        public static long ArbitraryToDecimalSystem(string number, int radix)
+        internal static long ArbitraryToDecimalSystem(string number, int radix)
         {
             const string Digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            //"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            //"0123456789abcdefghijklmnopqrstuvwxyz"
-            if (radix < 2 || radix > Digits.Length)
-                throw new ArgumentException("The radix must be >= 2 and <= " +
-                    Digits.Length.ToString());
 
-            if (String.IsNullOrEmpty(number))
+            if (radix < 2 || radix > Digits.Length)
+            {
+                throw new ArgumentException("The radix must be >= 2 and <= " +
+                              Digits.Length.ToString());
+            }
+
+            if (string.IsNullOrEmpty(number))
+            {
                 return 0;
+            }
 
             // Make sure the arbitrary numeral system number is in upper case
             number = number.ToUpperInvariant();
@@ -94,9 +95,11 @@ namespace _001.Exam_Problem1
 
                 int digit = Digits.IndexOf(c);
                 if (digit == -1)
+                {
                     throw new ArgumentException(
                         "Invalid character in the arbitrary numeral system number",
                         "number");
+                }
 
                 result += digit * multiplier;
                 multiplier *= radix;
@@ -105,16 +108,20 @@ namespace _001.Exam_Problem1
             return result;
         }
 
-        public static string DecimalToArbitrarySystem(long decimalNumber, int radix)
+        internal static string DecimalToArbitrarySystem(long decimalNumber, int radix)
         {
             const int BitsInLong = 64;
             const string Digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
             if (radix < 2 || radix > Digits.Length)
+            {
                 throw new ArgumentException("The radix must be >= 2 and <= " + Digits.Length.ToString());
+            }
 
             if (decimalNumber == 0)
+            {
                 return "0";
+            }
 
             int index = BitsInLong - 1;
             long currentNumber = Math.Abs(decimalNumber);
@@ -127,7 +134,7 @@ namespace _001.Exam_Problem1
                 currentNumber = currentNumber / radix;
             }
 
-            string result = new String(charArray, index + 1, BitsInLong - index - 1);
+            string result = new string(charArray, index + 1, BitsInLong - index - 1);
             if (decimalNumber < 0)
             {
                 result = "-" + result;
@@ -136,44 +143,45 @@ namespace _001.Exam_Problem1
             return result;
         }
 
-        static string ConvertToCat(string input)
+        internal static string ConvertToEnglish(string input)
         {
-            var sb = new StringBuilder();
+            var result = new StringBuilder();
 
             for (int i = 0; i < input.Length; i++)
             {
                 switch (input[i].ToString())
                 {
-                    case "0": sb.Append("a"); break;
-                    case "1": sb.Append("b"); break;
-                    case "2": sb.Append("c"); break;
-                    case "3": sb.Append("d"); break;
-                    case "4": sb.Append("e"); break;
-                    case "5": sb.Append("f"); break;
-                    case "6": sb.Append("g"); break;
-                    case "7": sb.Append("h"); break;
-                    case "8": sb.Append("i"); break;
-                    case "9": sb.Append("j"); break;
-                    case "a": sb.Append("k"); break;
-                    case "b": sb.Append("l"); break;
-                    case "c": sb.Append("m"); break;
-                    case "d": sb.Append("n"); break;
-                    case "e": sb.Append("o"); break;
-                    case "f": sb.Append("p"); break;
-                    case "g": sb.Append("q"); break;
-                    case "h": sb.Append("r"); break;
-                    case "i": sb.Append("s"); break;
-                    case "j": sb.Append("t"); break;
-                    case "k": sb.Append("u"); break;
-                    case "l": sb.Append("v"); break;
-                    case "m": sb.Append("w"); break;
-                    case "n": sb.Append("x"); break;
-                    case "o": sb.Append("y"); break;
-                    case "p": sb.Append("z"); break;
+                    case "0": result.Append("a"); break;
+                    case "1": result.Append("b"); break;
+                    case "2": result.Append("c"); break;
+                    case "3": result.Append("d"); break;
+                    case "4": result.Append("e"); break;
+                    case "5": result.Append("f"); break;
+                    case "6": result.Append("g"); break;
+                    case "7": result.Append("h"); break;
+                    case "8": result.Append("i"); break;
+                    case "9": result.Append("j"); break;
+                    case "a": result.Append("k"); break;
+                    case "b": result.Append("l"); break;
+                    case "c": result.Append("m"); break;
+                    case "d": result.Append("n"); break;
+                    case "e": result.Append("o"); break;
+                    case "f": result.Append("p"); break;
+                    case "g": result.Append("q"); break;
+                    case "h": result.Append("r"); break;
+                    case "i": result.Append("s"); break;
+                    case "j": result.Append("t"); break;
+                    case "k": result.Append("u"); break;
+                    case "l": result.Append("v"); break;
+                    case "m": result.Append("w"); break;
+                    case "n": result.Append("x"); break;
+                    case "o": result.Append("y"); break;
+                    case "p": result.Append("z"); break;
                     default: break;
                 }
             }
-            return sb.ToString();
+
+            return result.ToString();
         }
     }
 }
