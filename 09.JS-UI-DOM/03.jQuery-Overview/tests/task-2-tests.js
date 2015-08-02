@@ -1,10 +1,10 @@
-/*globals describe, it, require, before, global, $*/
+/*globals describe, it, require, before, global*/
 var expect = require('chai').expect;
 var jsdom = require('jsdom');
 var jq = require('jquery');
-var result = require('../tasks/task-1')();
+var result = require('../tasks/task-2')();
 
-describe('Task #1 Tests', function () {
+describe('Task #2 Tests', function () {
 
   before(function (done) {
     jsdom.env({
@@ -15,10 +15,10 @@ describe('Task #1 Tests', function () {
         global.$ = jq(window);
         Object.keys(window)
           .filter(function (prop) {
-          return prop.toLowerCase().indexOf('html') >= 0;
-        }).forEach(function (prop) {
-          global[prop] = window[prop];
-        });
+            return prop.toLowerCase().indexOf('html') >= 0;
+          }).forEach(function (prop) {
+            global[prop] = window[prop];
+          });
         done();
       }
     });
@@ -28,7 +28,7 @@ describe('Task #1 Tests', function () {
     it('expect nothing to change, whenm no elements with class `button` or `content`', function () {
       var html = '<div id="root"><div></div><ul><li><a href="#">link</a></li></ul></div>';
       document.body.innerHTML = html;
-      result('root');
+      result('#root');
       expect(document.body.innerHTML).to.equal(html);
     });
 
@@ -49,14 +49,14 @@ describe('Task #1 Tests', function () {
         buttonNode.className = 'button';
         container.appendChild(buttonNode);
 
-        tag = possibleTags[(Math.random() * possibleTags.length) | 0];
+        possibleTags[(Math.random() * possibleTags.length) | 0];
         contentNode = document.createElement(tag);
         contentNode.className = 'content';
         container.appendChild(contentNode);
       }
       document.body.innerHTML = container.outerHTML;
 
-      result('root');
+      result('#root');
       var btns = document.getElementsByClassName('button');
       expect(btns).to.have.length(count);
       for (i = 0, len = btns.length; i < len; i += 1) {
@@ -65,9 +65,9 @@ describe('Task #1 Tests', function () {
     });
 
     it('expect to hide the next content on button click, and then show it again, when there are other elements', function () {
-      function createDummyNode(){
-        var tags = ['a', 'button', 'p', 'div', 'ul', 'li', 'ol', 'input', 'table','tr','br','hr', 'span'];
-        var node = document.createElement(tags[(Math.random*tags.length) | 0]);
+      function createDummyNode() {
+        var tags = ['a', 'button', 'p', 'div', 'ul', 'li', 'ol', 'input', 'table', 'tr', 'br', 'hr', 'span'];
+        var node = document.createElement(tags[(Math.random * tags.length) | 0]);
         node.innerHTML = 'Dummy Element: ' + Math.random();
         return node;
       }
@@ -82,33 +82,33 @@ describe('Task #1 Tests', function () {
       container.id = 'root';
       var dymmyObjectChance = 70;
       for (i = 0; i < count; i += 1) {
-        if(Math.random * 100 < dymmyObjectChance){
+        if (Math.random() * 100 < dymmyObjectChance) {
           container.appendChild(createDummyNode());
         }
         tag = possibleTags[(Math.random() * possibleTags.length) | 0];
         buttonNode = document.createElement(tag);
         buttonNode.className = 'button';
-        if (i === ((count / 2) | 0 )) {
+        if (i === ((count / 2) | 0)) {
           buttonNode.id = 'the-button';
         }
         container.appendChild(buttonNode);
 
-        tag = possibleTags[(Math.random() * possibleTags.length) | 0];
+        possibleTags[(Math.random() * possibleTags.length) | 0];
         contentNode = document.createElement(tag);
         contentNode.className = 'content';
 
-        if(Math.random * 100 < dymmyObjectChance){
+        if (Math.random() * 100 < dymmyObjectChance) {
           container.appendChild(createDummyNode());
         }
         container.appendChild(contentNode);
 
-        if(Math.random * 100 < dymmyObjectChance){
+        if (Math.random() * 100 < dymmyObjectChance) {
           container.appendChild(createDummyNode());
         }
       }
       document.body.innerHTML = container.outerHTML;
 
-      result('root');
+      result('#root');
 
       var theButton = document.getElementById('the-button');
 
@@ -125,8 +125,8 @@ describe('Task #1 Tests', function () {
       expect(theContent).to.exist;
       expect(theButton.innerHTML).to.equal('show');
       expect(theContent.style.display).to.equal('none');
-      
-      theButton.dispatchEvent(event);      
+
+      theButton.dispatchEvent(event);
       expect(theButton.innerHTML).to.equal('hide');
       expect(theContent.style.display).to.equal('');
     });
@@ -145,19 +145,19 @@ describe('Task #1 Tests', function () {
         tag = possibleTags[(Math.random() * possibleTags.length) | 0];
         buttonNode = document.createElement(tag);
         buttonNode.className = 'button';
-        if (i === ((count / 2) | 0 )) {
+        if (i === ((count / 2) | 0)) {
           buttonNode.id = 'the-button';
         }
         container.appendChild(buttonNode);
 
-        tag = possibleTags[(Math.random() * possibleTags.length) | 0];
+        possibleTags[(Math.random() * possibleTags.length) | 0];
         contentNode = document.createElement(tag);
         contentNode.className = 'content';
         container.appendChild(contentNode);
       }
       document.body.innerHTML = container.outerHTML;
 
-      result('root');
+      result('#root');
 
       var theButton = document.getElementById('the-button');
 
@@ -174,38 +174,39 @@ describe('Task #1 Tests', function () {
       expect(theContent).to.exist;
       expect(theButton.innerHTML).to.equal('show');
       expect(theContent.style.display).to.equal('none');
-      
-      theButton.dispatchEvent(event);      
+
+      theButton.dispatchEvent(event);
       expect(theButton.innerHTML).to.equal('hide');
       expect(theContent.style.display).to.equal('');
     });
   });
-describe('Invalid', function () {
+
+  describe('Invalid', function () {
     it('Expect to throw, when no params are provided', function () {
       function test() {
         result();
       }
       expect(test).to.throw();
-    });    
-    
+    });
+
     /* Selector validation */
     it('Expect to throw, when undefined is provided as selector', function () {
       function test() {
-        result(undefined, []);
+        result(undefined);
       }
       expect(test).to.throw();
     });
 
     it('Expect to throw, when null is provided as selector', function () {
       function test() {
-        result(null, []);
+        result(null);
       }
       expect(test).to.throw();
     });
 
     it('Expect to throw, when selector that selects nothing is provided', function () {
       function test() {
-        result('TEST_NO_SUCH_SELECTOR', []);
+        result('TEST_NO_SUCH_SELECTOR');
       }
       expect(test).to.throw();
     });

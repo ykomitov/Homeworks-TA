@@ -171,8 +171,8 @@ describe('Task #1 Tests', function () {
         result();
       }
       expect(test).to.throw();
-    });
-
+    });    
+    
     /* Selector validation */
     it('Expect to throw, when undefined is provided as selector and contents is valid', function () {
       function test() {
@@ -200,7 +200,6 @@ describe('Task #1 Tests', function () {
       function test() {
         result('root');
       }
-
       expect(test).to.throw();
     });
 
@@ -208,7 +207,6 @@ describe('Task #1 Tests', function () {
       function test() {
         result('root', undefined);
       }
-
       expect(test).to.throw();
     });
 
@@ -216,50 +214,46 @@ describe('Task #1 Tests', function () {
       function test() {
         result('root', null);
       }
-
       expect(test).to.throw();
     });
 
     it('Expect to throw and not to change the #root, when contents contains not a number or string at first position, selector is valid', function () {
       var contents = [[], 1, 'String'],
-          selector = 'root',
-          root = document.getElementById(selector),
-          rootContent = '<h1>THis should remain</h1>';
-      root.innerHTML = rootContent;
+        selector = 'root',
+        root = document.getElementById(selector),
+        rootContent = '<h1>THis should remain</h1>';
+      root.innerHTML = rootContent; 
       function test() {
         result(selector, contents);
       }
-
       expect(test).to.throw();
       expect(root.innerHTML).to.equal(rootContent);
     });
-
+    
     it('Expect to throw and not to change the #root, when contents contains not a number or string at last position, selector is valid', function () {
       var contents = [1, 'String', {}],
-          selector = 'root',
-          root = document.getElementById(selector),
-          rootContent = '<h1>THis should remain</h1>';
+        selector = 'root',
+        root = document.getElementById(selector),
+        rootContent = '<h1>THis should remain</h1>';
 
-      root.innerHTML = rootContent;
+      root.innerHTML = rootContent; 
       function test() {
-        result(selector, contents);
+        result(selector, contents);        
       }
-
       expect(test).to.throw();
       expect(root.innerHTML).to.equal(rootContent);
     });
-
+    
     it('Expect to throw and not to change the #root, when contents contains not a number or string in the middle, selector is valid', function () {
       var contents = [1, 'String', {}, 'THIS', 'JS OOP'],
-          selector = 'root',
-          root = document.getElementById(selector),
-          rootContent = '<h1>THis should remain</h1>';
+        selector = 'root',
+        root = document.getElementById(selector),
+        rootContent = '<h1>THis should remain</h1>';
 
-      root.innerHTML = rootContent;
+      root.innerHTML = rootContent; 
       function test() {
         result(selector, contents);
       }
-
       expect(test).to.throw();
       expect(root.innerHTML).to.equal(rootContent);
     });
