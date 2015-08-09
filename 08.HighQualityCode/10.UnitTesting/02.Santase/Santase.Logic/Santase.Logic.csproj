@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46AE5102-EB9C-4BA9-9ACF-18816FC97E4B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{76FD6AC0-6F00-4F92-8857-876E60AA9FE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.Students_and_courses</RootNamespace>
-    <AssemblyName>01.Students-and-courses</AssemblyName>
+    <RootNamespace>Santase.Logic</RootNamespace>
+    <AssemblyName>Santase.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,11 +39,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Announce.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardExtensions.cs" />
+    <Compile Include="Cards\CardSuit.cs" />
+    <Compile Include="Cards\CardType.cs" />
+    <Compile Include="Cards\Deck.cs" />
+    <Compile Include="Cards\IDeck.cs" />
+    <Compile Include="CardWinner.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\RandomProvider.cs" />
+    <Compile Include="GameHand.cs" />
+    <Compile Include="GameRound.cs" />
+    <Compile Include="ICardWinner.cs" />
+    <Compile Include="IGameHand.cs" />
+    <Compile Include="IGameRound.cs" />
+    <Compile Include="InternalGameException.cs" />
+    <Compile Include="IPlayerActionValidater.cs" />
+    <Compile Include="ISantaseGame.cs" />
+    <Compile Include="PlayerActionValidater.cs" />
+    <Compile Include="PlayerPosition.cs" />
+    <Compile Include="Players\BasePlayer.cs" />
+    <Compile Include="Players\IPlayer.cs" />
+    <Compile Include="Players\PlayerAction.cs" />
+    <Compile Include="Players\PlayerActionType.cs" />
+    <Compile Include="Players\PlayerTurnContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="RoundStates\BaseRoundState.cs" />
+    <Compile Include="RoundStates\FinalRoundState.cs" />
+    <Compile Include="RoundStates\MoreThanTwoCardsLeftRoundState.cs" />
+    <Compile Include="RoundStates\StartRoundState.cs" />
+    <Compile Include="RoundStates\TwoCardsLeftRoundState.cs" />
+    <Compile Include="SantaseGame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

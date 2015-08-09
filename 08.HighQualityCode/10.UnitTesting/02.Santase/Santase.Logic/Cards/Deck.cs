@@ -48,11 +48,13 @@ namespace Santase.Logic.Cards
 
         public void ChangeTrumpCard(Card newCard)
         {
-            this.trumpCard = newCard;
-            if (this.listOfCards.Count > 0)
+            if (this.listOfCards.Count < 1)
             {
-                this.listOfCards[0] = newCard;
+                throw new InternalGameException("Deck is empty!");
             }
+
+            this.trumpCard = newCard;
+            this.listOfCards[0] = newCard;
         }
 
         private IEnumerable<CardType> GetAllCardTypes()
