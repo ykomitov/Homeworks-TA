@@ -1,0 +1,17 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+public class TestClass
+{
+	<# for(int i = 0; i < 3; i++){#>
+private string field<#=i#> ="";
+	<#}#>
+
+	private void TestMethod()
+	{
+	}
+}
