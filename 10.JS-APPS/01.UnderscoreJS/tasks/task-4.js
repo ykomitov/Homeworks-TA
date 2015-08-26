@@ -28,13 +28,19 @@
 function solve() {
     return function (animals) {
         _.chain(animals)
+            .sortBy('species').reverse()
             .groupBy('species')
-            .sortBy()
-            .sortBy('legsCount')
-            .each(function (group) {
-                console.log(Array(group.name.length + 1).join('-'));
-                console.log(group.name);
-                console.log(Array(group.name.length + 1).join('-'));
+            .mapObject(function (group) {
+                var groupedByLegs = _.sortBy(group, 'legsCount');
+
+                group = groupedByLegs;
+                return group;
+            })
+            .each(function (group, key) {
+                console.log(Array(key.length + 2).join('-'));
+                console.log(key + ':');
+                console.log(Array(key.length + 2).join('-'));
+
                 _.each(group, function (animal) {
                     console.log(animal.name + ' has ' + animal.legsCount + ' legs');
                 })
