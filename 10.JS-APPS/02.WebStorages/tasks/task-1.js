@@ -8,30 +8,52 @@ function solve() {
         localStorage.setItem('number', this.numberAsString);
         localStorage.setItem('numberOfGuesses', 0);
 
-        return this;
+        // return this;
     }
 
     function guess(number) {
         var i,
             sheepCount = 0,
             ramCount = 0,
-            numberAsArr = number.toString().split(''),
-            originalNumAsStr = localStorage.getItem('number'),
-            originalNumAsArr = originalNumAsStr.split(''),
+            numberAsArr = number.toString().split('') || undefined,
+            originalNumAsStr = localStorage.getItem('number') || undefined,
+            originalNumAsArr,
             result = {sheep: 0, rams: 0},
             currentHighScore = JSON.parse(localStorage.getItem('highScore')) || {},
-            currentNumberOfGuesses = localStorage.getItem('numberOfGuesses');
+            currentNumberOfGuesses = localStorage.getItem('numberOfGuesses') || 0;
+
+        // Throw if init was not called before guess
+        if (originalNumAsStr === undefined) {
+            console.log('Game is not yet initialized!');
+            throw new Error('Game is not yet initialized!');
+        }
+
+        originalNumAsArr = originalNumAsStr.split('');
 
         // Check for exact match & update high score
         if (number == originalNumAsStr) {
             currentNumberOfGuesses++;
             var player = localStorage.getItem('playerName');
-            currentHighScore[player] = currentNumberOfGuesses;
+            var isNewPlayer = JSON.stringify(currentHighScore).indexOf('player') < 0;
 
-            //TODO: check if player name exists and if current score is better than player highscore
-            localStorage.setItem('highScore', JSON.stringify(currentHighScore));
-            console.log('success');
-            return;
+            if (isNewPlayer) {
+                currentHighScore[player] = currentNumberOfGuesses;
+
+                localStorage.setItem('highScore', JSON.stringify(currentHighScore));
+                localStorage.setItem('number', undefined);
+                console.log('success');
+                return;
+            } else {
+                if (currentHighScore[player] >= currentNumberOfGuesses) {
+                    console.log('success');
+                    return;
+                } else {
+                    localStorage.setItem('highScore', JSON.stringify(currentHighScore));
+                    localStorage.setItem('number', undefined);
+                    console.log('success');
+                    return;
+                }
+            }
         }
 
         // Initial check for 'rams'
@@ -67,6 +89,7 @@ function solve() {
     }
 
     function getHighScore(count) {
+        // TODO: implement count!!!
         var sortable = [];
         var highScore = JSON.parse(localStorage.getItem('highScore'));
 
@@ -77,6 +100,8 @@ function solve() {
         sortable.sort(function (a, b) {
             return a[1] - b[1]
         });
+
+        console.log(sortable);
 
         for (var i = 0; i < sortable.length; i += 1) {
             console.log(i + 1 + ' - ' + sortable[i][0] + ': ' + sortable[i][1]);
