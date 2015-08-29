@@ -192,5 +192,10 @@ FakesAssemblies/
 # Visual Studio 6 build log
 *.plg
 
+# Webstorm
+node_modules/
+bower_components/
+.idea
+
 # Visual Studio 6 workspace options file
 *.opt
