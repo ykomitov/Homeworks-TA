@@ -16,7 +16,7 @@
                     Title = song.Element("title").Value,
                 };
 
-            Console.WriteLine("Found {0} titles:", titles.Count());
+            Console.WriteLine("Found {0} songs:\r\n", titles.Count());
 
             var counter = 1;
             foreach (var title in titles)

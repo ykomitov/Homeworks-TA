@@ -48,7 +48,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\01-02.ExtractWithDOMParser.csproj">
+    <ProjectReference Include="..\01-02.ExtractWithDomParser\01-02.ExtractWithDOMParser.csproj">
       <Project>{09527a87-acb1-4138-bcb0-d569324cbf02}</Project>
       <Name>01-02.ExtractWithDOMParser</Name>
     </ProjectReference>

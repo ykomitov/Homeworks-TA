@@ -1,106 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <catalogue xmlns:catalogue="urn:catalogue">
   <album>
     <name>Kill 'Em All</name>
     <artist>Metallica</artist>
     <year>1983</year>
     <producer>Paul Curcio</producer>
-    <price>11.98</price>
+    <price>$11.98</price>
     <songs>
       <song>
-        <titile>Hit The Lights</titile>
+        <title>Hit The Lights</title>
         <duration>4:17</duration>
       </song>
       <song>
-        <titile>The Four Horsemen</titile>
+        <title>The Four Horsemen</title>
         <duration>7:12</duration>
       </song>
       <song>
-        <titile>Motorbreath</titile>
+        <title>Motorbreath</title>
         <duration>3:08</duration>
       </song>
       <song>
-        <titile>Jump In The Fire</titile>
+        <title>Jump In The Fire</title>
         <duration>4:41</duration>
       </song>
       <song>
-        <titile>(Anesthesia)--Pulling Teeth</titile>
+        <title>(Anesthesia)--Pulling Teeth</title>
         <duration>4:14</duration>
       </song>
       <song>
-        <titile>Whiplash</titile>
+        <title>Whiplash</title>
         <duration>4:10</duration>
       </song>
       <song>
-        <titile>Phantom Lord</titile>
+        <title>Phantom Lord</title>
         <duration>5:01</duration>
       </song>
       <song>
-        <titile>No Remorse</titile>
+        <title>No Remorse</title>
         <duration>6:26</duration>
       </song>
       <song>
-        <titile>Seek &amp; Destroy</titile>
+        <title>Seek &amp; Destroy</title>
         <duration>6:55</duration>
       </song>
       <song>
-        <titile>Metal Militia</titile>
+        <title>Metal Militia</title>
         <duration>5:09</duration>
       </song>
     </songs>
-  </album>
-  <album>
-    <name>To Be Deleted</name>
-    <artist>Metallica</artist>
-    <year>1983</year>
-    <producer>Paul Curcio</producer>
-    <price>111.98</price>
   </album>
   <album>
     <name>Death Magnetic</name>
     <artist>Metallica</artist>
     <year>2008</year>
     <producer>Rick Rubin</producer>
-    <price>7.99</price>
+    <price>$7.99</price>
     <songs>
       <song>
-        <titile>That Was Just Your Life</titile>
+        <title>That Was Just Your Life</title>
         <duration>7:08</duration>
       </song>
       <song>
-        <titile>The End Of The Line</titile>
+        <title>The End Of The Line</title>
         <duration>7:52</duration>
       </song>
       <song>
-        <titile>Broken. Beat &amp; Scarred</titile>
+        <title>Broken, Beat &amp; Scarred</title>
         <duration>6:24</duration>
       </song>
       <song>
-        <titile>The Day That Never Comes</titile>
+        <title>The Day That Never Comes</title>
         <duration>7:56</duration>
       </song>
       <song>
-        <titile>All Nightmare Long</titile>
+        <title>All Nightmare Long</title>
         <duration>7:57</duration>
       </song>
       <song>
-        <titile>Cyanide</titile>
+        <title>Cyanide</title>
         <duration>6:39</duration>
       </song>
       <song>
-        <titile>The Unforgiven III</titile>
+        <title>The Unforgiven III</title>
         <duration>7:46</duration>
       </song>
       <song>
-        <titile>The Judas Kiss</titile>
+        <title>The Judas Kiss</title>
         <duration>8:00</duration>
       </song>
       <song>
-        <titile>Suicide &amp; Redemption</titile>
+        <title>Suicide &amp; Redemption</title>
         <duration>9:57</duration>
       </song>
       <song>
-        <titile>My Apocalypse</titile>
+        <title>My Apocalypse</title>
         <duration>5:01</duration>
       </song>
     </songs>
@@ -110,70 +104,70 @@
     <artist>Farmers Market</artist>
     <year>2008</year>
     <producer>Stian Carstensen</producer>
-    <price>5.58</price>
+    <price>$5.58</price>
     <songs>
       <song>
-        <titile>Surfin' USSR</titile>
+        <title>Surfin' USSR</title>
         <duration>4:49</duration>
       </song>
       <song>
-        <titile>Surfin' USSR Part 2</titile>
+        <title>Surfin' USSR Part 2</title>
         <duration>2:46</duration>
       </song>
       <song>
-        <titile>Lodtschitze Mini Maritza</titile>
+        <title>Lodtschitze Mini Maritza</title>
         <duration>5:07</duration>
       </song>
       <song>
-        <titile>Anyone Who Remembers Vladiwoodstock Wasn't There!</titile>
+        <title>Anyone Who Remembers Vladiwoodstock Wasn't There!</title>
         <duration>4:34</duration>
       </song>
       <song>
-        <titile>Dissident Harmony Sisters' Camel Call</titile>
+        <title>Dissident Harmony Sisters' Camel Call</title>
         <duration>1:37</duration>
       </song>
       <song>
-        <titile>To Hell And Baku</titile>
+        <title>To Hell And Baku</title>
         <duration>3:57</duration>
       </song>
       <song>
-        <titile>Tractor Tracks Across The Tundra</titile>
+        <title>Tractor Tracks Across The Tundra</title>
         <duration>1:15</duration>
       </song>
       <song>
-        <titile>From Prussia With Love</titile>
+        <title>From Prussia With Love</title>
         <duration>4:08</duration>
       </song>
       <song>
-        <titile>Red Square Dance</titile>
+        <title>Red Square Dance</title>
         <duration>7:47</duration>
       </song>
       <song>
-        <titile>The Dismantling Of The Soviet Onion Made Us Cry...</titile>
+        <title>The Dismantling Of The Soviet Onion Made Us Cry...</title>
         <duration>3:21</duration>
       </song>
       <song>
-        <titile>Kalashnikov Wedding</titile>
+        <title>Kalashnikov Wedding</title>
         <duration>2:50</duration>
       </song>
       <song>
-        <titile>Steroid Train Trip</titile>
+        <title>Steroid Train Trip</title>
         <duration>2:21</duration>
       </song>
       <song>
-        <titile>Meanwhile Back At The Agricultural Workers Collective</titile>
+        <title>Meanwhile Back At The Agricultural Workers Collective</title>
         <duration>4:58</duration>
       </song>
       <song>
-        <titile>Ladyboy's Night At The Cultural Relativism Saloon (Fremling)</titile>
+        <title>Ladyboy's Night At The Cultural Relativism Saloon (Fremling)</title>
         <duration>2:05</duration>
       </song>
       <song>
-        <titile>One Day. Son. All I Own Will Still Belong To The State</titile>
+        <title>One Day, Son, All I Own Will Still Belong To The State</title>
         <duration>6:09</duration>
       </song>
       <song>
-        <titile>Yagoda</titile>
+        <title>Yagoda</title>
         <duration>2:35</duration>
       </song>
     </songs>
