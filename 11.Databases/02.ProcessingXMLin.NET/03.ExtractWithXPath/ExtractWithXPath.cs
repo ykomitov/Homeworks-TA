@@ -4,9 +4,9 @@
     using System.Collections;
     using System.Xml.XPath;
 
-    class ExtractWithXPath
+    public class ExtractWithXPath
     {
-        static void Main()
+        public static void Main()
         {
             Hashtable artistsList = new Hashtable();
             var doc = new XPathDocument("../../../01.catalogue.xml");

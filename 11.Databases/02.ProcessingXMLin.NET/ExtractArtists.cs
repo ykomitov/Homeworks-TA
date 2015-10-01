@@ -4,9 +4,9 @@
     using System.Collections;
     using System.Xml;
 
-    class ExtractArtists
+    public class ExtractArtists
     {
-        static void Main()
+        public static void Main()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("../../01.catalogue.xml");
