@@ -9,22 +9,21 @@
         public static void Main()
         {
             string line;
-            string fileName = "../../sample.xml";
+            string fileName = "sample.xml";
             Encoding encoding = Encoding.GetEncoding("windows-1251");
             string[] tags = { "name", "address", "phone" };
 
             using (System.IO.StreamReader reader = new System.IO.StreamReader("../../sample.txt"))
             {
-                using (XmlTextWriter writer = new XmlTextWriter(fileName, encoding))
+                using (XmlTextWriter writer = new XmlTextWriter("../../" + fileName, encoding))
                 {
                     writer.Formatting = Formatting.Indented;
                     writer.IndentChar = '\t';
                     writer.Indentation = 1;
 
                     writer.WriteStartDocument();
-                    writer.WriteStartElement("persons");
-                    writer.WriteAttributeString("name", "Person List");
-
+                    writer.WriteStartElement("person");
+                    writer.WriteAttributeString("name", "Person Details");
 
                     // Read the input file line by line.
                     for (int i = 0; i < tags.Length; i++)
@@ -33,9 +32,8 @@
                         writer.WriteStartElement(tags[i]);
                         writer.WriteValue(line);
                         writer.WriteEndElement();
-
-                        Console.WriteLine(line);
                     }
+
                     writer.WriteEndElement();
                 }
             }

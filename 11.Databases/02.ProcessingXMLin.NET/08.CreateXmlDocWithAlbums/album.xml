@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<albums>
+  <album>
+    <name>Kill 'Em All</name>
+    <artist>Metallica</artist>
+  </album>
+  <album>
+    <name>Death Magnetic</name>
+    <artist>Metallica</artist>
+  </album>
+  <album>
+    <name>Surfin' USSR</name>
+    <artist>Farmers Market</artist>
+  </album>
+  <album>
+    <name>TEST NAME</name>
+    <artist>DELETE ARTIST</artist>
+  </album>
+</albums>

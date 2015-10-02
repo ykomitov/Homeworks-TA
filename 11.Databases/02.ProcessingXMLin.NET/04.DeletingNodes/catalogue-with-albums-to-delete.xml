@@ -50,13 +50,6 @@
     </songs>
   </album>
   <album>
-    <name>To Be Deleted</name>
-    <artist>Metallica</artist>
-    <year>1983</year>
-    <producer>Paul Curcio</producer>
-    <price>111.98</price>
-  </album>
-  <album>
     <name>Death Magnetic</name>
     <artist>Metallica</artist>
     <year>2008</year>
@@ -111,6 +104,79 @@
     <year>2008</year>
     <producer>Stian Carstensen</producer>
     <price>5.58</price>
+    <songs>
+      <song>
+        <titile>Surfin' USSR</titile>
+        <duration>4:49</duration>
+      </song>
+      <song>
+        <titile>Surfin' USSR Part 2</titile>
+        <duration>2:46</duration>
+      </song>
+      <song>
+        <titile>Lodtschitze Mini Maritza</titile>
+        <duration>5:07</duration>
+      </song>
+      <song>
+        <titile>Anyone Who Remembers Vladiwoodstock Wasn't There!</titile>
+        <duration>4:34</duration>
+      </song>
+      <song>
+        <titile>Dissident Harmony Sisters' Camel Call</titile>
+        <duration>1:37</duration>
+      </song>
+      <song>
+        <titile>To Hell And Baku</titile>
+        <duration>3:57</duration>
+      </song>
+      <song>
+        <titile>Tractor Tracks Across The Tundra</titile>
+        <duration>1:15</duration>
+      </song>
+      <song>
+        <titile>From Prussia With Love</titile>
+        <duration>4:08</duration>
+      </song>
+      <song>
+        <titile>Red Square Dance</titile>
+        <duration>7:47</duration>
+      </song>
+      <song>
+        <titile>The Dismantling Of The Soviet Onion Made Us Cry...</titile>
+        <duration>3:21</duration>
+      </song>
+      <song>
+        <titile>Kalashnikov Wedding</titile>
+        <duration>2:50</duration>
+      </song>
+      <song>
+        <titile>Steroid Train Trip</titile>
+        <duration>2:21</duration>
+      </song>
+      <song>
+        <titile>Meanwhile Back At The Agricultural Workers Collective</titile>
+        <duration>4:58</duration>
+      </song>
+      <song>
+        <titile>Ladyboy's Night At The Cultural Relativism Saloon (Fremling)</titile>
+        <duration>2:05</duration>
+      </song>
+      <song>
+        <titile>One Day. Son. All I Own Will Still Belong To The State</titile>
+        <duration>6:09</duration>
+      </song>
+      <song>
+        <titile>Yagoda</titile>
+        <duration>2:35</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Surfin' USSR</name>
+    <artist>Farmers Market</artist>
+    <year>2008</year>
+    <producer>Stian Carstensen</producer>
+    <price>53.58</price>
     <songs>
       <song>
         <titile>Surfin' USSR</titile>
