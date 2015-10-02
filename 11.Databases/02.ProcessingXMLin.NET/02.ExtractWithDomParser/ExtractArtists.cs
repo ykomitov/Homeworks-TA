@@ -9,7 +9,7 @@
         public static void Main()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("../../../01.catalogue.xml");
+            doc.Load("../../../01.CreateXml/catalogue.xml");
             XmlNode rootNode = doc.DocumentElement;
             XmlNodeList artists = rootNode.SelectNodes("/catalogue/album/artist");
             Hashtable artistsList = new Hashtable();

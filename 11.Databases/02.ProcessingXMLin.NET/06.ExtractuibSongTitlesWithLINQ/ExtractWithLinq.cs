@@ -8,7 +8,7 @@
     {
         public static void Main()
         {
-            XDocument xmlDoc = XDocument.Load("../../../01.catalogue.xml");
+            XDocument xmlDoc = XDocument.Load("../../../01.CreateXml/catalogue.xml");
             var titles =
                 from song in xmlDoc.Descendants("song")
                 select new

@@ -9,7 +9,7 @@
         public static void Main()
         {
             Hashtable artistsList = new Hashtable();
-            var doc = new XPathDocument("../../../01.catalogue.xml");
+            var doc = new XPathDocument("../../../01.CreateXml/catalogue.xml");
             var nav = doc.CreateNavigator();
             var artists = nav.Select("/catalogue/album/artist");
 

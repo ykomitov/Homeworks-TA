@@ -8,7 +8,7 @@
         public static void Main()
         {
             Console.WriteLine("Song titles in the catalogue:\r\n");
-            using (XmlReader reader = XmlReader.Create("../../../01.catalogue.xml"))
+            using (XmlReader reader = XmlReader.Create("../../../01.CreateXml/catalogue.xml"))
             {
                 while (reader.Read())
                 {
