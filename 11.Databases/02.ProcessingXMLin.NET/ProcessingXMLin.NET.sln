@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.ExtractAlbums", "11.Extr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.ExtractAlbumsWithLinq", "12.ExtractAlbumsWithLinq\12.ExtractAlbumsWithLinq.csproj", "{1516C3FE-1102-4B1B-A032-1BD4AF5C8515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.DirContentToXmlWithLinq", "10.DirContentToXmlWithLinq\10.DirContentToXmlWithLinq.csproj", "{A6AAA087-5359-4472-8B92-20CE94B4B83F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{1516C3FE-1102-4B1B-A032-1BD4AF5C8515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1516C3FE-1102-4B1B-A032-1BD4AF5C8515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1516C3FE-1102-4B1B-A032-1BD4AF5C8515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AAA087-5359-4472-8B92-20CE94B4B83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AAA087-5359-4472-8B92-20CE94B4B83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AAA087-5359-4472-8B92-20CE94B4B83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AAA087-5359-4472-8B92-20CE94B4B83F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,14 +1,11 @@
-﻿/*Write a program to traverse given directory and write to a XML file its contents together with all subdirectories and files.
-
-    Use tags <file> and <dir> with appropriate attributes.
-    For the generation of the XML document use the class XmlWriter*/
-
-namespace Processing.Xml
+﻿namespace Processing.Xml
 {
     using System;
+    using System.Linq;
     using System.Xml;
+    using System.Xml.Linq;
 
-    public class WriteDirContentToXml
+    public class WriteDirContentToXmlWithLinq
     {
         public static void Main()
         {
@@ -18,12 +15,10 @@ namespace Processing.Xml
 
             using (XmlWriter writer = XmlWriter.Create("../../directoryContent.xml"))
             {
-                writer.WriteStartDocument();
+                XDocument rootDocument = new XDocument(new XElement("root"));
+                XElement finalDocument = SaveDirectoryTreeToXml(writer, rootDocument.Element("root"), directory);
 
-                // Write the Root Element
-                writer.WriteStartElement("root");
-
-                SaveDirectoryTreeToXml(writer, directory);
+                finalDocument.Save(writer);
             }
 
             // Keep the console window open in debug mode.
@@ -31,7 +26,7 @@ namespace Processing.Xml
             Console.ReadKey();
         }
 
-        public static void SaveDirectoryTreeToXml(XmlWriter writer, System.IO.DirectoryInfo root)
+        public static XElement SaveDirectoryTreeToXml(XmlWriter writer, XElement element, System.IO.DirectoryInfo root)
         {
             System.IO.FileInfo[] files = null;
             System.IO.DirectoryInfo[] subDirs = null;
@@ -50,9 +45,7 @@ namespace Processing.Xml
             {
                 foreach (System.IO.FileInfo fi in files)
                 {
-                    writer.WriteStartElement("file");
-                    writer.WriteValue(fi.Name);
-                    writer.WriteEndElement();
+                    element.Add(new XElement("file", fi.Name));
                 }
 
                 // Find all the subdirectories under this directory.
@@ -60,12 +53,14 @@ namespace Processing.Xml
 
                 foreach (System.IO.DirectoryInfo dirInfo in subDirs)
                 {
-                    writer.WriteStartElement("dir");
-                    writer.WriteAttributeString("name", dirInfo.Name);
-                    SaveDirectoryTreeToXml(writer, dirInfo);
-                    writer.WriteEndElement();
+                    element.Add(new XElement("dir", new XAttribute("name", dirInfo.Name)));
+
+                    // Recursive call, selecting each distinct name attribute
+                    SaveDirectoryTreeToXml(writer, element.Elements("dir").First(x => x.Attribute("name").Value == dirInfo.Name), dirInfo);
                 }
             }
+
+            return element;
         }
     }
 }
