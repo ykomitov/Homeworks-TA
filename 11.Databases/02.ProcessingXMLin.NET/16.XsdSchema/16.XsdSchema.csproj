@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4EC20D39-57FE-476F-ACAC-C29D60954381}</ProjectGuid>
+    <ProjectGuid>{232B4D5E-0FB4-47D6-9C4C-9E334C0EF5DD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.CreateXml</RootNamespace>
-    <AssemblyName>_01.CreateXml</AssemblyName>
+    <RootNamespace>_16.XsdSchema</RootNamespace>
+    <AssemblyName>16.XsdSchema</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,13 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="catalogue.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="catalogue.xml" />
-    <Content Include="catalogue.xsl" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

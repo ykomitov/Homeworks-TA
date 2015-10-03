@@ -23,7 +23,8 @@ namespace Processing.Xml
             // Select all nodes where year is matching criteria.
             IEnumerable<XElement> queryResult = root.Descendants("album")
                                                        .Where(x => (int)x.Element("year") < year)
-                                                     //.Select(y => y.Element("name"))
+
+                                                    // .Select(y => y.Element("name"))
                                                        .ToList();
 
             Console.WriteLine("Albums, published {0} years ago or earlier (before {1}):\r\n", NumberOfYears, year);
