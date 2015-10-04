@@ -54,8 +54,9 @@
                 Console.WriteLine("{0}", item.Title);
             }
 
-            // Generate html page containing all videos from the RSS feed of the Academy
-            File.WriteAllText("../../videos.html", HelperMethods.BuildHtml(outputVideos));
+            // Generate html page containing all videos from the RSS feed of the Academy & open it in the default browser
+            File.WriteAllText("videos.html", HelperMethods.BuildHtml(outputVideos));
+            System.Diagnostics.Process.Start("videos.html");
         }
     }
 }
