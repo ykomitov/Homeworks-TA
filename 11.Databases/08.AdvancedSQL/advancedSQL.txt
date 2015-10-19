@@ -136,7 +136,7 @@
 	  UserPass nvarchar(100) NOT NULL,
 	  FirstName nvarchar(50) NOT NULL,
 	  LastName nvarchar(50) NOT NULL,
-	  LastLogin datetime NOT NULL,
+	  LastLogin datetime NULL,
 	  CONSTRAINT PK_Users PRIMARY KEY(UserId)
 	)
 	
@@ -202,8 +202,23 @@
 --Problem 20--
 --Write SQL statements to update some of the records in the Users and Groups tables.
 
+	USE TelerikAcademy
+
+	UPDATE Users
+	SET FirstName = 'Alfred'
+	WHERE UserId=3 
+
+	UPDATE Groups
+	SET GroupName = 'WTF'
+	WHERE GroupId = 1 
+
 --Problem 21--
 --Write SQL statements to delete some of the records from the Users and Groups tables.
+
+	USE TelerikAcademy
+
+	DELETE FROM Users
+	WHERE UserId = 4
 
 --Problem 22--
 --Write SQL statements to insert in the Users table the names of all employees from the Employees table.
@@ -212,24 +227,73 @@
 --    For username use the first letter of the first name + the last name (in lowercase).
 --    Use the same for the password, and NULL for last login time.
 
+	USE TelerikAcademy
+
+	INSERT INTO Users
+	(UserName, UserPass, FirstName, LastName, LastLogin, GroupId)
+	-- First 3 letters used from first name because otherwise there are duplications
+	SELECT LOWER(LEFT(e.FirstName, 3)) + LOWER(e.LastName) AS 'UserName', LOWER(LEFT(e.FirstName, 1) + e.LastName) AS 'UserPass', e.FirstName, e.LastName, NULL, NULL
+	FROM dbo.Employees e
+
 --Problem 23--
 --Write a SQL statement that changes the password to NULL for all users that have not been in the system since 10.03.2010.
 
+	USE TelerikAcademy
+	UPDATE  Users
+	SET Pass = NULL
+	WHERE DATEDIFF(day, LastLogin, '2016-3-10 00:00:00') > 0
 
 --Problem 24--
 --Write a SQL statement that deletes all users without passwords (NULL password).
+	
+	USE TelerikAcademy
+	DELETE Users
+	WHERE Pass IS NULL
 
 --Problem 25--
 --Write a SQL query to display the average employee salary by department and job title.
 
+	USE TelerikAcademy
+	SELECT AVG(e.Salary), e.JobTitle , d.Name
+	FROM Employees e, Departments d
+	WHERE d.DepartmentID = e.DepartmentID
+	GROUP BY e.JobTitle, d.Name
+
 --Problem 26--
 --Write a SQL query to display the minimal employee salary by department and job title along with the name of some of the employees that take it.
+
+	USE TelerikAcademy
+	SELECT MIN(e.Salary) as 'Min Salary', e.JobTitle , d.Name as 'Department name', 
+	e.FirstName + ' '+ e.LastName as 'Full Name'
+	FROM Employees e, Departments d
+	WHERE d.DepartmentID = e.DepartmentID
+	GROUP BY e.JobTitle, d.Name, e.FirstName + ' ' + e.LastName
 
 --Problem 27--
 --Write a SQL query to display the town where maximal number of employees work.
 
+	USE TelerikAcademy
+	SELECT TOP  1 COUNT(a.TownID) as [EmployeeCount]
+	FROM Addresses a
+	JOIN Employees e
+	ON e.AddressID=a.AddressID
+	JOIN Towns t
+	ON t.TownID=a.TownID
+	GROUP BY t.TownID 
+	ORDER BY EmployeeCount DESC
+
 --Problem 28--
 --Write a SQL query to display the number of managers from each town.
+
+	USE TelerikAcademy
+	SELECT  COUNT(a.TownID) as [EmployeeCount], t.Name FROM Addresses a
+	JOIN Employees e
+	ON e.AddressID=a.AddressID
+	JOIN Towns t
+	ON t.TownID=a.TownID
+	WHERE e.ManagerID IS  NOT NULL
+	GROUP BY t.Name 
+	ORDER BY EmployeeCount DESC
 
 --Problem 29--
 --Write a SQL to create table WorkHours to store work reports for each employee (employee id, date, task, hours, comments).
@@ -239,17 +303,144 @@
 --    Define a table WorkHoursLogs to track all changes in the WorkHours table with triggers.
 --        For each change keep the old record data, the new record data and the command (insert / update / delete).
 
+	USE TelerikAcademy
+	--WorkHours--
+	DROP TABLE dbo.WorkHours
+	CREATE TABLE WorkHours(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	EmployeeId INT NOT NULL,
+	DateOfReport DATETIME,
+	Task NVARCHAR(50),
+	HoursOfWork INT,
+	Comments NVARCHAR(500),
+	CONSTRAINT FK_WorkHours_Employees FOREIGN KEY (EmployeeId) REFERENCES Employees(EmployeeID)
+	)
+
+
+	--Add some records--
+	DECLARE @counter int
+	SET @counter=0
+
+	WHILE @counter<30
+	BEGIN
+	INSERT INTO WorkHours(EmployeeId,DateOfReport,Task,HoursOfWork,Comments)
+	VALUES (@counter,GETDATE(),'task'+CONVERT(VARCHAR(5), @counter),8,'comment'+CONVERT(VARCHAR(5), @counter))
+	SET @counter=@counter +1
+	END
+	DROP TABLE WorkHoursLog
+	GO
+
+	--WorkLogs--
+	CREATE TABLE WorkHoursLog(
+	Id int PRIMARY KEY IDENTITY(1,1),
+	WorkHoursId int,
+	EmployeeId INT FOREIGN KEY REFERENCES Employees(EmployeeId),
+	DateOfReport DATETIME,
+	Task NVARCHAR(50),
+	HoursOfWork INT,
+	Comments NVARCHAR(500),
+	[Action] varchar(10) NOT NULL
+	)
+
+	-- triggers --
+
+	--INSERT--
+	DROP TRIGGER trg_WorkHours_Insert
+	GO
+	CREATE TRIGGER trg_WorkHours_Insert ON WorkHours
+	FOR INSERT 
+	AS
+	INSERT INTO WorkHoursLog(WorkHoursId, EmployeeId, DateOfReport, Task, HoursOfWork, Comments, [Action])
+		SELECT Id, EmployeeID, DateOfReport, Task, HoursOfWork, Comments, 'Insert'
+		FROM inserted
+	PRINT 'FOR INSERT trigger fired.'
+	GO
+
+	--DELTETE--
+	DROP TRIGGER trg_WorkHours_Delete
+	GO
+	CREATE TRIGGER trg_WorkHours_Delete ON WorkHours
+	FOR DELETE 
+	AS
+	INSERT INTO WorkHoursLog(WorkHoursId,EmployeeId, DateOfReport, Task, HoursOfWork, Comments, [Action])
+		SELECT Id, EmployeeId, DateOfReport, Task, HoursOfWork, Comments, 'Delete'
+		FROM deleted
+	PRINT 'FOR DELETE trigger fired.'
+	GO
+
+	--UPDATE--
+	DROP TRIGGER trg_WorkHours_Update
+	GO
+	CREATE TRIGGER trg_WorkHours_Update ON WorkHours
+	FOR UPDATE 
+	AS
+	INSERT INTO WorkHoursLog(WorkHoursId,EmployeeId, DateOfReport, Task, HoursOfWork, Comments, [Action])
+		SELECT Id, EmployeeId, DateOfReport, Task, HoursOfWork, Comments, 'UPDATE'
+		FROM inserted
+	PRINT 'FOR UPDATE trigger fired.'
+	GO
+
+
+	--Trigers tests--
+
+	--DELETE--
+	DELETE FROM  WorkHours 
+	WHERE EmployeeId=25
+
+
+	--INSERT--
+	DECLARE @counter INT
+	SET @counter=31
+
+	INSERT INTO WorkHours(EmployeeId,DateOfReport,Task,HoursOfWork,Comments)
+	VALUES (@counter,GETDATE(),'task'+CONVERT(VARCHAR(5), @counter),8,'comment'+CONVERT(VARCHAR(5), @counter))
+
+	--UPDATE--
+	UPDATE WorkHours
+	SET HoursOfWork=9 
+	WHERE HoursOfWork=8
+
 --Problem 30--
 -- Start a database transaction, delete all employees from the 'Sales' department along with all dependent records from the pother tables.
 --
 --    At the end rollback the transaction.
+
+	BEGIN TRAN
+
+	ALTER TABLE Departments
+		DROP CONSTRAINT FK_Departments_Employees
+	GO
+
+	DELETE e FROM  Employees e, Departments d
+		WHERE e.DepartmentID=d.DepartmentID
+		AND d.Name='Sales'
+
+	ROLLBACK TRAN
 
 --Problem 31--
 --Start a database transaction and drop the table EmployeesProjects.
 --
 --    Now how you could restore back the lost table data?
 
+	BEGIN TRAN
+
+	DROP TABLE EmployeesProjects
+
+	ROLLBACK TRAN
+
 --Problem 32--
 --Find how to use temporary tables in SQL Server.
 --
 --    Using temporary tables backup all records from EmployeesProjects and restore them back after dropping and re-creating the table.
+
+	BEGIN TRAN
+
+	SELECT *  INTO  #Temp_EmployeesProjects
+	FROM EmployeesProjects
+
+	DROP TABLE EmployeesProjects
+
+	SELECT * INTO EmployeesPRojects
+	FROM #Temp_EmployeesProjects
+
+	ROLLBACK TRAN
