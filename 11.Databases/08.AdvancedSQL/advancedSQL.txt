@@ -129,12 +129,37 @@
 --    Define unique constraint to avoid repeating usernames.
 --    Define a check constraint to ensure the password is at least 5 characters long.
 
+	USE TelerikAcademy
+	CREATE TABLE Users (
+	  UserId int IDENTITY,
+	  Username nvarchar(25) NOT NULL UNIQUE,
+	  UserPass nvarchar(100) NOT NULL,
+	  FirstName nvarchar(50) NOT NULL,
+	  LastName nvarchar(50) NOT NULL,
+	  LastLogin datetime NOT NULL,
+	  CONSTRAINT PK_Users PRIMARY KEY(UserId)
+	)
 	
 --Problem 16--
 --Write a SQL statement to create a view that displays the users from the Users table that have been in the system today. Test if the view works correctly.
 
+	USE TelerikAcademy;
+	GO
+
+	CREATE VIEW [SampleView] AS
+	SELECT *
+	FROM Users u
+	WHERE CAST(u.LastLogin AS DATE) >= CAST(GETDATE() AS DATE)
+
 --Problem 17--
 --Write a SQL statement to create a table Groups. Groups should have unique name (use unique constraint). Define primary key and identity column.
+
+	USE TelerikAcademy
+	CREATE TABLE Groups (
+	  GroupId int IDENTITY,
+	  GroupName nvarchar(25) NOT NULL UNIQUE,
+	  CONSTRAINT PK_Groups PRIMARY KEY(GroupId)
+	)
 
 --Problem 18--
 --Write a SQL statement to add a column GroupID to the table Users.
@@ -142,9 +167,37 @@
 --    Fill some data in this new column and as well in the `Groups table.
 --    Write a SQL statement to add a foreign key constraint between tables Users and Groups tables.
 
+	USE TelerikAcademy
 
+	ALTER TABLE Users
+	ADD GroupId int
+
+	USE TelerikAcademy
+	INSERT INTO Users
+
+	VALUES ('pesho','1234','Pesho','Peshev',GETDATE(),1),
+			('gosho','1234','Gosho','Goshev',GETDATE(),1)
+	GO
+
+	USE TelerikAcademy
+	ALTER TABLE Users ADD FOREIGN KEY (GroupId) REFERENCES Groups(GroupId);
+	
 --Problem 19--
 --Write SQL statements to insert several records in the Users and Groups tables.
+
+	USE TelerikAcademy
+	INSERT INTO Users
+
+	VALUES ('marko','1234','Marko','Totev',GETDATE(),1),
+			('ivan','1234','Ivan','Ivanov',GETDATE(),1)
+	GO
+	
+	USE TelerikAcademy
+	INSERT INTO Groups
+
+	VALUES ('group 1'),
+			('group 2')
+	GO
 
 --Problem 20--
 --Write SQL statements to update some of the records in the Users and Groups tables.
