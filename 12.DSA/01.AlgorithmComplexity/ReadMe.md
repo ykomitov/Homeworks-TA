@@ -63,5 +63,4 @@ The algorithm complexity of the provided code is **O(n * m)**. Assuming worst ca
   ```
 ----------
 The algorithm complexity of the provided code is again **O(n * m)** or in this case, since the code can only work if n = m, **O(n<sup>2</sup>)**.
-
 In the Console.WriteLine call in the end of the code, the given row index is 0, meaning that the method starts working from the first row in the square matrix. Since the code then again visits each cell in the matrix roughly once, the complexity is linear, proportional to the input data.
