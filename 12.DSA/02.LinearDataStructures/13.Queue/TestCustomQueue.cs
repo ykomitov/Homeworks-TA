@@ -6,15 +6,21 @@
 namespace _13.Queue
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class TestCustomQueue
     {
         public static void Main()
         {
+            var testQueue = new MyQueue<string>();
+            testQueue.Enqueue("One");
+            testQueue.Enqueue("Two");
+            testQueue.Enqueue("Four");
+            Console.WriteLine(testQueue);
+            Console.WriteLine("Removing: {0}", testQueue.Dequeue());
+            ////Console.WriteLine("Removing: {0}", testQueue.Dequeue());
+            Console.WriteLine(testQueue.Peek());
+
+            Console.WriteLine(testQueue);
         }
     }
 }

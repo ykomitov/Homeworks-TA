@@ -7,15 +7,22 @@
 namespace _11.LinkedList
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class TestCustomLinkedList
     {
         public static void Main()
         {
+            var linkedListTest = new MyLinkedList<decimal>();
+            linkedListTest.AddLast(100);
+            linkedListTest.AddLast(101);
+            linkedListTest.AddLast(106);
+            linkedListTest.AddLast(100);
+            linkedListTest.AddLast(106);
+            ////linkedListTest.AddFirst(666);
+            ////linkedListTest.AddBefore(166, 888);
+            ////linkedListTest.RemoveFirst(111);
+            linkedListTest.RemoveFirst(106);
+            Console.WriteLine(linkedListTest);
         }
     }
 }
