@@ -15,15 +15,30 @@ Write unit tests for your class.*/
 namespace _04.HashTableImplementation
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using System.Threading;
 
     public class Startup
     {
         public static void Main()
         {
+            var myHashTable = new MyHashTable<string, string>();
+            var random = new Random();
+
+            for (int i = 0; i < 50; i++)
+            {
+                myHashTable.Add(HelperMethods.GetRandomString(), HelperMethods.GetRandomString());
+                Thread.Sleep(11);
+            }
+
+            myHashTable.Add("Hasan", "Seche");
+
+            Console.WriteLine(myHashTable.Count);
+            Console.WriteLine(myHashTable.Find("Hasan"));
+            Console.WriteLine(myHashTable.Count);
+            myHashTable.Remove("Hasan");
+           //// Console.WriteLine(myHashTable.Find("Hasan"));
+            myHashTable.Clear();
+            Console.WriteLine(myHashTable.Count);
         }
     }
 }
