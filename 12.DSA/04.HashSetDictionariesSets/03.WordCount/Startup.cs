@@ -13,13 +13,46 @@ namespace _03.WordCount
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Startup
     {
         public static void Main()
         {
+            var wordCount = new Dictionary<string, int>();
+
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader("../../words.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                var wordsInLine = line.Split(new string[] { ",", "?", ".", "!", "\'", " ", "\'s", "-" }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var word in wordsInLine)
+                {
+                    var currentKey = word.ToLower();
+                    if (!wordCount.ContainsKey(currentKey))
+                    {
+                        wordCount.Add(currentKey, 1);
+                    }
+                    else
+                    {
+                        wordCount[currentKey] += 1;
+                    }
+                }
+            }
+
+            file.Close();
+
+            List<KeyValuePair<string, int>> sortedWords = wordCount.ToList();
+            sortedWords
+                .Sort(delegate(KeyValuePair<string, int> firstPair, KeyValuePair<string, int> nextPair)
+                {
+                    return firstPair.Value.CompareTo(nextPair.Value);
+                });
+
+            foreach (var word in sortedWords)
+            {
+                Console.WriteLine("{0}: {1}", word.Key, word.Value);
+            }
         }
     }
 }
