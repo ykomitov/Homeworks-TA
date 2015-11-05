@@ -3,15 +3,24 @@
 namespace _03.BuildTreeFromFileSystem
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Startup
     {
         public static void Main()
         {
+            var rootDir = "../../../02.DirectoryTraversal/testDir";
+            ////var rootDir = "C://WINDOWS";
+
+            var rootDirTree = DirectoryTree.BuildDirectoryTree(rootDir);
+
+            Console.WriteLine("Total file size in direcotry {0} is {1}", rootDirTree.Name, rootDirTree.SumOfFileSizes);
+            Console.WriteLine("Total file size is subdirectories:\r\n");
+
+            foreach (var subDir in rootDirTree.ChildFolders)
+            {
+                Console.WriteLine("Folder name: {0}", subDir.Name);
+                Console.WriteLine("Size: {0} KB\r\n", subDir.SumOfFileSizes);
+            }
         }
     }
 }

@@ -28,13 +28,6 @@
             return tree;
         }
 
-        public static Node<T> BuildTreeFromDictionary<T>(Dictionary<string, List<string>> treeDict, Node<T> root)
-        {
-            var treeNode = root;
-
-            return treeNode;
-        }
-
         // Problem 1.1 - Create the tree from the dictionary (then we have the root node ;)
         public static Node<T> CreateTreeFromDictionary<T>(Dictionary<T, List<T>> dictionary)
         {
