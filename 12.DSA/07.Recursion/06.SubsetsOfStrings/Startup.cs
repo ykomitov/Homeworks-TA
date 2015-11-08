@@ -15,11 +15,10 @@ namespace _06.SubsetsOfStrings
             var collectionOfSomething = new string[] { "test", "rock", "fun" };
             var output = new string[k];
 
-            //var collectionOfSomething = new int[] { 1, 2, 3, 4 };
-            //var output = new int[k];
+            ////var collectionOfSomething = new int[] { 1, 2, 3, 4 };
+            ////var output = new int[k];
 
             GenerateCombinationsWithDuplicates(0, collectionOfSomething, output, 0);
-
         }
 
         private static void GenerateCombinationsWithDuplicates<T>(int start, T[] input, T[] subset, int index)

@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.FindPathsInMaze", "07.Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.CheckIfPathExists", "08.CheckIfPathExists\08.CheckIfPathExists.csproj", "{8FEF5A98-EEE2-43AD-9B46-99E958C58F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.LargestAreaOfAdjacetCells", "09.LargestAreaOfAdjacetCells\09.LargestAreaOfAdjacetCells.csproj", "{F00E7A50-885F-4947-993D-57FA64867D93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.LargestAreaOfAdjacentCells", "09.LargestAreaOfAdjacentCells\09.LargestAreaOfAdjacentCells.csproj", "{F00E7A50-885F-4947-993D-57FA64867D93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
