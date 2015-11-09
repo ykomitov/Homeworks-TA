@@ -31,7 +31,7 @@
 
         public static void Main()
         {
-            int n = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
             stools = new Stool[n];
             //memo = new int[1 << n, n, 3];
             memo = new int[1 << n, 16, 4];
@@ -59,11 +59,6 @@
 
         static int MaxHeight(int used, int top, int side)
         {
-            if (memo[used, top, side] != 0)
-            {
-                return memo[used, top, side];
-            }
-
             if (used == 1 << top)
             {
                 if (side == 0) // x = 0, y = 1, z = 2
@@ -75,6 +70,11 @@
                     return stools[top].Y;
                 }
                 return stools[top].Z;
+            }
+
+            if (memo[used, top, side] != 0)
+            {
+                return memo[used, top, side];
             }
 
             int fromStoops = used ^ (1 << top);
@@ -98,6 +98,11 @@
                         (stools[i].Y >= SideY && stools[i].Z >= SideX))
                     {
                         result = Math.Max(result, MaxHeight(fromStoops, i, 0) + SideH);
+                    }
+
+                    if (stools[i].X == stools[i].Y && stools[i].X == stools[i].Z)
+                    {
+                        continue;
                     }
 
                     // side of stools[i] == 1
