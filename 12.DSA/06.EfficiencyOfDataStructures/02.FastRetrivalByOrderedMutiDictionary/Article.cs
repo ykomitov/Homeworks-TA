@@ -1,6 +1,8 @@
 ﻿namespace _02.FastRetrivalByOrderedMutiDictionary
 {
-    public class Article
+    using System;
+
+    public class Article : IComparable<Article>
     {
         public Article(string barcode, string vendor, string articleName, decimal price)
         {
@@ -17,5 +19,15 @@
         public string Name { get; set; }
 
         public decimal Price { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name + " Barcode: " + this.Barcode + string.Format(" Price: {0:F2}", this.Price);
+        }
+
+        public int CompareTo(Article other)
+        {
+            return this.Price.CompareTo(other.Price);
+        }
     }
 }
