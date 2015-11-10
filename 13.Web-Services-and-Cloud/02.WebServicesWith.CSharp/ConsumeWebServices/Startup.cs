@@ -8,9 +8,7 @@ namespace ConsumeWebServices
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Net.Http;
-    using System.Text;
     using System.Threading.Tasks;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
@@ -19,15 +17,11 @@ namespace ConsumeWebServices
     {
         public static void Main()
         {
-            string googleBooksApiKey = "AIzaSyDwTFKD3diDfEk80VJBEOQP8RNf97gJrvY";
-
-            string testUrl = "https://www.googleapis.com/books/v1/volumes?q=javascript+the+good+parts+inauthor:Douglas+Crockford+&maxResults=1&key=";
-
-            var task = GetAsync(testUrl + googleBooksApiKey);
-
-            dynamic json = JsonConvert.DeserializeObject<BookVolume>(task.Result.ToString());
-           // var result = DeserializeFromJson<BookVolume>(task.Result): 
-            Console.WriteLine();
+            /* Since the Feedzilla API is not working, I decided to use the Google Books API. Enjoy the spaghetti ;)
+            */
+            SearchGoogleBooks("doctor", 3);
+            SearchGoogleBooks("javascript the good parts", 2);
+            SearchGoogleBooks("астрофизика", 2);
         }
 
         public static async Task<JObject> GetAsync(string uri)
@@ -35,11 +29,39 @@ namespace ConsumeWebServices
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(uri);
 
-            //will throw an exception if not successful
+            // will throw an exception if not successful
             response.EnsureSuccessStatusCode();
 
             string content = await response.Content.ReadAsStringAsync();
             return await Task.Run(() => JObject.Parse(content));
+        }
+
+        public static void SearchGoogleBooks(string bookName, int count)
+        {
+            string apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
+            string[] searchKeys = bookName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string bookNameQueryString = string.Join("+", searchKeys);
+            string maxResults = "&maxResults=" + count;
+            string googleBooksApiKey = "&key=" + "AIzaSyDwTFKD3diDfEk80VJBEOQP8RNf97gJrvY";
+
+            string queryString = apiUrl + bookNameQueryString + maxResults + googleBooksApiKey;
+
+            var response = GetAsync(queryString);
+
+            var resultingVolume = JsonConvert.DeserializeObject<BookVolume>(response.Result.ToString());
+
+            var resultingBooks = new Dictionary<string, string>();
+            foreach (var book in resultingVolume.Items)
+            {
+                resultingBooks.Add(book.VolumeInfo.Title, book.VolumeInfo.InfoLink.Substring(0, book.VolumeInfo.InfoLink.IndexOf('&')));
+            }
+
+            Console.WriteLine("Searching <{0}> returns {1} results. Top {2} results are:\r\n", bookName, resultingVolume.TotalItems, count);
+            foreach (var item in resultingBooks)
+            {
+                Console.WriteLine("{0}: {1}", item.Key, item.Value);
+            }
+            Console.WriteLine();
         }
     }
 }
