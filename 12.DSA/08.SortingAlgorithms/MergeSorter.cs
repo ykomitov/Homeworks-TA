@@ -2,23 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
 
     public class MergeSorter<T> : ISorter<T> where T : IComparable<T>
     {
         public void Sort(IList<T> collection)
         {
-            var sortedCollection = MergeSort(collection);
-
-            for (int i = 0; i < collection.Count; i++)
-            {
-                for (int j = 0; j < sortedCollection.Count; j++)
-                {
-                    collection[i] = sortedCollection[i];
-                }
-            }
+            this.CopyArray(collection, this.MergeSort(collection)); 
         }
 
-        public static IList<T> MergeSort(IList<T> input)
+        private IList<T> MergeSort(IList<T> input)
         {
             if (input.Count <= 1)
             {
@@ -39,11 +32,10 @@
                 right.Add(input[i]);
             }
 
-
-            return Merge(MergeSort(left), MergeSort(right));
+            return this.Merge(this.MergeSort(left), this.MergeSort(right));
         }
 
-        private static IList<T> Merge(IList<T> left, IList<T> right)
+        private IList<T> Merge(IList<T> left, IList<T> right)
         {
             var result = new List<T>();
 
@@ -74,6 +66,20 @@
             }
 
             return result;
+        }
+
+        private void CopyArray(IList<T> original, IList<T> sorted)
+        {
+            bool arrayHaveEqualLength = original.Count == sorted.Count;
+            Debug.Assert(arrayHaveEqualLength, "The two arrays must always have the same length!");
+
+            for (int i = 0; i < original.Count; i++)
+            {
+                for (int j = 0; j < sorted.Count; j++)
+                {
+                    original[i] = sorted[i];
+                }
+            }
         }
     }
 }

@@ -2,15 +2,30 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class SelectionSorter<T> : ISorter<T> where T : IComparable<T>
     {
         public void Sort(IList<T> collection)
         {
-            throw new NotImplementedException();
+            int minIndex;
+
+            for (int j = 0; j < collection.Count - 1; j++)
+            {
+                minIndex = j;
+
+                for (int i = j + 1; i < collection.Count; i++)
+                {
+                    if (collection[i].CompareTo(collection[minIndex]) < 0)
+                    {
+                        minIndex = i;
+                    }
+                }
+
+                if (minIndex != j)
+                {
+                    HelperMethods.Swap(collection, minIndex, j);
+                }
+            }
         }
     }
 }
