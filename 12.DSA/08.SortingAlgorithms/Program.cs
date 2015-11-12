@@ -32,19 +32,27 @@
             collection.PrintAllItemsOnConsole();
             Console.WriteLine();
 
-            //// Console.WriteLine("Linear search 101:");
-            //// Console.WriteLine(collection.LinearSearch(101));
-            //// Console.WriteLine();
-              
-            //// Console.WriteLine("Binary search 101:");
-            //// Console.WriteLine(collection.BinarySearch(101));
-            //// Console.WriteLine();
-              
+            Console.WriteLine("Linear search 101:");
+            Console.WriteLine(collection.LinearSearch(101));
+            Console.WriteLine();
+
+            Console.WriteLine("Linear search 131:");
+            Console.WriteLine(collection.LinearSearch(131));
+            Console.WriteLine();
+
+            Console.WriteLine("Binary search 101:");
+            Console.WriteLine(collection.BinarySearch(101));
+            Console.WriteLine();
+
+            Console.WriteLine("Binary search 131:");
+            Console.WriteLine(collection.BinarySearch(131));
+            Console.WriteLine();
+
             //// Console.WriteLine("Shuffle:");
             //// collection.Shuffle();
             //// collection.PrintAllItemsOnConsole();
             //// Console.WriteLine();
-               
+
             //// Console.WriteLine("Shuffle again:");
             //// collection.Shuffle();
             //// collection.PrintAllItemsOnConsole();
