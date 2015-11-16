@@ -4,7 +4,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class SourceControlSystemDbContext : IdentityDbContext<User>
+    public class SourceControlSystemDbContext : IdentityDbContext<User>, ISourceControlSystemDbContext
     {
         public SourceControlSystemDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -21,3 +21,4 @@
         }
     }
 }
+ 

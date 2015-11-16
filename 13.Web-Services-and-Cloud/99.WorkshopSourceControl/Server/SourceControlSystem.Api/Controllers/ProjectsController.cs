@@ -2,10 +2,10 @@
 {
     using System.Linq;
     using System.Web.Http;
+    using System.Web.Http.Cors;
+    using AutoMapper.QueryableExtensions;
     using Common.Constants;
-    using Data;
     using Models.Projects;
-    using Services.Data;
     using Services.Data.Contracts;
 
     public class ProjectsController : ApiController
@@ -17,16 +17,14 @@
             this.projects = projectsService;
         }
 
-        public ProjectsController()
-            : this(new ProjectsService())
-        {
-        }
-
+        [EnableCors("*", "*", "*")]
         public IHttpActionResult Get()
         {
+            //// ObjectFactory.Get<IProjectsService>();
+
             var result = this.projects
                 .All(page: 1)
-                .Select(SoftwareProjectDetailsResponseModel.FromModel)
+                .ProjectTo<SoftwareProjectDetailsResponseModel>()
                 .ToList();
 
             return this.Ok(result);
@@ -47,7 +45,7 @@
                             (!pr.Private ||
                             // Check if the user is authorised to make requests
                             (pr.Private && pr.Users.Any(u => u.UserName == this.User.Identity.Name))))
-                .Select(SoftwareProjectDetailsResponseModel.FromModel)
+                .ProjectTo<SoftwareProjectDetailsResponseModel>()
                 .FirstOrDefault();
 
             // Check if this project exists
@@ -64,7 +62,7 @@
         {
             var result = this.projects
                 .All(page, pageSize)
-                .Select(SoftwareProjectDetailsResponseModel.FromModel) // Avoids code duplication. Select conditions in the model class
+                .ProjectTo<SoftwareProjectDetailsResponseModel>()
                 .ToList();
 
             return this.Ok(result);
@@ -73,6 +71,8 @@
         [Authorize]
         public IHttpActionResult Post(SaveProjectRequestModel model)
         {
+            //// var dbModel = Mapper.Map<SofwareProject>(model);
+
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest(this.ModelState);
