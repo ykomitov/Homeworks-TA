@@ -5,6 +5,7 @@
 
     public class Startup
     {
+        // The GetDayOfWeek service must be started from project 01.DayOfWeek in order for the following code NOT to throw exception
         public static void Main()
         {
             var client = new GetDayOfWeekClient();
