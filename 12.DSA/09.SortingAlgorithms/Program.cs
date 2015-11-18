@@ -48,14 +48,18 @@
             Console.WriteLine(collection.BinarySearch(131));
             Console.WriteLine();
 
-            //// Console.WriteLine("Shuffle:");
-            //// collection.Shuffle();
-            //// collection.PrintAllItemsOnConsole();
-            //// Console.WriteLine();
+            Console.WriteLine("Collection before shuffle:");
+            collection.PrintAllItemsOnConsole();
+            Console.WriteLine();
 
-            //// Console.WriteLine("Shuffle again:");
-            //// collection.Shuffle();
-            //// collection.PrintAllItemsOnConsole();
+            Console.WriteLine("Shuffle:");
+            collection.Shuffle();
+            collection.PrintAllItemsOnConsole();
+            Console.WriteLine();
+
+            Console.WriteLine("Shuffle again:");
+            collection.Shuffle();
+            collection.PrintAllItemsOnConsole();
         }
     }
 }

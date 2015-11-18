@@ -82,7 +82,13 @@
 
         public void Shuffle()
         {
-            throw new NotImplementedException();
+            var n = this.items.Count;
+            var random = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                int randomIndex = random.Next(0, n - i);
+                HelperMethods.Swap(this.items, i, randomIndex);
+            }
         }
 
         public void PrintAllItemsOnConsole()
