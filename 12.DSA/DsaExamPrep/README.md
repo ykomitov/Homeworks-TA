@@ -14,14 +14,16 @@
 #### Approach towards creating the AI player
 
 1. ** Calculating hand strength & other metrics**
+
 The core of our selected approach was to**not use predefined tables** to evaluate playing potential but to **run simulations** instead for calculating each hand strength. Since the initial time limit per move was considerably higher (0.1 s) we started at 100 simulations / hand, but in the end due to lowered time limits we ended with 25 simulations / hand.
+
 The OddsCalculator class is responsible for all computations we use in our AI player and can be found [here](https://github.com/ykomitov/TexasHoldem-ColdCall/blob/master/TexasHoldem/TexasHoldem.AI.TodorPlayer/Helpers/OddsCalculator.cs).
 
 2. **Create a pool of player personalities and rotate them based on game results**
 
 Our idea was to create a pool of different player personalities - several aggressive, several "normal" and cautious players. Then, a **state pattern** was implemented which was responsible for selecting the best performing player based on each individual opponent.
 
-** 3. Track game progress and dynamically select optimal player depending on game results**
+3. ** Track game progress and dynamically select optimal player depending on game results**
 
 1. All player personalities initialized with success rate of 1. Randomly chosen personality for starting state;
 2. Play a predefined number of games (hands) then calculate & save this personality success rate;
