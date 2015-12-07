@@ -23,7 +23,7 @@ The OddsCalculator class is responsible for all computations we use in our AI pl
 
 Our idea was to create a pool of different player personalities - several aggressive, several "normal" and cautious players. Then, a **state pattern** was implemented which was responsible for selecting the best performing player based on each individual opponent.
 
-- ** Track game progress and dynamically select optimal player depending on game results**
+- **Track game progress and dynamically select optimal player depending on game results**
 
 1. All player personalities initialized with success rate of 1. Randomly chosen personality for starting state;
 2. Play a predefined number of games (hands) then calculate & save this personality success rate;
@@ -31,18 +31,18 @@ Our idea was to create a pool of different player personalities - several aggres
 
 #### AI player personalities
 
-All-in protection
+**All-in protection**
 
 Always check or call with hand strength > 0.6% and big blind above 10$
 
-Save all-in
+**Save all-in**
 
 * If the other player raises, fold when money needed to call are >= half of otack & hand strength is below 0.8%;
 * If hand strength is < .42% and player cannot check, then fold;
 * If hand strength is > .95% raise big
 * In any other case check or call
 
-Normal player
+**Normal player**
 
 To implement a normal player we use not only hand strength but also calculate pot odds and potential rate of return. The base strategy we implement is to mostly stay in hands with a rate of return greater than 1.
 
@@ -55,6 +55,6 @@ Rate of return = handStrength / potOdds;
 * Else (Rate of return >= 1.3) 0% fold, 30% call, 70% raise
 * If fold and amount to call is zero, then call.
 
-Aggressive player
+**Aggressive player**
 
 Similar to the normal player, but bluffing more regularly
