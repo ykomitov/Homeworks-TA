@@ -13,6 +13,8 @@
 
 #### Approach towards creating the AI player
 
+![alt tag](playerStateSelection.jpg)
+
 - **Calculating hand strength & other metrics**
 
 The core of our selected approach was to**not use predefined tables** to evaluate playing potential but to **run simulations** instead for calculating each hand strength. Since the initial time limit per move was considerably higher (0.1 s) we started at 100 simulations / hand, but in the end due to lowered time limits we ended with 25 simulations / hand.
