@@ -1,5 +1,1 @@
-Endpoints currently available
-
-| HTTP Method   | Web service endpoint     | Description           |
-| ------------- |:------------------------:| ---------------------:|
-| POST (public) |/api/account/register     | Registers a new user  |
+This repository contains homeworks and sample projects from Telerik Academy 2015
