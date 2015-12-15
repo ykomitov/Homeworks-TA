@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <form class="form-horizontal" name="loginForm" novalidate>
+            <fieldset>
+                <legend>Login User</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-4 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="email" name="email" class="form-control"
+                               id="loginEmail"
+                               required="required"
+                               placeholder="Email"
+                               ng-model="login.email">
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-4 help-block"
+                         ng-messages="loginForm.email.$error"
+                         ng-if="loginForm.email.$invalid && loginForm.email.$touched">
+                        <div ng-messages-include="/identity/messages.html"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-4 control-label">Password</label>
+                    <div class="col-lg-8">
+                        <input type="password" name="password" class="form-control"
+                               id="loginPassword"
+                               required="required"
+                               placeholder="Password"
+                               ng-minlength="6"
+                               ng-model="login.password">
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-4 help-block"
+                         ng-messages="loginForm.password.$error"
+                         ng-if="loginForm.password.$invalid && loginForm.password.$touched">
+                        <div ng-messages-include="/identity/messages.html"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button ng-disabled="loginForm.$invalid" ng-click="vm.login(login, loginForm)" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
