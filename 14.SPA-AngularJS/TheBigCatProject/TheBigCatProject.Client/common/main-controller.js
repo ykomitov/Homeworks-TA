@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function MainController(identity, auth) {
+    function MainController($location, identity, auth) {
 
         var vm = this;
 
@@ -14,6 +14,8 @@
 
             // for second login
             waitForLogin();
+
+            $location.path('/');
         };
 
         function waitForLogin() {
@@ -25,5 +27,5 @@
     };
 
     angular.module('catApp')
-           .controller('MainController', ['identity', 'auth', MainController]);
+           .controller('MainController', ['$location', 'identity', 'auth', MainController]);
 }());

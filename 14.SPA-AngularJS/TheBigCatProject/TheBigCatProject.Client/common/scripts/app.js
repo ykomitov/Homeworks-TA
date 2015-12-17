@@ -7,6 +7,18 @@
 
         $locationProvider.html5Mode(true);
 
+        var routeResolvers = {
+            authenticationRequired: {
+                authenticate: ['$q', 'auth', function ($q, auth) {
+                    if (auth.isAuthenticated()) {
+                        return true;
+                    }
+
+                    return $q.reject('Not authorized!');
+                }]
+            }
+        };
+
         $routeProvider
             .when('/', {
                 templateUrl: 'home/home.html',
@@ -23,12 +35,24 @@
                 controller: 'LoginController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/cats/add', {
+                templateUrl: 'cats/addCat.html',
+                controller: 'AddCatController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+                })
             .otherwise('/', {
                 redirectTo: '/'
             });
     };
 
-    function run($cookies, $http, auth) {
+    function run($cookies, $http, $rootScope, $location, auth) {
+
+        $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
+            if (rejection === 'Not authorized!') {
+                $location.path('/');
+            }
+        });
 
         if (auth.isAuthenticated()) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
@@ -39,7 +63,7 @@
     angular
         .module('catApp', ['ngRoute', 'ngCookies', 'ngMessages', 'catApp.controllers'])
         .config(['$routeProvider', '$locationProvider', config])
-        .run(['$cookies', '$http', 'auth', run])
+        .run(['$cookies', '$http', '$rootScope', '$location', 'auth', run])
         .constant('baseUrl', 'http://localhost:56315');
 
     angular.module('catApp.controllers', ['toaster', 'ngAnimate', 'catApp.services']);

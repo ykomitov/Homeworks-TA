@@ -1,0 +1,69 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <form class="form-horizontal" name="addCatForm" novalidate>
+            <fieldset>
+                <legend>Add Your Cat</legend>
+                <div class="form-group">
+                    <label for="catName" class="col-lg-4 control-label">Name</label>
+                    <div class="col-lg-8">
+                        <input type="text" name="catName" class="form-control"
+                               id="catName"
+                               required="required"
+                               placeholder="Cat name"
+                               ng-minlength="2"
+                               ng-maxlength="20"
+                               ng-model="cat.name">
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-4 help-block"
+                         ng-messages="addCatForm.catName.$error"
+                         ng-if="addCatForm.catName.$invalid && addCatForm.catName.$touched">
+                        <div ng-messages-include="/common/errorMessages.html"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="catAge" class="col-lg-4 control-label">Age</label>
+                    <div class="col-lg-8">
+                        <input type="number" name="catAge" class="form-control"
+                               id="catAge"
+                               required="required"
+                               placeholder="Cat age"
+                               ng-model="cat.age">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="catImageUrl" class="col-lg-4 control-label">Cat image</label>
+                    <div class="col-lg-8">
+                        <input type="url" name="catImageUrl" class="form-control"
+                               id="catImageUrl"
+                               required="required"
+                               placeholder="Cat image URL"
+                               ng-model="cat.url">
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-4 help-block"
+                         ng-messages="addCatForm.catImageUrl.$error"
+                         ng-if="addCatForm.catImageUrl.$invalid && addCatForm.catImageUrl.$touched">
+                        <div ng-messages-include="/common/errorMessages.html"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="breed" class="col-lg-4 control-label">Breed</label>
+                    <div class="col-lg-8">
+                        <select class="form-control" id="breed" ng-model="cat.breed">
+                            <option>Mahlenska</option>
+                            <option>Main Coon</option>
+                            <option>Whatever</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button ng-disabled="addCatForm.$invalid" ng-click="vm.addCat(cat, addCatForm)" class="btn btn-primary">Add cat</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-6 image-container">
+        <img class="img-rounded center-block" ng-src="{{cat.url}}"/>
+    </div>
+</div>

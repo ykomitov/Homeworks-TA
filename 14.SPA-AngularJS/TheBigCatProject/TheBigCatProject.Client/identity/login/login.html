@@ -15,7 +15,7 @@
                     <div class="col-lg-8 col-lg-offset-4 help-block"
                          ng-messages="loginForm.email.$error"
                          ng-if="loginForm.email.$invalid && loginForm.email.$touched">
-                        <div ng-messages-include="/identity/messages.html"></div>
+                        <div ng-messages-include="/common/errorMessages.html"></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,7 +31,7 @@
                     <div class="col-lg-8 col-lg-offset-4 help-block"
                          ng-messages="loginForm.password.$error"
                          ng-if="loginForm.password.$invalid && loginForm.password.$touched">
-                        <div ng-messages-include="/identity/messages.html"></div>
+                        <div ng-messages-include="/common/errorMessages.html"></div>
                     </div>
                 </div>
                 <div class="form-group">

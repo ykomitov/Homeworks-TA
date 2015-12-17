@@ -66,14 +66,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="home\favicon.ico" />
+    <Content Include="cats\add-cat-controller.js" />
+    <Content Include="cats\addCat.html" />
+    <Content Include="common\favicon.ico" />
+    <Content Include="common\scripts\cat-service.js" />
     <Content Include="home\home-cat.jpg" />
     <Content Include="home\home-controller.js" />
     <Content Include="home\home.html" />
     <Content Include="identity\login\login-controller.js" />
     <Content Include="identity\login\login.html" />
-    <Content Include="identity\main-controller.js" />
-    <Content Include="identity\messages.html" />
+    <Content Include="common\main-controller.js" />
+    <Content Include="common\errorMessages.html" />
     <Content Include="identity\register\register-controller.js" />
     <Content Include="packages.config" />
     <Content Include="identity\register\register.html" />
@@ -92,10 +95,10 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <None Include="scripts\_references.js" />
-    <Content Include="scripts\app\app.js" />
+    <Content Include="common\scripts\app.js" />
     <None Include="scripts\jquery-1.6.3-vsdoc.js" />
-    <Content Include="scripts\app\auth-service.js" />
-    <Content Include="scripts\app\identity-service.js" />
+    <Content Include="common\scripts\auth-service.js" />
+    <Content Include="common\scripts\identity-service.js" />
     <Content Include="scripts\jquery-1.6.3.js" />
     <Content Include="scripts\jquery-1.6.3.min.js" />
     <Content Include="styles\site.css" />
