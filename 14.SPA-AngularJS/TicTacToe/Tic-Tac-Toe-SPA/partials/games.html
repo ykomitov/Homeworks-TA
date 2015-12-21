@@ -1,0 +1,20 @@
+<button ng-click="vm.createGame()">Create new game</button>
+<h1>{{vm.games}}</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Board</th>
+    <th>First player</th>
+    <th>Join</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="game in vm.gamesList">
+    <td>{{$index + 1}}</td>
+    <td><tic-tac-board></tic-tac-board></td>
+    <td>{{game.FirstPlayerName}}</td>
+    <td><button id="{{game.Id}}">Join game</button></td>
+  </tr>
+   </tbody>
+</table>
