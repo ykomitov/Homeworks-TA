@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\Default\sprite.png" />
     <Content Include="css\kendo.default.min.css" />
     <Content Include="js\common\data.js" />
     <Content Include="js\drivers\all-drivers-directive.js" />

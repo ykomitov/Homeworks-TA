@@ -7,8 +7,13 @@
             return data.get('api/trips');
         }
 
+        function createTrip(trip) {
+            return data.post('api/trips', trip);
+        }
+
         return {
-            getPublicTrips: getPublicTrips
+            getPublicTrips: getPublicTrips,
+            createTrip: createTrip
         }
     }
 

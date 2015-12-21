@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function CreateTripsController(cities, identity) {
+    function CreateTripsController($location, cities, trips) {
         var vm = this;
 
         cities.getAllCities()
@@ -9,9 +9,18 @@
                   vm.cities = allCities;
               });
 
+        vm.createTrip = function (newTrip) {
+            trips.createTrip(newTrip)
+                 .then(function (createdTrip) {
+                     $location.path('/trips/details/' + createdTrip.id);
+                 }, function () {
+
+                 });
+        }
+
     }
 
     angular.module('myApp.controllers')
-           .controller('CreateTripsController', ['cities', 'identity', CreateTripsController]);
+           .controller('CreateTripsController', ['$location', 'cities', 'trips', CreateTripsController]);
 
 }());

@@ -28,11 +28,11 @@
                 <div class="form-group">
                     <label for="departureTime" class="col-md-2 control-label">Departure Time</label>
                     <div class="col-md-10">
-                        <input id="departureTime" kendo-datepicker placeholder="Departure Time" ng-model="trip.departureTime" required="required" class="form-control" />
+                        <input id="departureTime" kendo-datetimepicker k-format="'yyyy-MM-dd HH:mm:ss'" placeholder="Departure Time" ng-model="trip.departureTime" required="required" class="form-control" />
                     </div>
                 </div>
                 <div class="pull-right">
-                    <button ng-click="createTrip(trip)" ng-disabled="createTripForm.$invalid" class="btn btn-primary">
+                    <button ng-click="vm.createTrip(trip)" ng-disabled="createTripForm.$invalid" class="btn btn-primary">
                         Create
                     </button>
                     <a href="#/" class="btn btn-primary">Cancel</a>
