@@ -38,7 +38,7 @@
     angular.module('myApp.services', []);
     angular.module('myApp.directives', []);
     angular.module('myApp.controllers', ['myApp.services']);
-    angular.module('myApp', ['ngRoute', 'ngCookies', 'myApp.controllers', 'myApp.directives']).
+    angular.module('myApp', ['ngRoute', 'ngCookies', 'kendo.directives', 'myApp.controllers', 'myApp.directives']).
         config(['$routeProvider', config])
         .value('toastr', toastr)
         .constant('baseServiceUrl', 'http://spa2014.bgcoder.com');

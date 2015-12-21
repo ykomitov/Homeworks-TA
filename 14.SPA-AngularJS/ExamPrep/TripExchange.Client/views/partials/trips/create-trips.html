@@ -25,6 +25,12 @@
                         <input id="availableSeats" type="number" placeholder="Number of seats" ng-model="trip.availableSeats" min="1" max="254" required="required" class="form-control" />
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="departureTime" class="col-md-2 control-label">Departure Time</label>
+                    <div class="col-md-10">
+                        <input id="departureTime" kendo-datepicker placeholder="Departure Time" ng-model="trip.departureTime" required="required" class="form-control" />
+                    </div>
+                </div>
                 <div class="pull-right">
                     <button ng-click="createTrip(trip)" ng-disabled="createTripForm.$invalid" class="btn btn-primary">
                         Create

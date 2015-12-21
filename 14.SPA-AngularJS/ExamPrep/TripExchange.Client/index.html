@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="../css/toastr.min.css" />
+    <link rel="stylesheet" href="../css/kendo.common.min.css" />
+    <link rel="stylesheet" href="../css/kendo.default.min.css" />
     <link rel="stylesheet" href="../css/app.css" />
 </head>
 <body ng-app="myApp" ng-cloak>
@@ -65,5 +67,14 @@
     <script src="js/drivers/drivers-controller.js"></script>
     <script src="js/trips/create-trips-controller.js"></script>
     <script src="js/trips/cities-service.js"></script>
+
+    <!-- Kendo - IMPORTANT - scripts must be in the following order! -->
+    <script src="lib/kendo/kendo-core-min.js"></script>
+    <script src="lib/kendo/kendo-calendar-min.js"></script>
+    <script src="lib/kendo/kendo-popup-min.js"></script>
+    <script src="lib/kendo/kendo-datepicker-min.js"></script>
+    <script src="lib/kendo/kendo-timepicker-min.js"></script>
+    <script src="lib/kendo/kendo-datetimepicker-min.js"></script>
+    <script src="lib/kendo/kendo.angular.min.js"></script>
 </body>
 </html>

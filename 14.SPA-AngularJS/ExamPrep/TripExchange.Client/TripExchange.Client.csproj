@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\kendo.default.min.css" />
     <Content Include="js\common\data.js" />
     <Content Include="js\drivers\all-drivers-directive.js" />
     <Content Include="js\drivers\drivers-controller.js" />
@@ -78,6 +79,13 @@
     <Content Include="js\trips\create-trips-controller.js" />
     <Content Include="js\trips\trips-controller.js" />
     <Content Include="js\trips\trips-service.js" />
+    <Content Include="lib\kendo\kendo-calendar-min.js" />
+    <Content Include="lib\kendo\kendo-core-min.js" />
+    <Content Include="lib\kendo\kendo-datepicker-min.js" />
+    <Content Include="lib\kendo\kendo-datetimepicker-min.js" />
+    <Content Include="lib\kendo\kendo-popup-min.js" />
+    <Content Include="lib\kendo\kendo-timepicker-min.js" />
+    <Content Include="lib\kendo\kendo.angular.min.js" />
     <Content Include="packages.config" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
@@ -95,6 +103,7 @@
     <Content Include="lib\angular\errors.json" />
     <Content Include="lib\angular\version.json" />
     <Content Include="lib\toastr\toastr.min.js.map" />
+    <Content Include="css\kendo.common.min.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -888,9 +897,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\kendo\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
