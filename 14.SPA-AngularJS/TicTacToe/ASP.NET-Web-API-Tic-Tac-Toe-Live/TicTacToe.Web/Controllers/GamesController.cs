@@ -1,17 +1,14 @@
 ﻿namespace TicTacToe.Web.Controllers
 {
-    using System.Linq;
-    using System.Web.Http;
-
-    using Microsoft.AspNet.Identity;
-
-    using TicTacToe.Data;
-    using TicTacToe.Models;
     using System;
-    using TicTacToe.Web.DataModels;
+    using System.Linq;
     using System.Text;
+    using System.Web.Http;
+    using TicTacToe.Data;
     using TicTacToe.GameLogic;
-using TicTacToe.Web.Infrastructure;
+    using TicTacToe.Models;
+    using TicTacToe.Web.DataModels;
+    using TicTacToe.Web.Infrastructure;
 
     [Authorize]
     public class GamesController : BaseApiController
@@ -65,6 +62,32 @@ using TicTacToe.Web.Infrastructure;
             this.data.SaveChanges();
 
             return Ok(game.Id);
+        }
+
+        [HttpGet]
+        public IHttpActionResult List()
+        {
+            var currentUserId = this.userIdProvider.GetUserId();
+
+            var games = this.data.Games.All()
+        //        .Where(g => g.FirstPlayerId != currentUserId)
+             .OrderBy(g => g.State == GameState.WaitingForSecondPlayer)
+                .Select(g => new GameInfoDataModel()
+                {
+                    Board = g.Board,
+                    Id = g.Id,
+                    State = g.State,
+                    FirstPlayerName = g.FirstPlayer.UserName,
+                    SecondPlayerName = g.SecondPlayer.UserName,
+                })
+             .ToList();
+
+            if (games == null)
+            {
+                return this.NotFound();
+            }
+
+            return Ok(games);
         }
 
         [HttpGet]
