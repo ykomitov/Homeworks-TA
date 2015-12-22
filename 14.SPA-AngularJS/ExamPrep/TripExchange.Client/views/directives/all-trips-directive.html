@@ -4,11 +4,15 @@
         <th class="text-center">From</th>
         <th class="text-center">To</th>
         <th class="text-center">Departure Time</th>
+        <th class="text-center" ng-if="vm.identity && vm.identity.isAuthenticated()">Is Mine</th>
     </tr>
-    <tr ng-repeat="trip in vm.publicTrips">
+    <tr ng-repeat="trip in vm.trips">
         <td><a href="#/trips/{{trip.id}}">{{trip.driverName}}</a></td>
         <td>{{trip.from}}</td>
         <td>{{trip.to}}</td>
-        <td>{{trip.departureDate}}</td>
+        <td>{{trip.departureDate | beautifulDate}}</td>
+        <td ng-if="vm.identity && vm.identity.isAuthenticated()">
+            {{trip.isMine ? 'Yes':'No'}}
+        </td>
     </tr>
 </table>

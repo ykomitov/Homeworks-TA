@@ -1,5 +1,89 @@
 ﻿<div class="container">
-    <h2 class="text-center">Trips</h2>
-    <a ng-show="vm.identity.isAuthenticated()" href="#/trips/create" class="btn btn-sm btn-primary pull-right" style="margin-bottom: 5px">Create</a>
-    <div all-trips></div>
+    <h2 class="text-center">
+        Trips
+        <a ng-show="vm.identity.isAuthenticated()" href="#/trips/create" class="btn btn-sm btn-primary pull-right">Create</a>
+    </h2>
+    <div class="row" ng-show="vm.identity.isAuthenticated()">
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="sort" class="control-label">Sort</label>
+                </div>
+                <select class="form-control" id="sort" ng-model="vm.request.orderBy" ng-init="vm.request.orderBy='date'">
+                    <option value="driver">Driver</option>
+                    <option value="date">Date</option>
+                    <option value="seats">Seats</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="orderType" class="control-label">Order Type</label>
+                </div>
+                <select class="form-control" id="orderType" ng-model="vm.request.orderType" ng-init="vm.request.orderType='asc'">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="from" class="control-label">From</label>
+                </div>
+                <select class="form-control" id="from" ng-init="vm.request.from=''" ng-model="vm.request.from">
+                    <option value="">Select city</option>
+                    <option ng-repeat="city in vm.cities" value="{{city}}">{{city}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="to" class="control-label">To</label>
+                </div>
+                <select class="form-control" id="to" ng-init="vm.request.to=''" ng-model="vm.request.to">
+                    <option value="">Select city</option>
+                    <option ng-repeat="city in vm.cities" value="{{city}}">{{city}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="vm.identity.isAuthenticated()">
+        <div class="col-md-3">
+            <div class="col-md-8">
+                <div class="checkbox">
+                    <label for="finished">
+                        <input id="finished" type="checkbox" ng-model="vm.request.finished">Include Finished
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="mine">
+                        <input id="mine" type="checkbox" ng-model="vm.request.onlyMine">Only Mine
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary pull-right" ng-click="vm.filterTrips()">Filter</button>
+            </div>
+        </div>
+        <div class="col-md-3 col-md-offset-6">
+            <div class="col-md-3">
+                <button class="btn btn-sm btn-primary" ng-click="vm.prevPage()">&lt&lt</button>
+            </div>
+            <div class="col-md-6">
+                <input ng-model="vm.request.page" type="number" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-sm btn-primary" ng-click="vm.nextPage()">&gt&gt</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="vm.trips && vm.trips.length > 0">
+        <div all-trips></div>
+    </div>
+    <div ng-hide="vm.trips && vm.trips.length > 0">
+        <h2 class="text-center">No results!</h2>
+    </div>
 </div>

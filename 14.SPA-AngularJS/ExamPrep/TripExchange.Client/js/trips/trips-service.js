@@ -11,9 +11,14 @@
             return data.post('api/trips', trip);
         }
 
+        function filterTrips(filters) {
+            return data.get('api/trips', filters);
+        }
+
         return {
             getPublicTrips: getPublicTrips,
-            createTrip: createTrip
+            createTrip: createTrip,
+            filterTrips: filterTrips
         }
     }
 
