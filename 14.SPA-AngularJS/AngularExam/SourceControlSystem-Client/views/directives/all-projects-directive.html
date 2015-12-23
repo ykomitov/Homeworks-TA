@@ -1,0 +1,14 @@
+<table class="table table-bordered text-center">
+  <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">License</th>
+    <th class="text-center">Total Users</th>
+    <th class="text-center">Created On</th>
+  </tr>
+  <tr ng-repeat="project in vm.projects">
+    <td><a href="#/projects/{{project.Id}}">{{project.Name}}</a></td>
+    <td>{{project.License}}</td>
+    <td>{{project.TotalUsers}}</td>
+    <td>{{project.CreatedOn | beautifulDate}}</td>
+  </tr>
+</table>

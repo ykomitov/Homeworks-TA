@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">Commit Info</h2>
+    <table class="table table-bordered text-center">
+      <tr>
+        <th class="text-center">User Name</th>
+        <th class="text-center">Project Name</th>
+        <th class="text-center">Created On</th>
+      </tr>
+      <tr>
+        <td>{{vm.commitInfo.UserName}}</td>
+        <td>{{vm.commitInfo.ProjectName}}</td>
+        <td>{{vm.commitInfo.CreatedOn | beautifulDate}}</td>
+      </tr>
+    </table>
+    <div class="table-bordered">
+      <b>Source code:</b>
+
+      <p>{{vm.commitInfo.SourceCode}}</p>
+    </div>
+  </div>
+</div>

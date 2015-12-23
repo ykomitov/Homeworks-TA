@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="well">
+    <form name="addCommitForm" class="form-horizontal" novalidate>
+      <fieldset>
+        <legend class="text-center">Add commit to project</legend>
+        <label for="description" class="col-md-2 control-label">Code</label>
+
+        <div class="col-md-10">
+            <textarea id="description"
+                      name="description"
+                      placeholder="The source goes here"
+                      ng-model="commit.sourceCode"
+                      required="required"
+                      class="form-control"></textarea>
+        </div>
+        <div class="col-md-10 col-md-offset-2 help-block"
+             ng-messages="createProjectForm.name.$error"
+             ng-if="createProjectForm.description.$invalid && createProjectForm.description.$touched">
+          <div class="text-danger">Please enter your source code here!</div>
+        </div>
+  </div>
+  <div class="pull-right" style="margin-top: 10px;">
+    <button ng-click="vm.addCommit(commit)" ng-disabled="addCommitForm.$invalid" class="btn btn-primary">
+      Create
+    </button>
+    <a href="#/" class="btn btn-primary">Cancel</a>
+  </div>
+  </fieldset>
+  </form>
+</div>
+</div>

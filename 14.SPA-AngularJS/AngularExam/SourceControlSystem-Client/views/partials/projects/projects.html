@@ -1,0 +1,90 @@
+<div class="container">
+  <h2 class="text-center">
+    Projects
+    <a ng-show="vm.identity.isAuthenticated()" href="#/projects/add" class="btn btn-sm btn-primary pull-right">Add
+      project</a>
+  </h2>
+  <hr/>
+  <div class="row" ng-show="vm.identity.isAuthenticated()">
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="text-center">
+          <label for="order" class="control-label">Order By</label>
+        </div>
+        <select class="form-control" id="order" ng-model="vm.request.orderBy" ng-init="vm.request.orderBy='date'">
+          <option value="date">Date</option>
+          <option value="collaborators">Collaborators</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="text-center">
+          <label for="orderType" class="control-label">Order Type</label>
+        </div>
+        <select class="form-control" id="orderType" ng-model="vm.request.orderType"
+                ng-init="vm.request.orderType='asc'">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="text-center">
+          <label for="filter" class="control-label">Filter by Name/Description</label>
+          <input class="form-control" id="filter" type="text" ng-model="vm.request.filter">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="text-center">
+          <label for="byUser" class="control-label">Filter by user email</label>
+          <input class="form-control" id="byUser" type="text" ng-model="vm.request.byUser">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="vm.identity.isAuthenticated()">
+    <div class="col-md-9">
+      <div class="col-md-2 text-center">
+        Page
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-sm btn-primary" ng-click="vm.prevPage()">&lt&lt</button>
+      </div>
+      <div class="col-md-2">
+        <input id="page" ng-model="vm.request.page" type="number" class="form-control text-center"/>
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-sm btn-primary" ng-click="vm.nextPage()">&gt&gt</button>
+      </div>
+      <div class="col-md-2 text-center">
+        Page size
+      </div>
+      <div class="col-md-2">
+        <input id="pageSize" ng-model="vm.request.pageSize" ng-init="vm.request.pageSize=10" type="number"
+               placeholder="10" class="form-control text-center"/>
+      </div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="col-md-8">
+        <div class="checkbox">
+          <label for="mine">
+            <input id="mine" type="checkbox" ng-model="vm.request.onlyPublic">Only Public
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary pull-right" ng-click="vm.filterProjects()">Filter</button>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 10px;">
+    <div ng-show="!vm.identity.isAuthenticated()" all-projects></div>
+    <div ng-show="vm.identity.isAuthenticated()" filtered-projects></div>
+  </div>
+</div>

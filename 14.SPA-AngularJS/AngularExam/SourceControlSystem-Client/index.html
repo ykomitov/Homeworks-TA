@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Source Control System</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="../css/toastr.min.css"/>
+  <link rel="stylesheet" href="../css/kendo.common.min.css"/>
+  <link rel="stylesheet" href="../css/kendo.default.min.css"/>
+  <link rel="stylesheet" href="../css/app.css"/>
+</head>
+<body ng-app="myApp" ng-cloak>
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#/" class="navbar-brand">Source Control System</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#/projects">Projects</a>
+        </li>
+        <li>
+          <a href="#/commits">Commits</a>
+        </li>
+      </ul>
+      <div ng-include="'views/partials/identity/login.html'"></div>
+    </div>
+  </div>
+</div>
+<div ng-view>
+</div>
+<footer class="footer">
+  <div class="container text-center">Source Control System v. 0. 0. 1</div>
+</footer>
+<!-- Angular, jQuery and other libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/toastr/toastr.min.js"></script>
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
+<script src="lib/angular/angular-cookies.min.js"></script>
+<script src="lib/angular/angular-messages.min.js"></script>
+<script src="lib/angular/angular-animate.min.js"></script>
+
+<!-- Main App -->
+<script src="js/app.js"></script>
+
+<!-- Common -->
+<script src="js/common/notifier.js"></script>
+<script src="js/common/data.js"></script>
+<script src="js/common/beautiful-date.js"></script>
+
+<!-- Identity -->
+<script src="js/identity/auth.js"></script>
+<script src="js/identity/authorization.js"></script>
+<script src="js/identity/identity.js"></script>
+
+<!-- Controllers -->
+<script src="js/home/home-controller.js"></script>
+<script src="js/identity/register-controller.js"></script>
+<script src="js/identity/login-controller.js"></script>
+
+<script src="js/commits/commits-controller.js"></script>
+<script src="js/commits/add-commits-controller.js"></script>
+<script src="js/commits/commits-info-controller.js"></script>
+<script src="js/projects/projects-controller.js"></script>
+<script src="js/projects/add-project-controller.js"></script>
+<script src="js/projects/project-info-controller.js"></script>
+
+<!-- Services -->
+<script src="js/services/statistics-service.js"></script>
+<script src="js/services/projects-service.js"></script>
+<script src="js/services/commits-service.js"></script>
+<script src="js/services/license-service.js"></script>
+<script src="js/services/collaborators-service.js"></script>
+
+<!-- Directives -->
+<script src="js/directives/all-projects-directive.js"></script>
+<script src="js/directives/all-commits-directive.js"></script>
+<script src="js/directives/filtered-projects-directive.js"></script>
+
+<!-- Kendo - IMPORTANT - scripts must be in the following order! -->
+<script src="lib/kendo/kendo-core-min.js"></script>
+<script src="lib/kendo/kendo-calendar-min.js"></script>
+<script src="lib/kendo/kendo-popup-min.js"></script>
+<script src="lib/kendo/kendo-datepicker-min.js"></script>
+<script src="lib/kendo/kendo-timepicker-min.js"></script>
+<script src="lib/kendo/kendo-datetimepicker-min.js"></script>
+<script src="lib/kendo/kendo.angular.min.js"></script>
+</body>
+</html>

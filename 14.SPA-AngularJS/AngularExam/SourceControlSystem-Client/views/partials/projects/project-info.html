@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">Project Details</h1>
+
+    <h2 class="text-center">Name: {{vm.project.Name}}</h2>
+    <a href="#/projects/{{vm.project.Id}}/addcommits" class="btn btn-default pull-left" style="margin-bottom: 5px;">Add commit</a>
+    <a class="btn btn-default pull-right" style="margin-bottom: 5px;">Add collaborator</a>
+    <table class="table table-bordered text-center">
+      <tr>
+        <th class="text-center">Project ID</th>
+        <th class="text-center">Project Name</th>
+        <th class="text-center">Created on</th>
+        <th class="text-center">License</th>
+        <th class="text-center">Total Users</th>
+      </tr>
+      <tr>
+        <td>{{vm.project.Id}}</td>
+        <td>{{vm.project.Name}}</td>
+        <td>{{vm.project.CreatedOn}}n</td>
+        <td>{{vm.project.License}}</td>
+        <td>{{vm.project.TotalUsers}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">Project Commits</h2>
+    <table class="table table-bordered text-center">
+      <tr>
+        <th class="text-center">User Name</th>
+        <th class="text-center">Created On</th>
+      </tr>
+      <tr ng-repeat="commit in vm.projectCommits">
+        <td><a href="#/commits/{{commit.Id}}">{{commit.UserName}}</a></td>
+        <td>{{commit.CreatedOn | beautifulDate}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">Project Collaborators</h2>
+    <table class="table table-bordered text-center">
+      <tr>
+        <th class="text-center">User Name</th>
+      </tr>
+      <tr ng-repeat="collaborator in vm.projectCollaborators">
+        <td>{{collaborator}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
