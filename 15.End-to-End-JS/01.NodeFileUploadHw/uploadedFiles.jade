@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Your Files
+    body
+        h1 Uploaded files:
+
+        ul
+        each file in files
+            li
+                a(href='../download/' + file) !{file}
+
+        p
+            a(href='/') Back
