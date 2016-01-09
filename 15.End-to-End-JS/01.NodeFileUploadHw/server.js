@@ -14,6 +14,9 @@ let port = 6666;
 // Create the web server
 http.createServer(function (req, res) {
 
+  // Check if the "uploaded" directory exists and create it if necessary
+  fs.existsSync('uploaded') || fs.mkdirSync('uploaded');
+
   // Function visualizing the files, uploaded on the server
   function visualizeUploadedFiles() {
     fs.readFile('uploadedFiles.jade', function (err, template) {
