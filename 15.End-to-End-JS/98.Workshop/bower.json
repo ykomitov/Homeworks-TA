@@ -1,0 +1,19 @@
+{
+  "name": "workshop",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ykomitov/Homeworks-TA",
+  "authors": [
+    "ykomitov <yavork@gmail.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

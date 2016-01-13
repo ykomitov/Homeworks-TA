@@ -1,0 +1,15 @@
+extend layout
+block content
+    h1
+        | Products
+
+    ol
+        each product in data
+            li
+                a(href='/products' + product._id)
+                strong= product.name
+                em= product.date
+                if product.image
+                    img(src=product.image, height="42")
+                else
+                    img(src="/images/default.jpg", height="42")

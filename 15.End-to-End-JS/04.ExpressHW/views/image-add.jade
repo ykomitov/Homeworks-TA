@@ -1,0 +1,21 @@
+extend layout
+
+block content
+    div.container
+        h1 Add new image
+
+        form.form(action="/images", method="POST", enctype="multipart/form-data")
+            label.control-label
+                | Name
+                input.form-control(name="name")
+            label.control-label
+                | Description:
+                input.form-control(name="description")
+            label
+                | Image URL
+                input.form-control(name="image", type="text", placeholder="Image URL")
+            label
+                | Image Upload
+                input.form-control(name="image-file", type="file", placeholder="Image File")
+            div
+                button.btn Add image

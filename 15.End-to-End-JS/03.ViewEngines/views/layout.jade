@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        block title
+            title View Engines HW
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        link(rel='stylesheet', href='css/app.css')
+    body
+        div(class='navbar navbar-default')
+            div(class='navbar-header')
+                a(class='navbar-brand', href='/')
+                    | Homework Home
+                ul(class='nav navbar-nav')
+                    each item in ['Phones', 'Tablets', 'Wearables']
+                        li
+                            a(href='/' + item)
+                                = item
+
+
+        block content
+
+
+    footer(class='footer')
+        div(class='container text-center') The Footer
+
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')

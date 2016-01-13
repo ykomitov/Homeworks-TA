@@ -1,0 +1,23 @@
+extend layout
+
+block content
+    h1 Add new product
+
+    form.form(action="/products", method="POST")
+        label.control-label
+            | Name
+            input.form-control(name="name")
+        label.control-label
+            | Description:
+            input.form-control(name="description")
+        label
+            | Price
+            input.form-control(name="price", type="number")
+        label
+            | Image URL
+            input.form-control(name="image", type="text")
+        label
+            | Image
+            input.form-control(name="product-image", type="file")
+        div
+            button.btn Add product

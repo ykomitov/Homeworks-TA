@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div(class='container')
+        h1= title
+        ul(class='list-group')
+            h3 All Devices:
+            each item in data
+                li(class='list-group-item')
+                    div(class='cell')= item.manufacturer
+                    div(class='cell')= item.model
+                    div(class='cell')= item.price

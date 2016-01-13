@@ -1,0 +1,13 @@
+extend layout
+block content
+    div.container
+        h1
+            | Images
+
+        table.table.table-stripped.table-hover
+            each image in data
+                tr
+                    if image.image
+                        img(onclick='window.open("/images/' + image._id + '")', src=image.image, height="200")
+                    else
+                        img(onclick='window.open("/images/' + image._id + '")', src="/images/default.jpg", height="200")
