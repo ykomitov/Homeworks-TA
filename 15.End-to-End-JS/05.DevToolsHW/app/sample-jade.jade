@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        block title
+            title Image Gallery
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        link(rel='stylesheet', href='styles/app.css')
+    body
+        div(class='navbar navbar-default')
+            div(class='navbar-header')
+                a(class='navbar-brand', href='/')
+                    | Home
+                ul(class='nav navbar-nav')
+                    each item in [{link:'home', title:'Recent Images'}, {link:'images', title:'All Images'}, {link:'images/add', title: 'Add Image'}]
+                        li
+                            a(href='/' + item.link)
+                                = item.title
+
+
+        div.container
+            div.jumbotron
+                h1 Welcome stranger
+                p This is a place where you can upload images
+                p
+                    a.btn.btn-primary.btn-lg(href="images") Go to see the images
+
+
+    footer(class='footer')
+        div(class='container text-center') Simple Image Gallery v. 0.0 (10x Doncho)
+
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
