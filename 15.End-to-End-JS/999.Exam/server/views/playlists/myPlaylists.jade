@@ -1,0 +1,21 @@
+extends ../shared/layout
+block main-content
+    h1 All available playlists
+    div
+        table.table.table-striped.table-hover.text-center
+            thead
+                tr
+                    th.text-center Title
+                    th.text-center Category
+                    th.text-center Description
+                    th.text-center Creation Date
+                    th.text-center Rating
+            tbody
+                each playlist in playlists
+                    tr
+                        td
+                            a(href="/playlist/details/#{playlist._id}") #{playlist.title}
+                        td #{playlist.category}
+                        td #{playlist.description}
+                        td #{playlist.creationDate}
+                        td #{playlist.rating}

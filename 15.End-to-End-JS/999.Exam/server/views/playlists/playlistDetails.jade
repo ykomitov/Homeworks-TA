@@ -1,0 +1,36 @@
+extends ../shared/layout
+block main-content
+    div.col-md-8.col-md-offset-2
+        h1 Playlist Title: #{playlist.title}
+        h2 Description: #{playlist.description}
+        table.table.table-striped.table-hover.text-center
+            thead
+                tr
+                    th.text-center Playlist Creator
+                    th.text-center Playlist Title
+                    th.text-center Creation Date
+                    th.text-center Private
+                    th.text-center Rating
+            tbody
+                tr
+                    td #{playlist.creator}
+                    td #{playlist.title}
+                    td #{playlist.creationDate}
+                    td #{playlist.isPrivate}
+                    td #{playlist.rating}
+        table.table.table-striped.table-hover.text-center
+            thead
+                tr
+                    th.text-center Videos
+            tbody
+                each video in playlist.videoUrls
+                    tr
+                        td
+                            a(href="#{video}") #{video}
+
+        p.text-center Add Video
+            form(method="post")
+                label(for="youtubeLink") Link to YouTube video
+                input(id="youtubeLink" class="form-control" type="text" name="youtubeLink" placeholder="Put youtube link here")
+                br
+                input(type="submit" class="btn btn-lg" value="Add video")

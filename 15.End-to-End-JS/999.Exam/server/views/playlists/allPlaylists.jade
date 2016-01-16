@@ -1,0 +1,33 @@
+extends ../shared/layout
+block main-content
+    h1 All available playlists
+    label(for="sortBy") Sort By
+    select(id="sortBy" class="form-control" type="text" name="sortBy")
+        option(value="creationDate") Date
+        option(value="rating") Rating
+    br
+    div
+        table.table.table-striped.table-hover.text-center
+            thead
+                tr
+                    th.text-center Title
+                    th.text-center Category
+                    th.text-center Description
+                    th.text-center Creator
+                    th.text-center Creation Date
+                    th.text-center Rating
+            tbody
+                each playlist in data.playlists
+                    tr
+                        td
+                            a(href="/playlist/details/#{playlist._id}") #{playlist.title}
+                        td #{playlist.category}
+                        td #{playlist.description}
+                        td #{playlist.creator}
+                        td #{playlist.creationDate}
+                        td #{playlist.rating}
+    br
+    ul.list-unstyled.list-inline.text-center
+        - for(var i = 1; i <= data.totalPages; i++)
+            li
+                a.btn.btn-sm.btn-primary(href="/playlists/all?page=#{i}") #{i}
