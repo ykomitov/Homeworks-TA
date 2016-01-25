@@ -1,0 +1,11 @@
+﻿@model _06.MvcSumator.Models.AdditionModel
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <h1>My MVC Summator</h1>
+    <h4>First number: @Html.TextBoxFor(x => x.FirstNumber, new { @Value = 0.0 })</h4>
+    <h4>Second number: @Html.TextBoxFor(x => x.SecondNumber, new { @Value = 0.0 })</h4>
+    <input type="submit" value="Sum" />
+    <br />
+    <h3>Result: @Html.DisplayFor(x => x.Sum)</h3>
+}
