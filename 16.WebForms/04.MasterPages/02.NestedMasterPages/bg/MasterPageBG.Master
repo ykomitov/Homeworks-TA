@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MasterPageBG.master.cs" Inherits="_02.NestedMasterPages.bg.MasterPageBG" %>
+
+
+<asp:Content ContentPlaceHolderID="Navigation" runat="server">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="~/bg/BgHome.aspx">На Пешо компанията</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/bg/BgHome.aspx">Начало</a></li>
+                    <li><a runat="server" href="~/bg/BgAbout.aspx">За компанията</a></li>
+                    <li><a runat="server" href="~/bg/BgContacts.aspx">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <div class="content">
+        <asp:ContentPlaceHolder ID="BgLanguageArea" runat="server" />
+    </div>
+</asp:Content>

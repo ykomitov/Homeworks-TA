@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MasterPageES.master.cs" Inherits="_02.NestedMasterPages.es.MasterPageES" %>
+
+<asp:Content ContentPlaceHolderID="Navigation" runat="server">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="~/es/EsHome.aspx">La empresa de Pesho</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/es/EsHome.aspx">Inicio</a></li>
+                    <li><a runat="server" href="~/es/EsAbout.aspx">Acerca de Nosotros</a></li>
+                    <li><a runat="server" href="~/es/EsContacts.aspx">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <div class="content">
+        <asp:ContentPlaceHolder ID="EsLanguageArea" runat="server" />
+    </div>
+</asp:Content>
+

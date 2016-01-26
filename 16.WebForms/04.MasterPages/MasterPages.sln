@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.WebFormsAppWithMasterPage", "01.WebFormsAppWithMasterPage\01.WebFormsAppWithMasterPage.csproj", "{74CC41A0-B8B1-49EF-9AE3-CDDEC548ABCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.NestedMasterPages", "02.NestedMasterPages\02.NestedMasterPages.csproj", "{68A76687-31D7-40FD-8ECE-0020F2743676}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CC41A0-B8B1-49EF-9AE3-CDDEC548ABCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CC41A0-B8B1-49EF-9AE3-CDDEC548ABCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CC41A0-B8B1-49EF-9AE3-CDDEC548ABCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CC41A0-B8B1-49EF-9AE3-CDDEC548ABCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A76687-31D7-40FD-8ECE-0020F2743676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A76687-31D7-40FD-8ECE-0020F2743676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A76687-31D7-40FD-8ECE-0020F2743676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A76687-31D7-40FD-8ECE-0020F2743676}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
