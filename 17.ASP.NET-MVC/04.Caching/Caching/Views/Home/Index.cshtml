@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Cachable user control</h1>
+<h2>If you add a new town it will be shown in the dropdown after 120 seconds...</h2>
+<form method="post">
+    <select>
+        @foreach (var town in FakeDb.towns)
+        {
+            <option value="@town">@town</option>
+        }
+    </select>
+    <input type="text" name="inputTown" placeholder="Add new town name" />
+    <input type="submit" />
+</form>
