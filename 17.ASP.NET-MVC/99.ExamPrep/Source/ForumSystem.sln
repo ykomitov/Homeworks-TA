@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2B732AE4-AFC8-4BC0-9420-E5A5525BEC93}"
 EndProject
@@ -22,6 +22,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSystem.Data.Common", "Data\ForumSystem.Data.Common\ForumSystem.Data.Common.csproj", "{A22BF89D-5DF2-44E9-91A7-EF6B0E06267C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSystem.Web.Infrastructure", "Web\ForumSystem.Web.Infrastructure\ForumSystem.Web.Infrastructure.csproj", "{86CE0AEA-0F7E-4C82-98C2-E74D778B9FAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalLibraries", "ExternalLibraries", "{1BB79659-BE61-483A-BEA6-1BBD50CF6816}"
+	ProjectSection(SolutionItems) = preProject
+		ExternalLibraries\Kendo.Mvc.dll = ExternalLibraries\Kendo.Mvc.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

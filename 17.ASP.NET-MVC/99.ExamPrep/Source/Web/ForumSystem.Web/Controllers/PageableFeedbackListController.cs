@@ -14,7 +14,7 @@
     [Authorize]
     public class PageableFeedbackListController : Controller
     {
-        const int ItemsPerPage = 4;
+        private const int ItemsPerPage = 4;
 
         private readonly IDeletableEntityRepository<Feedback> feedbacks;
 
@@ -53,7 +53,7 @@
                 };
 
                 var cacheAbsoluteExpiration = DateTime.Now.AddMinutes(1);
-                this.HttpContext.Cache.Add(("Feedback_page_" + id), viewModel, null, cacheAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
+                this.HttpContext.Cache.Add("Feedback_page_" + id, viewModel, null, cacheAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
             }
  
             return this.View(viewModel);

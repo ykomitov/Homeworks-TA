@@ -5,13 +5,14 @@
     using ForumSystem.Data.Models;
     using ForumSystem.Web.Infrastructure.Mapping;
     using Infrastructure;
+
     public class FeedbackViewModel : IMapFrom<Feedback>, IHaveCustomMappings
     {
         private ISanitizer sanitizer;
 
         public FeedbackViewModel()
         {
-            sanitizer = new HtmlSanitizerAdapter();
+            this.sanitizer = new HtmlSanitizerAdapter();
         }
 
         public string Author { get; set; }
@@ -24,7 +25,7 @@
         {
             get
             {
-                return sanitizer.Sanitize(this.Content);
+                return this.sanitizer.Sanitize(this.Content);
             }
         }
 
