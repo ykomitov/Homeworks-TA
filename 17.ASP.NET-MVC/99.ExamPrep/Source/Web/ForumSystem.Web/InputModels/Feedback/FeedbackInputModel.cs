@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
-
-namespace ForumSystem.Web.ViewModels.Feedback
+﻿namespace ForumSystem.Web.InputModels.Feedback
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public class FeedbackInputModel
     {
         [Required]
@@ -13,6 +13,5 @@ namespace ForumSystem.Web.ViewModels.Feedback
         [AllowHtml]
         [DataType(DataType.MultilineText)]
         public string Content { get; set; }
-
     }
 }

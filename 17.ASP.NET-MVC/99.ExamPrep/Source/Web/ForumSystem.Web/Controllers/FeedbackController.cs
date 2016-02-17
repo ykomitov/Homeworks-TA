@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using ForumSystem.Data.Common.Repository;
-using ForumSystem.Data.Models;
-using ForumSystem.Web.ViewModels.Feedback;
-using Microsoft.AspNet.Identity;
-
-namespace ForumSystem.Web.Controllers
+﻿namespace ForumSystem.Web.Controllers
 {
+    using System.Web.Mvc;
+    using ForumSystem.Data.Common.Repository;
+    using ForumSystem.Data.Models;
+    using InputModels.Feedback;
+    using Microsoft.AspNet.Identity;
+
     public class FeedbackController : Controller
     {
         private IDeletableEntityRepository<Feedback> feedback;

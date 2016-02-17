@@ -19,6 +19,22 @@ namespace ForumSystem.Data.Migrations
         {
             var tagList = new List<Tag>();
 
+            if (!context.Feedbacks.Any())
+            {
+                for (int i = 1; i <= 18; i++)
+                {
+                    var feedback = new Feedback()
+                    {
+                        Content = $"Feedback <b>content</b> {i}",
+                        Title = $"Feedback {i}"
+                    };
+
+                    context.Feedbacks.Add(feedback);
+                }
+
+                context.SaveChanges();
+            }
+
             if (!context.Tags.Any())
             {
                 for (int i = 1; i <= 20; i++)
