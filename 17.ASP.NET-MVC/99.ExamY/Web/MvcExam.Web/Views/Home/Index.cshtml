@@ -1,0 +1,111 @@
+﻿@model MvcExam.Web.InputModels.IdeaInputModel
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <style type="text/css">
+        #Title, #Description {
+            min-width: 100%;
+        }
+    </style>
+    <h2>I suggest you...</h2>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-12">
+            @Html.EditorFor(m => m.Title, new { @class = "form-control", id = "title", htmlAttributes = new { placeholder = "Enter your idea" } })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            @Html.EditorFor(m => m.Description, new { @class = "form-control", id = "description", htmlAttributes = new { placeholder = "Enter description" } })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-default" value="Post idea" />
+        </div>
+    </div>
+}
+
+@foreach (var idea in this.ViewBag.PagedIdeas.Ideas)
+{
+    <div>
+        <h2>@idea.Title</h2>
+        <p>@Html.Raw(@idea.Description.Replace(Environment.NewLine, "<br /><br />"))</p>
+        <p>@idea.Comments comments</p>
+        <h2 id="vote-sum-@idea.Id">@idea.Votes</h2><span>votes</span>
+        <br />
+        <button id="@idea.Id" class="vote-button">Vote</button>
+        <div id="vote-@idea.Id" class="uvIdeaVoteFormToggle" style="display: none; width: 350px;" tabindex="-1">
+            <fieldset style="padding-left: 79px;" class="uvIdeaVoteFormFieldset">
+                <legend class="uvIdeaVoteFormLegend">Vote</legend>
+                <div class="uvIdeaVoteButtons">
+                    <button id="vote-btn-@idea.Id" value="1" type="submit" class="uvIdeaVoteButton">1 vote</button>
+                    <button id="vote-btn-@idea.Id" value="2" type="submit" class="uvIdeaVoteButton">2 votes</button>
+                    <button id="vote-btn-@idea.Id" value="3" type="submit" class="uvIdeaVoteButton">3 votes</button>
+                    <button class="close-btn">Close</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+}
+<nav>
+    <ul class="pagination">
+        @if (this.ViewBag.PagedIdeas.CurrentPage > 1)
+            {
+            <li>
+                <a href="/Home/Index/@(this.ViewBag.PagedIdeas.CurrentPage-1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= this.ViewBag.PagedIdeas.TotalPages; i++)
+        {
+            if (this.ViewBag.PagedIdeas.CurrentPage == i)
+            {
+                <li class="active"><a href="/Home/Index/@i">@i</a></li>
+            }
+            else
+            {
+                <li><a href="/Home/Index/@i">@i</a></li>
+            }
+        }
+        @if (this.ViewBag.PagedIdeas.CurrentPage < this.ViewBag.PagedIdeas.TotalPages)
+            {
+            <li>
+                <a href="/Home/Index/@(this.ViewBag.PagedIdeas.CurrentPage+1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(".vote-button").on("click", function (ev) {
+            var targetID = ev.target.id;
+            $("#vote-" + targetID).toggle();
+        });
+
+        $(".close-btn").on("click", function () {
+            $(".uvIdeaVoteFormToggle").hide();
+        });
+
+        $(".uvIdeaVoteButton").on("click", function (ev) {
+            var targetId = ev.target.id;
+            var index = targetId.lastIndexOf("-");
+            var id = targetId.slice(index + 1);
+            var voteType = $(this).attr('value');
+
+            $.post("/Votes/Vote", { ideaId: id, vote: voteType }, function (data) {
+                var currentVotesCount = $("#vote-sum-" + id);
+                $("#vote-sum-" + id).html(data.NewVotesSum);
+            })
+            $(".uvIdeaVoteFormToggle").hide();
+        });
+    </script>
+}

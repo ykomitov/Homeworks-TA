@@ -1,0 +1,38 @@
+﻿@using Kendo.Mvc.UI
+@(Html.Kendo().Grid<MvcExam.Data.Models.Idea>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Title);
+        columns.Bound(c => c.Description);
+        columns.Bound(c => c.AuthorIp);
+        columns.Bound(c => c.CreatedOn);
+        columns.Bound(c => c.ModifiedOn);
+        columns.Bound(c => c.IsDeleted);
+        columns.Bound(c => c.DeletedOn);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar => {
+            toolbar.Create();
+      })
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Pageable()
+      .Selectable(selectable => {
+            selectable.Mode(GridSelectionMode.Single);
+            selectable.Type(GridSelectionType.Row);
+      })
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Ideas_Read", "Ideas"))
+          .Create(create => create.Action("Ideas_Create", "Ideas"))
+          .Update(update => update.Action("Ideas_Update", "Ideas"))
+          .Destroy(destroy => destroy.Action("Ideas_Destroy", "Ideas"))
+      )
+)
