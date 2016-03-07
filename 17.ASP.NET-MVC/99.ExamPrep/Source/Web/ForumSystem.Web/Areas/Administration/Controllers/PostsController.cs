@@ -10,6 +10,7 @@
     using Kendo.Mvc.UI;
     using Microsoft.AspNet.Identity;
     using Models;
+
     [Authorize]
     public class PostsController : Controller
     {

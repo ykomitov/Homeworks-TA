@@ -8,7 +8,7 @@
           columns.Bound(c => c.Title);
           columns.Bound(c => c.ContentSanitized).ClientTemplate("#=Content#");
           columns.Bound(c => c.AuthorName);
-          columns.Bound(c => c.IsDeleted);
+          columns.Bound(c => c.IsDeleted).ClientTemplate("#=Deleted#");
           columns.Bound(c => c.CreatedOn).Format("{0:dd MMM yyyy, HH:mm}");
           columns.Bound(c => c.ModifiedOn).Format("{0:dd MMM yyyy, HH:mm}");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
